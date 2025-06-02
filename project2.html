@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Project 2</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Add PyScript -->
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -147,6 +150,67 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .python-output {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      margin: 20px 0;
+    }
+    .python-output pre {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .run-button {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      margin: 10px 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border: none;
+      cursor: pointer;
+    }
+    .run-button:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #viz-output {
+      margin-top: 20px;
+    }
+    .code-example {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      line-height: 1.5;
+      overflow-x: auto;
+    }
+    .code-example pre {
+      margin: 0;
+      white-space: pre-wrap;
+    }
+    .code-example .comment {
+      color: #6a9955;
+    }
+    .code-example .string {
+      color: #ce9178;
+    }
+    .code-example .keyword {
+      color: #569cd6;
+    }
+    .code-example .function {
+      color: #dcdcaa;
+    }
   </style>
 </head>
 <body>
@@ -190,6 +254,65 @@
         <h3>This diplays appointments by national category. As there are 18 categories overall, the top 8 were found and diplsayed for ease of reading</h3>
         <img src="NHS_project/national_cat_plot.png" alt="National Category Analysis" class="viz-image" onclick="openModal(this)">
       </div>
+    </div>
+
+    <h2>Code Example</h2>
+    <p>This block was used to find the top 5 sub ICB locations for missed appointments. This involved filtering the locations by missed appointments and ICB Codes.</p>
+    <p>The location names had to be retrieved from another dataframe, but the file sizes made merging resource intensive, so these were manually referenced</p>
+    <p>The second block generates the Seaborn bar plot, displayed once the button is clicked.</p>
+    <div class="code-example">
+      <pre><span class="comment">'''
+Determine the Top 5 Sub ICB Locations for DNA's
+Due to resource usage, df's have not been merged 
+'''</span>
+
+<span class="comment">#Find how many DNA's there are in ar DataFrame</span>
+dna_count = (ar['appointment_status'] == 'DNA').sum()
+print(f<span class="string">"Number of 'DNA' occurrences: {dna_count}"</span>)
+
+<span class="comment">#Find the top 5 ICB ONS Codes for DNA's</span>
+top_5_dna = (ar[ar['appointment_status'] == 'DNA']
+             .groupby('icb_ons_code')
+             .size()
+             .reset_index(name='count_of_dna')
+             .sort_values('count_of_dna', ascending=False)
+             .head(5))
+
+<span class="comment">#Take ICB code and Location name from ad</span>
+subset_ad = ad[['icb_ons_code', 'sub_icb_location_name']].drop_duplicates()
+
+<span class="comment">#Cross reference to codes taken from ar</span>
+codes = [<span class="string">'E54000057'</span>, <span class="string">'E54000008'</span>, <span class="string">'E54000050'</span>, <span class="string">'E54000048'</span>, <span class="string">'E54000051'</span>]
+result = subset_ad[subset_ad['icb_ons_code'].isin(codes)][['icb_ons_code', 'sub_icb_location_name']]
+dna_locations = pd.merge(top_5_dna, result, on='icb_ons_code', how='left')</pre>
+    </div>
+
+    <div class="code-example">
+      <pre><span class="comment"># Create a single figure</span>
+plt.figure(figsize=(14, 10))
+
+<span class="comment"># Create the bar plot</span>
+sns.barplot(x='count_of_dna', y='sub_icb_location_name', data=dna_locations, palette='Purples_d')
+plt.title('Top 5 Locations by DNA')
+plt.xlabel('DNA Count')
+plt.ylabel('Location')
+
+<span class="comment"># Save and show the plot</span>
+plt.tight_layout()
+plt.savefig('dna_plot.png', dpi=300, bbox_inches='tight')
+plt.show()</pre>
+    </div>
+
+    
+    <div class="python-output">
+      <button class="run-button" onclick="showPlot()">Generate Graph</button>
+      <div id="viz-output"></div>
+      <script>
+        function showPlot() {
+          const outputDiv = document.getElementById('viz-output');
+          outputDiv.innerHTML = '<img src="NHS_project/dna_plot.png" alt="DNA Locations Plot" style="width: 100%; max-width: 800px; margin-top: 20px;">';
+        }
+      </script>
     </div>
 
     <!-- Modal -->
