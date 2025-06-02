@@ -105,6 +105,40 @@
       margin-bottom: 20px;
       color: #495057;
     }
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #dee2e6;
+      text-align: center;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    .footer-link {
+      color: #495057;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-link:hover {
+      color: #4CAF50;
+    }
+    .linkedin-btn {
+      display: inline-block;
+      background-color: #0077b5;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .linkedin-btn:hover {
+      background-color: #005582;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
@@ -142,5 +176,11 @@
       <!-- Add more projects here -->
     </ul>
   </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <a href="mailto:pjstocc@gmail.com" class="footer-link">pjstocc@gmail.com</a>
+      <a href="https://www.linkedin.com/in/pjstock/" target="_blank" class="linkedin-btn">LinkedIn</a>
+    </div>
+  </footer>
 </body>
 </html>
