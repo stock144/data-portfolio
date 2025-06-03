@@ -174,7 +174,7 @@ sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = [14, 8]
 
 # Read the CSV file
-df = pd.read_csv("polls.csv")
+df = pd.read_csv("Polling_project/polls.csv")
 
 # Convert date column to datetime
 df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y')
@@ -212,7 +212,7 @@ plt.ylabel('Support (%)')
 plt.title('UK Polling Trends with LOESS Smoothing')
 plt.legend()
 plt.tight_layout()
-plt.savefig('polling_trends.png', dpi=300, bbox_inches='tight')
+plt.savefig('Polling_project/polling_trends.png', dpi=300, bbox_inches='tight')
 
 # Print some basic statistics
 averages = daily_averages[party_columns].mean().round(1).sort_values(ascending=False)

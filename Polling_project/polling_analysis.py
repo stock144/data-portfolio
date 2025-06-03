@@ -11,7 +11,7 @@ sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = [14, 8]
 
 # Read the CSV file
-df = pd.read_csv("Polling_project/polls.csv")
+df = pd.read_csv("polls.csv")
 
 # Convert date column to datetime
 df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y')
@@ -37,16 +37,20 @@ colors = {
     'Others': '#999999'  # Grey
 }
 
+# Calculate 7-day window size as a fraction of total days
+total_days = (daily_averages['Date'].max() - daily_averages['Date'].min()).days
+window_fraction = 14 / total_days  # Convert 14 days to a fraction of total time period
+
 # Plot each party with LOESS smoothing
 for party, color in colors.items():
     # Create scatter plot with low alpha for individual points
     plt.scatter(daily_averages['Date'], daily_averages[party], 
                 color=color, alpha=0.3, label=f'{party} (raw)')
     
-    # Calculate LOESS smoothing
+    # Calculate LOESS smoothing with 7-day window
     lowess = sm.nonparametric.lowess(daily_averages[party], 
                                     daily_averages['Date_Numeric'],
-                                    frac=0.3)  # Adjust window size here
+                                    frac=window_fraction)  # 7-day window
     
     # Plot smoothed line
     plt.plot(daily_averages['Date'], lowess[:, 1], 
@@ -54,13 +58,16 @@ for party, color in colors.items():
 
 # Add vertical line for Local Elections
 election_date = pd.to_datetime('01/05/2025', format='%d/%m/%Y')
-plt.axvline(x=election_date, color='black', linestyle='--', alpha=0.5)
+plt.axvline(x=election_date, color='red', linestyle='--', alpha=0.5)
 plt.text(election_date, 38, 'Local Elections - England', 
          rotation=45, verticalalignment='bottom', 
          horizontalalignment='left', fontsize=10)
 
 # Customize the plot
-plt.title('UK Polling Trends with LOESS Smoothing', fontsize=16, pad=20)
+plt.title('UK Polling Trends with LOESS Smoothing', fontsize=16, pad=20) 
+
+# Customize the plot
+plt.title('UK Polling Trends', fontsize=16, pad=20)
 plt.xlabel('Date', fontsize=12)
 plt.ylabel('Support (%)', fontsize=12)
 plt.ylim(0, 40)  # Set y-axis limits from 0 to 40
@@ -79,7 +86,7 @@ plt.legend(title='Party',
 plt.tight_layout()
 
 # Save the plot
-plt.savefig('Polling_project/polling_trends.png', dpi=300, bbox_inches='tight')
+plt.savefig('polling_trends.png', dpi=300, bbox_inches='tight')
 
 # Print some basic statistics
 averages = daily_averages[party_columns].mean().round(1).sort_values(ascending=False)
