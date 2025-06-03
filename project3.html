@@ -144,155 +144,30 @@
         <div class="project-description">
             <p>This project uses only polls published on <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_United_Kingdom_general_election" target="_blank">Wikipedia</a>.</p>
             
-            <p>The Wikipedia table was imported into excel and cleaned, in particular dates formats. Where polls were conducted over a number of days, the date was set to the last day to enable plotting.</p>
+            <p>The Wikipedia table was imported into Excel and cleaned, with particular attention to date formats. For polls conducted over multiple days, the date was set to the final day to enable consistent plotting.</p>
             
-            <p>The plot uses a 14 day LOESS, smoothing out the lines and avoiding severe fluctuations, while still being responsive to short term changes.</p>
+            <p>The plot uses a 14-day LOESS smoothing to reduce noise while maintaining responsiveness to short-term trends. This approach helps identify underlying patterns in the polling data.</p>
+
+            <p>When multiple polls are released on the same day, they are averaged to create a single data point.</p>
             
-            <p>The Latest Polling Averages represent the average of all polls on the latest date available.</p>
+            <p>The Latest Polling Averages show the mean of all polls from the most recent date. For instance, if three polls are released on the same day, their results are averaged to provide a single representative figure.</p>
             
-            <p>The Average Support represents the average of every poll in the dataset.</p>
+            <p>The Average Support figures represent the mean of every individual poll in the dataset, regardless of when they were conducted. This provides a broader view of overall party support across the entire polling period.</p>
         </div>
         
-        <div class="code-section">
-            <button class="code-button" onclick="showCode()">Show Analysis Code</button>
-        </div>
-
-        <div id="codeModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeCodeModal()">&times;</span>
-                <h2>Python Analysis Code</h2>
-                <pre><code>import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import statsmodels.api as sm
-from datetime import datetime
-
-# Set the style for seaborn
-sns.set_style("whitegrid")
-plt.rcParams['figure.figsize'] = [14, 8]
-
-# Read the CSV file
-df = pd.read_csv("Polling_project/polls.csv")
-
-# Convert date column to datetime
-df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y')
-df['Date_Numeric'] = (df['Date'] - df['Date'].min()).dt.days
-
-# Group by date and calculate mean for each party
-party_columns = ['Lab', 'Con', 'Ref', 'LD', 'Greens', 'Others']
-daily_averages = df.groupby('Date')[party_columns].mean().reset_index()
-
-# Sort by date
-daily_averages['Date_Numeric'] = (daily_averages['Date'] - daily_averages['Date'].min()).dt.days
-
-# Create the plot
-plt.figure(figsize=(14, 8))
-colors = {'Lab': 'red', 'Con': 'blue', 'Ref': 'purple', 'LD': 'orange', 'Greens': 'green', 'Others': 'grey'}
-
-for party, color in colors.items():
-    sns.regplot(
-        x='Date_Numeric',
-        y=party,
-        data=daily_averages,
-        lowess=True,
-        scatter_kws={'alpha': 0.3},
-        line_kws={'color': color, 'label': party, 'linewidth': 2}
-    )
-
-# Convert x-axis back to dates for labeling
-date_ticks = daily_averages['Date'].sort_values().unique()
-numeric_ticks = (date_ticks - daily_averages['Date'].min()).days
-plt.gca().set_xticks(numeric_ticks)
-plt.gca().set_xticklabels([d.strftime('%d/%m/%Y') for d in date_ticks], rotation=45)
-
-plt.xlabel('Date')
-plt.ylabel('Support (%)')
-plt.title('UK Polling Trends with LOESS Smoothing')
-plt.legend()
-plt.tight_layout()
-plt.savefig('Polling_project/polling_trends.png', dpi=300, bbox_inches='tight')
-
-# Print some basic statistics
-averages = daily_averages[party_columns].mean().round(1).sort_values(ascending=False)
-
-# Print the sorted averages
-print("\nAverage support by party:")
-print(averages)
-
-print("\nLatest polling averages:")
-latest_date = daily_averages['Date'].max()
-latest_polls = daily_averages[daily_averages['Date'] == latest_date]
-print(f"\nAs of {latest_date.strftime('%d %B %Y')}:")
-for party in party_columns:
-    print(f"{party}: {latest_polls[party].values[0]:.1f}%")</code></pre>
-            </div>
-        </div>
-
         <div class="plot-container">
             
             <img src="Polling_project/polling_trends.png" alt="UK Party Support Over Time" class="python-plot">
             
             <div class="stats-container">
                 <h3>Latest Polling Averages</h3>
-                <p>As of 30 May 2025:</p>
-                <div class="stats-grid">
-                    <div class="stat-box" style="background-color: #12B6CF; color: white;">
-                        <div class="stat-label">Reform</div>
-                        <div class="stat-value">31.0%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #E4003B; color: white;">
-                        <div class="stat-label">Labour</div>
-                        <div class="stat-value">25.0%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #0087DC; color: white;">
-                        <div class="stat-label">Conservative</div>
-                        <div class="stat-value">17.0%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #FAA61A; color: white;">
-                        <div class="stat-label">Liberal Democrats</div>
-                        <div class="stat-value">11.0%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #6AB023; color: white;">
-                        <div class="stat-label">Greens</div>
-                        <div class="stat-value">10.0%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #999999; color: white;">
-                        <div class="stat-label">Others</div>
-                        <div class="stat-value">2.0%</div>
-                    </div>
-                </div>
+                <div id="most-recent-poll" style="font-weight: bold; margin: 10px 0 20px 0; font-size: 1.1em; color: #333;"></div>
+                <div id="latest-polls-grid" class="stats-grid"></div>
             </div>
 
             <div class="stats-container">
                 <h3>Average Support by Party</h3>
-                <div class="stats-grid">
-                    <div class="stat-box" style="background-color: #12B6CF; color: white;">
-                        <div class="stat-label">Reform</div>
-                        <div class="stat-value">26.2%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #E4003B; color: white;">
-                        <div class="stat-label">Labour</div>
-                        <div class="stat-value">24.4%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #0087DC; color: white;">
-                        <div class="stat-label">Conservative</div>
-                        <div class="stat-value">21.4%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #FAA61A; color: white;">
-                        <div class="stat-label">Liberal Democrats</div>
-                        <div class="stat-value">13.1%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #6AB023; color: white;">
-                        <div class="stat-label">Greens</div>
-                        <div class="stat-value">8.7%</div>
-                    </div>
-                    <div class="stat-box" style="background-color: #999999; color: white;">
-                        <div class="stat-label">Others</div>
-                        <div class="stat-value">2.8%</div>
-                    </div>
-                </div>
+                <div id="average-support-grid" class="stats-grid"></div>
             </div>
         </div>
 
@@ -300,22 +175,76 @@ for party in party_columns:
     </div>
 
     <script>
-        // Modal functionality
-        function showCode() {
-            document.getElementById('codeModal').style.display = 'block';
+        // Function to load and display polling data
+        function loadPollingData() {
+            fetch('Polling_project/polling_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Display most recent poll info
+                    const mostRecentPollDiv = document.getElementById('most-recent-poll');
+                    if (mostRecentPollDiv && data.most_recent_poll) {
+                        mostRecentPollDiv.textContent = `Most Recent Poll: ${data.most_recent_poll.pollster} (${data.most_recent_poll.date})`;
+                    }
+
+                    // Party labels and colors
+                    const partyLabels = {
+                        'Ref': 'Reform',
+                        'Lab': 'Labour',
+                        'Con': 'Conservative',
+                        'LD': 'Liberal Democrats',
+                        'Greens': 'Greens',
+                        'Others': 'Others'
+                    };
+                    const partyColors = {
+                        'Ref': '#12B6CF',
+                        'Lab': '#E4003B',
+                        'Con': '#0087DC',
+                        'LD': '#FAA61A',
+                        'Greens': '#6AB023',
+                        'Others': '#999999'
+                    };
+
+                    // Latest Polling Averages stats grid
+                    const latestGrid = document.getElementById('latest-polls-grid');
+                    latestGrid.innerHTML = '';
+                    // Sort latest polls by value in descending order
+                    const sortedLatestPollsGrid = Object.entries(data.latest_polls)
+                        .sort(([,a], [,b]) => b - a);
+                    sortedLatestPollsGrid.forEach(([party, value]) => {
+                        latestGrid.innerHTML += `
+                            <div class="stat-box" style="background-color: ${partyColors[party]}; color: white;">
+                                <div class="stat-label">${partyLabels[party]}</div>
+                                <div class="stat-value">${value}%</div>
+                            </div>
+                        `;
+                    });
+
+                    // Average Support by Party stats grid
+                    const avgGrid = document.getElementById('average-support-grid');
+                    avgGrid.innerHTML = '';
+                    // Sort averages by value in descending order
+                    const sortedAverages = Object.entries(data.averages)
+                        .sort(([,a], [,b]) => b - a);
+                    sortedAverages.forEach(([party, value]) => {
+                        avgGrid.innerHTML += `
+                            <div class="stat-box" style="background-color: ${partyColors[party]}; color: white;">
+                                <div class="stat-label">${partyLabels[party]}</div>
+                                <div class="stat-value">${value}%</div>
+                            </div>
+                        `;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading polling data:', error);
+                    document.getElementById('latest-polls-grid').innerHTML = 
+                        '<p>Error loading polling data. Please try again later.</p>';
+                    document.getElementById('average-support-grid').innerHTML = 
+                        '<p>Error loading polling data. Please try again later.</p>';
+                });
         }
 
-        function closeCodeModal() {
-            document.getElementById('codeModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            var modal = document.getElementById('codeModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
+        // Load polling data when the page loads
+        document.addEventListener('DOMContentLoaded', loadPollingData);
     </script>
 </body>
 </html> 

@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import statsmodels.api as sm
 from datetime import datetime, timedelta
+import json
 
 # Set the style for seaborn
 sns.set_style("whitegrid")
@@ -37,34 +38,35 @@ colors = {
     'Others': '#999999'  # Grey
 }
 
-# Calculate 7-day window size as a fraction of total days
-total_days = (daily_averages['Date'].max() - daily_averages['Date'].min()).days
-window_fraction = 14 / total_days  # Convert 14 days to a fraction of total time period
-
 # Plot each party with LOESS smoothing
 for party, color in colors.items():
-    # Create scatter plot with low alpha for individual points
+    # Create scatter plot with higher alpha for individual points
     plt.scatter(daily_averages['Date'], daily_averages[party], 
-                color=color, alpha=0.3, label=f'{party} (raw)')
+                color=color, alpha=0.5, label=f'{party} (raw)')
     
-    # Calculate LOESS smoothing with 7-day window
-    lowess = sm.nonparametric.lowess(daily_averages[party], 
-                                    daily_averages['Date_Numeric'],
-                                    frac=window_fraction)  # 7-day window
+    # Calculate LOESS smoothing with 14-day window
+    # Convert 14 days to a fraction of the total date range
+    date_range = (daily_averages['Date'].max() - daily_averages['Date'].min()).days
+    frac = 14 / date_range  # 14 days as a fraction of total days
     
+    # Sort data by date for LOESS
+    sorted_data = daily_averages.sort_values('Date')
+    lowess = sm.nonparametric.lowess(sorted_data[party], 
+                                    sorted_data['Date_Numeric'],
+                                    frac=frac)  # 14-day window
+    # Convert lowess[:, 0] (numeric days) back to datetime
+    min_date = sorted_data['Date'].min()
+    lowess_dates = [min_date + pd.Timedelta(days=int(x)) for x in lowess[:, 0]]
     # Plot smoothed line
-    plt.plot(daily_averages['Date'], lowess[:, 1], 
+    plt.plot(lowess_dates, lowess[:, 1], 
              color=color, linewidth=2, label=party)
 
 # Add vertical line for Local Elections
 election_date = pd.to_datetime('01/05/2025', format='%d/%m/%Y')
-plt.axvline(x=election_date, color='red', linestyle='--', alpha=0.5)
+plt.axvline(x=election_date, color='black', linestyle='--', alpha=0.5)
 plt.text(election_date, 38, 'Local Elections - England', 
          rotation=45, verticalalignment='bottom', 
          horizontalalignment='left', fontsize=10)
-
-# Customize the plot
-plt.title('UK Polling Trends with LOESS Smoothing', fontsize=16, pad=20) 
 
 # Customize the plot
 plt.title('UK Polling Trends', fontsize=16, pad=20)
@@ -88,16 +90,39 @@ plt.tight_layout()
 # Save the plot
 plt.savefig('polling_trends.png', dpi=300, bbox_inches='tight')
 
-# Print some basic statistics
-averages = daily_averages[party_columns].mean().round(1).sort_values(ascending=False)
+# Calculate statistics
+# Calculate averages directly from the raw data, not from daily averages
+averages = df[party_columns].mean().round(1).sort_values(ascending=False)
+latest_date = daily_averages['Date'].max()
+latest_polls = daily_averages[daily_averages['Date'] == latest_date]
 
-# Print the sorted averages
+# Get the most recent poll details
+most_recent_poll = df.sort_values('Date', ascending=False).iloc[0]
+most_recent_poll_info = {
+    'date': most_recent_poll['Date'].strftime('%d %B %Y'),
+    'pollster': most_recent_poll['Pollster']
+}
+
+# Create data dictionary for JSON
+polling_data = {
+    'averages': averages.to_dict(),
+    'latest_date': latest_date.strftime('%d %B %Y'),
+    'latest_polls': {party: round(latest_polls[party].values[0], 1) for party in party_columns},
+    'most_recent_poll': most_recent_poll_info
+}
+
+# Save to JSON file
+with open('polling_data.json', 'w') as f:
+    json.dump(polling_data, f, indent=4)
+
+# Print statistics
 print("\nAverage support by party:")
 print(averages)
 
 print("\nLatest polling averages:")
-latest_date = daily_averages['Date'].max()
-latest_polls = daily_averages[daily_averages['Date'] == latest_date]
 print(f"\nAs of {latest_date.strftime('%d %B %Y')}:")
-for party in party_columns:
-    print(f"{party}: {latest_polls[party].values[0]:.1f}%") 
+# Get latest polls and sort in descending order
+latest_values = latest_polls[party_columns].iloc[0]
+sorted_latest = latest_values.sort_values(ascending=False)
+for party, value in sorted_latest.items():
+    print(f"{party}: {value:.1f}%") 
