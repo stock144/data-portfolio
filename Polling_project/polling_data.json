@@ -1,23 +1,154 @@
 {
-    "averages": {
-        "Ref": 25.8,
-        "Lab": 24.5,
-        "Con": 21.7,
-        "LD": 13.1,
-        "Greens": 8.7,
-        "Others": 2.8
+    "most_recent_poll": {
+        "date": "02 June 2025",
+        "pollster": "More in Common",
+        "sample_size": 2016,
+        "labour": 23.0,
+        "conservative": 21.0,
+        "reform": 28.0,
+        "libdem": 14.0,
+        "greens": 8.0,
+        "snp": 2.0,
+        "others": 3.0
     },
-    "latest_date": "02 June 2025",
     "latest_polls": {
         "Lab": 23.0,
         "Con": 21.0,
         "Ref": 28.0,
         "LD": 14.0,
         "Greens": 8.0,
+        "SNP": 2.0,
         "Others": 3.0
     },
-    "most_recent_poll": {
-        "date": "02 June 2025",
-        "pollster": "More in Common"
-    }
+    "averages": {
+        "Lab": 24.5,
+        "Con": 21.7,
+        "Ref": 25.8,
+        "LD": 13.1,
+        "Greens": 8.7,
+        "SNP": 2.7,
+        "Others": 2.8
+    },
+    "recent_polls": [
+        {
+            "date": "02 June 2025",
+            "pollster": "More in Common",
+            "sample_size": 2016,
+            "labour": 23.0,
+            "conservative": 21.0,
+            "reform": 28.0,
+            "libdem": 14.0,
+            "greens": 8.0,
+            "snp": 2.0,
+            "others": 3.0
+        },
+        {
+            "date": "01 June 2025",
+            "pollster": "YouGov",
+            "sample_size": 1524,
+            "labour": 22.0,
+            "conservative": 18.0,
+            "reform": 28.0,
+            "libdem": 17.0,
+            "greens": 9.0,
+            "snp": 3.0,
+            "others": 2.0
+        },
+        {
+            "date": "30 May 2025",
+            "pollster": "Opinium",
+            "sample_size": 2050,
+            "labour": 25.0,
+            "conservative": 17.0,
+            "reform": 31.0,
+            "libdem": 11.0,
+            "greens": 10.0,
+            "snp": 2.0,
+            "others": 2.0
+        },
+        {
+            "date": "29 May 2025",
+            "pollster": "Opinium",
+            "sample_size": 1647,
+            "labour": 22.0,
+            "conservative": 16.0,
+            "reform": 31.0,
+            "libdem": 16.0,
+            "greens": 9.0,
+            "snp": 2.0,
+            "others": 4.0
+        },
+        {
+            "date": "28 May 2025",
+            "pollster": "Techne",
+            "sample_size": 2447,
+            "labour": 22.0,
+            "conservative": 16.0,
+            "reform": 32.0,
+            "libdem": 13.0,
+            "greens": 11.0,
+            "snp": 3.0,
+            "others": 2.0
+        },
+        {
+            "date": "27 May 2025",
+            "pollster": "Find Out Now",
+            "sample_size": 1524,
+            "labour": 21.0,
+            "conservative": 19.0,
+            "reform": 29.0,
+            "libdem": 15.0,
+            "greens": 11.0,
+            "snp": 2.0,
+            "others": 2.0
+        },
+        {
+            "date": "26 May 2025",
+            "pollster": "YouGov",
+            "sample_size": 2000,
+            "labour": 22.0,
+            "conservative": 19.0,
+            "reform": 31.0,
+            "libdem": 14.0,
+            "greens": 8.0,
+            "snp": 2.0,
+            "others": 3.0
+        },
+        {
+            "date": "22 May 2025",
+            "pollster": "More in Common",
+            "sample_size": 1641,
+            "labour": 22.0,
+            "conservative": 17.0,
+            "reform": 30.0,
+            "libdem": 16.0,
+            "greens": 9.0,
+            "snp": 2.0,
+            "others": 4.0
+        },
+        {
+            "date": "21 May 2025",
+            "pollster": "Techne",
+            "sample_size": 2501,
+            "labour": 21.0,
+            "conservative": 16.0,
+            "reform": 32.0,
+            "libdem": 14.0,
+            "greens": 11.0,
+            "snp": 2.0,
+            "others": 2.0
+        },
+        {
+            "date": "19 May 2025",
+            "pollster": "Find Out Now",
+            "sample_size": 2222,
+            "labour": 22.0,
+            "conservative": 16.0,
+            "reform": 29.0,
+            "libdem": 17.0,
+            "greens": 10.0,
+            "snp": 2.0,
+            "others": 2.0
+        }
+    ]
 }

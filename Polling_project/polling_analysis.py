@@ -19,7 +19,7 @@ df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y')
 df['Date_Numeric'] = (df['Date'] - df['Date'].min()).dt.days
 
 # Group by date and calculate mean for each party
-party_columns = ['Lab', 'Con', 'Ref', 'LD', 'Greens', 'Others']
+party_columns = ['Lab', 'Con', 'Ref', 'LD', 'Greens', 'SNP', 'Others']
 daily_averages = df.groupby('Date')[party_columns].mean().reset_index()
 
 # Sort by date
@@ -35,6 +35,7 @@ colors = {
     'Ref': '#12B6CF',  # Reform Blue
     'LD': '#FAA61A',   # Liberal Democrat Orange
     'Greens': '#6AB023', # Green Party Green
+    'SNP': '#000000',   # SNP Black
     'Others': '#999999'  # Grey
 }
 
@@ -49,16 +50,12 @@ for party, color in colors.items():
     date_range = (daily_averages['Date'].max() - daily_averages['Date'].min()).days
     frac = 14 / date_range  # 14 days as a fraction of total days
     
-    # Sort data by date for LOESS
-    sorted_data = daily_averages.sort_values('Date')
-    lowess = sm.nonparametric.lowess(sorted_data[party], 
-                                    sorted_data['Date_Numeric'],
+    lowess = sm.nonparametric.lowess(daily_averages[party], 
+                                    daily_averages['Date_Numeric'],
                                     frac=frac)  # 14-day window
-    # Convert lowess[:, 0] (numeric days) back to datetime
-    min_date = sorted_data['Date'].min()
-    lowess_dates = [min_date + pd.Timedelta(days=int(x)) for x in lowess[:, 0]]
+    
     # Plot smoothed line
-    plt.plot(lowess_dates, lowess[:, 1], 
+    plt.plot(daily_averages['Date'], lowess[:, 1], 
              color=color, linewidth=2, label=party)
 
 # Add vertical line for Local Elections
@@ -98,18 +95,42 @@ latest_polls = daily_averages[daily_averages['Date'] == latest_date]
 
 # Get the most recent poll details
 most_recent_poll = df.sort_values('Date', ascending=False).iloc[0]
-most_recent_poll_info = {
-    'date': most_recent_poll['Date'].strftime('%d %B %Y'),
-    'pollster': most_recent_poll['Pollster']
-}
+most_recent_date = most_recent_poll['Date']
 
 # Create data dictionary for JSON
 polling_data = {
-    'averages': averages.to_dict(),
-    'latest_date': latest_date.strftime('%d %B %Y'),
+    'most_recent_poll': {
+        'date': most_recent_date.strftime('%d %B %Y'),
+        'pollster': most_recent_poll['Pollster'],
+        'sample_size': int(most_recent_poll['Sample Size']),
+        'labour': float(most_recent_poll['Lab']),
+        'conservative': float(most_recent_poll['Con']),
+        'reform': float(most_recent_poll['Ref']),
+        'libdem': float(most_recent_poll['LD']),
+        'greens': float(most_recent_poll['Greens']),
+        'snp': float(most_recent_poll['SNP']),
+        'others': float(most_recent_poll['Others'])
+    },
     'latest_polls': {party: round(latest_polls[party].values[0], 1) for party in party_columns},
-    'most_recent_poll': most_recent_poll_info
+    'averages': {party: round(averages[party], 1) for party in party_columns},
+    'recent_polls': []
 }
+
+# Add recent polls data
+recent_polls = df.sort_values('Date', ascending=False).head(10)
+for _, poll in recent_polls.iterrows():
+    polling_data['recent_polls'].append({
+        'date': poll['Date'].strftime('%d %B %Y'),
+        'pollster': poll['Pollster'],
+        'sample_size': int(poll['Sample Size']),
+        'labour': float(poll['Lab']),
+        'conservative': float(poll['Con']),
+        'reform': float(poll['Ref']),
+        'libdem': float(poll['LD']),
+        'greens': float(poll['Greens']),
+        'snp': float(poll['SNP']),
+        'others': float(poll['Others'])
+    })
 
 # Save to JSON file
 with open('polling_data.json', 'w') as f:
