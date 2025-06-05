@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UK Seat Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #0087DC;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin: 30px 0 20px 0;
+        }
+        .back-link {
+            display: inline-block;
+            color: #0087DC;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            color: #0066b3;
+            transform: translateX(-5px);
+        }
+        .seat-results {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        .seat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .seat-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .seat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        .seat-label {
+            color: #666;
+            font-size: 14px;
+        }
+        .swings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .swings-table th, .swings-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .swings-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .swings-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        .party-color {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .poll-info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .seat-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .party-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .seat-count {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .party-colors {
+            color: white;
+        }
+        .labour { background-color: #E4003B; }
+        .conservative { background-color: #0087DC; }
+        .reformuk { background-color: #12B6CF; }
+        .liberaldemocrats { background-color: #FAA61A; }
+        .snp { background-color: #000000; }
+        .green { background-color: #6AB023; }
+        .plaidcymru { background-color: #005B54; }
+        .others { background-color: #999999; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>UK Seat Calculator Results</h1>
+
+        <div class="description" style="margin: 20px 0; padding: 20px; background-color: #f8f9fa; border-radius: 5px; border: 1px solid #dee2e6;">
+            <h2 style="margin-top: 0; color: #333;">About the Seat Calculator</h2>
+            <p>
+                This seat calculator uses Universal National Swing (UNS) methodology to predict UK election outcomes based on the latest polling data. The process involves:
+            </p>
+            <p>
+                <strong>1. Base Data:</strong> The calculator starts with the 2024 General Election results as its baseline, comprised of constituency-level vote shares for all major parties.
+            </p>
+            <p>
+                <strong>2. Poll Integration:</strong> The latest poll data is used to calculate national-level swings for each party compared to the 2024 election results. This includes support for Labour, Conservative, Reform UK, Liberal Democrats, Green Party, and Others.
+            </p>
+            <p>
+                <strong>3. Swing Application:</strong> The calculator employs a Universal National Swing (UNS) methodology, where the national-level swings calculated from polling data are applied uniformly across all constituencies. These swings are then applied to each constituency's 2024 results.
+            </p>
+            <p>
+                <strong>4. Scotland and Wales:</strong> As most polls are taken at the GB or UK level, they cannot be easily applied to these areas. The calculator does not apply any swings to these parties, and instead uses their GE2024 vote share. Ideally, later iterations will support regional calculations.
+            </p>
+            <p>
+                <strong>5. Seat Allocation:</strong> The calculator then determines the winner in each constituency based on the adjusted vote shares, using the First Past the Post system. This results in the final seat count for each party.
+            </p>
+            <p>
+                The Universal National Swing method offers the advantage of simplicity and transparency, making it easy to understand and verify, but it may not fully capture local variations in voting patterns and can sometimes overestimate the impact of national trends on individual constituencies. 
+            </p>
+            <p>
+                UNS also does not take tactical voting into account
+            </p>
+            <p>
+                The results are updated automatically whenever a new poll becomes available, providing instant analysis on polling changes
+            </p>
+        </div>
+
+        <div class="poll-info" id="pollInfo" style="text-align: center; color: #666; margin: 20px 0; font-size: 1.1em; background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <!-- Pollster and date will be populated here -->
+        </div>
+
+        <div class="seat-results" id="seatResults">
+            <!-- Seat results will be populated here -->
+        </div>
+
+        <div class="swings-container" style="margin: 30px 0;">
+            <h2 style="text-align: center; color: #333; margin-bottom: 20px;">Vote Share Swings from 2024 GE</h2>
+            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <thead>
+                    <tr>
+                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Party</th>
+                        <th style="padding: 12px; text-align: right; border-bottom: 2px solid #ddd;">2024 GE Share</th>
+                        <th style="padding: 12px; text-align: right; border-bottom: 2px solid #ddd;">Latest Poll Share</th>
+                        <th style="padding: 12px; text-align: right; border-bottom: 2px solid #ddd;">Swing</th>
+                    </tr>
+                </thead>
+                <tbody id="swingsTable">
+                    <!-- Swings data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+
+    <script>
+        // Function to format percentage
+        function formatPercent(value) {
+            return value.toFixed(1) + '%';
+        }
+
+        // Function to create seat box
+        function createSeatBox(party, seats) {
+            const partyClass = party.toLowerCase().replace(' ', '');
+            return `
+                <div class="seat-box party-colors ${partyClass}">
+                    <div class="party-name">${party}</div>
+                    <div class="seat-count">${seats}</div>
+                </div>
+            `;
+        }
+
+        // Function to create swing row
+        function createSwingRow(party, data) {
+            const color = {
+                'Labour': '#E4003B',
+                'Conservative': '#0087DC',
+                'Reform UK': '#12B6CF',
+                'Liberal Democrats': '#FAA61A',
+                'Green': '#6AB023',
+                'SNP': '#000000',
+                'Plaid Cymru': '#005B54',
+                'Others': '#999999'
+            }[party] || '#999999';
+
+            return `
+                <tr>
+                    <td style="padding: 12px; border-bottom: 1px solid #ddd; color: ${color};">${party}</td>
+                    <td style="padding: 12px; text-align: right; border-bottom: 1px solid #ddd;">${formatPercent(data.ge_share)}</td>
+                    <td style="padding: 12px; text-align: right; border-bottom: 1px solid #ddd;">${formatPercent(data.latest_share)}</td>
+                    <td style="padding: 12px; text-align: right; border-bottom: 1px solid #ddd; color: ${color};">${formatPercent(data.swing)}</td>
+                </tr>
+            `;
+        }
+
+        // Load and display the data
+        fetch('Seat_Calculator_Project/seat_results.json')
+            .then(response => response.json())
+            .then(data => {
+                // Populate pollster and date
+                const pollInfo = document.getElementById('pollInfo');
+                pollInfo.innerHTML = `Based on poll by ${data.pollster} on ${data.date}:`;
+
+                // Populate seat results
+                const seatResults = document.getElementById('seatResults');
+                Object.entries(data.seats)
+                    .sort((a, b) => b[1] - a[1]) // Sort by seat count
+                    .forEach(([party, seats]) => {
+                        seatResults.innerHTML += createSeatBox(party, seats);
+                    });
+
+                // Populate swings table
+                const swingsTable = document.getElementById('swingsTable');
+                Object.entries(data.swings)
+                    .sort((a, b) => Math.abs(b[1].swing) - Math.abs(a[1].swing)) // Sort by absolute swing
+                    .forEach(([party, swingData]) => {
+                        swingsTable.innerHTML += createSwingRow(party, swingData);
+                    });
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);
+                document.getElementById('seatResults').innerHTML = '<p>Error loading data. Please try again later.</p>';
+                document.getElementById('pollInfo').innerHTML = '<p>Error loading poll information.</p>';
+            });
+    </script>
+</body>
+</html>

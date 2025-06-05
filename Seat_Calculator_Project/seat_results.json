@@ -1,0 +1,46 @@
+{
+    "pollster": "Find Out Now",
+    "date": "05/06/2025",
+    "seats": {
+        "Reform UK": 326,
+        "Labour": 173,
+        "Conservative": 28,
+        "Liberal Democrats": 78,
+        "SNP": 23,
+        "Others": 13,
+        "Green": 5,
+        "Plaid Cymru": 4
+    },
+    "swings": {
+        "Labour": {
+            "ge_share": 33.7,
+            "latest_share": 22.0,
+            "swing": -11.700000000000003
+        },
+        "Conservative": {
+            "ge_share": 23.7,
+            "latest_share": 16.0,
+            "swing": -7.699999999999999
+        },
+        "Reform UK": {
+            "ge_share": 14.3,
+            "latest_share": 31.0,
+            "swing": 16.7
+        },
+        "Liberal Democrats": {
+            "ge_share": 12.2,
+            "latest_share": 15.0,
+            "swing": 2.8000000000000007
+        },
+        "Green": {
+            "ge_share": 6.8,
+            "latest_share": 11.0,
+            "swing": 4.2
+        },
+        "Others": {
+            "ge_share": 6.1,
+            "latest_share": 2.0,
+            "swing": -4.1
+        }
+    }
+}

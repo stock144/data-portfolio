@@ -1,0 +1,54 @@
+{
+    "seats": {
+        "Reform UK": 271,
+        "Labour": 203,
+        "Conservative": 50,
+        "Liberal Democrats": 82,
+        "SNP": 22,
+        "Others": 14,
+        "Green": 4,
+        "Plaid Cymru": 4
+    },
+    "swings": {
+        "Labour": {
+            "ge_share": 33.7,
+            "latest_share": 22.0,
+            "swing": -11.700000000000003
+        },
+        "Conservative": {
+            "ge_share": 23.7,
+            "latest_share": 18.0,
+            "swing": -5.699999999999999
+        },
+        "Reform UK": {
+            "ge_share": 14.3,
+            "latest_share": 28.0,
+            "swing": 13.7
+        },
+        "Liberal Democrats": {
+            "ge_share": 12.2,
+            "latest_share": 17.0,
+            "swing": 4.800000000000001
+        },
+        "Green": {
+            "ge_share": 6.8,
+            "latest_share": 9.0,
+            "swing": 2.2
+        },
+        "SNP": {
+            "ge_share": 2.5,
+            "latest_share": 3.0,
+            "swing": 0.5
+        },
+        "Plaid Cymru": {
+            "ge_share": 0.7,
+            "latest_share": 1.0,
+            "swing": 0.30000000000000004
+        },
+        "Others": {
+            "ge_share": 6.1,
+            "latest_share": 2.0,
+            "swing": -4.1
+        }
+    }
+}

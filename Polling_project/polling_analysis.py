@@ -52,11 +52,11 @@ for party, color in colors.items():
     
     lowess = sm.nonparametric.lowess(daily_averages[party], 
                                     daily_averages['Date_Numeric'],
-                                    frac=frac)  # 14-day window
+                                    frac=frac, return_sorted=False)  # 14-day window
     
     # Plot smoothed line
-    plt.plot(daily_averages['Date'], lowess[:, 1], 
-             color=color, linewidth=2, label=party)
+    plt.plot(daily_averages['Date'], lowess, 
+         color=color, linewidth=2, label=party)
 
 # Add vertical line for Local Elections
 election_date = pd.to_datetime('01/05/2025', format='%d/%m/%Y')
