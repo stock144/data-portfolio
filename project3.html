@@ -138,11 +138,10 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">Back to Portfolio</a>
-        <h1>Project 3: UK Polling Analysis</h1>
-
-        <div class="description" style="margin: 20px 0; padding: 20px; background-color: #f8f9fa; border-radius: 5px; border: 1px solid #dee2e6;">
-            <h2 style="margin-top: 0; color: #333;">About This Project</h2>
+        <h1>UK Polling Analysis</h1>
+        <p>This project analyzes polling data from various pollsters across the UK, tracking support for different political parties over time.</p>
+        
+        <div class="project-description">
             <p>This project uses only polls published on <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_United_Kingdom_general_election" target="_blank">Wikipedia</a>.</p>
             
             <p>The Wikipedia table was imported into Excel and cleaned, with particular attention to date formats. For polls conducted over multiple days, the date was set to the final day to enable consistent plotting.</p>
@@ -151,6 +150,7 @@
 
             <p>When multiple polls are released on the same day, they are averaged to create a single data point.</p>
             
+            <p>The Latest Polling Averages show the mean of all polls from the most recent date. For instance, if three polls are released on the same day, their results are averaged to provide a single representative figure.</p>
             
             <p>The Average Support figures represent the mean of every individual poll in the dataset, regardless of when they were conducted. This provides a broader view of overall party support across the entire polling period.</p>
         </div>
@@ -159,11 +159,6 @@
             
             <img src="Polling_project/polling_trends.png" alt="UK Party Support Over Time" class="python-plot">
             
-            <div class="stats-container">
-                <div id="most-recent-poll" style="font-weight: bold; margin: 10px 0; font-size: 1.1em; color: #333;"></div>
-                <div id="latest-polls-grid" class="stats-grid"></div>
-            </div>
-
             <!-- Latest 10 Polls -->
             <div class="stats-container">
                 <h3>Latest 10 Polls</h3>
@@ -189,7 +184,11 @@
                 </div>
             </div>
 
-            
+            <div class="stats-container">
+                <h3>Latest Polling Averages</h3>
+                <div id="most-recent-poll" style="font-weight: bold; margin: 10px 0; font-size: 1.1em; color: #333;"></div>
+                <div id="latest-polls-grid" class="stats-grid"></div>
+            </div>
 
             <div class="stats-container">
                 <h3>Average Support by Party</h3>
