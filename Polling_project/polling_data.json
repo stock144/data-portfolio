@@ -1,35 +1,47 @@
 {
     "most_recent_poll": {
-        "date": "05 June 2025",
-        "pollster": "Find Out Now",
-        "sample_size": 1962,
-        "labour": 22.0,
-        "conservative": 16.0,
+        "date": "06 June 2025",
+        "pollster": "Techne",
+        "sample_size": 1628,
+        "labour": 23.0,
+        "conservative": 17.0,
         "reform": 31.0,
         "libdem": 15.0,
-        "greens": 11.0,
-        "snp": 3.0,
-        "others": 2.0
+        "greens": 8.0,
+        "snp": 2.0,
+        "others": 4.0
     },
     "latest_polls": {
-        "Lab": 22.0,
-        "Con": 16.0,
+        "Lab": 23.0,
+        "Con": 17.0,
         "Ref": 31.0,
         "LD": 15.0,
-        "Greens": 11.0,
-        "SNP": 3.0,
-        "Others": 2.0
+        "Greens": 8.0,
+        "SNP": 2.0,
+        "Others": 4.0
     },
     "averages": {
         "Lab": 24.5,
         "Con": 21.6,
-        "Ref": 25.8,
+        "Ref": 25.9,
         "LD": 13.1,
         "Greens": 8.7,
         "SNP": 2.7,
-        "Others": 2.7
+        "Others": 2.8
     },
     "recent_polls": [
+        {
+            "date": "06 June 2025",
+            "pollster": "Techne",
+            "sample_size": 1628,
+            "labour": 23.0,
+            "conservative": 17.0,
+            "reform": 31.0,
+            "libdem": 15.0,
+            "greens": 8.0,
+            "snp": 2.0,
+            "others": 4.0
+        },
         {
             "date": "05 June 2025",
             "pollster": "Find Out Now",
@@ -137,18 +149,6 @@
             "greens": 9.0,
             "snp": 2.0,
             "others": 4.0
-        },
-        {
-            "date": "21 May 2025",
-            "pollster": "Techne",
-            "sample_size": 2501,
-            "labour": 21.0,
-            "conservative": 16.0,
-            "reform": 32.0,
-            "libdem": 14.0,
-            "greens": 11.0,
-            "snp": 2.0,
-            "others": 2.0
         }
     ]
 }
