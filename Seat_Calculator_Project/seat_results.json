@@ -1,11 +1,11 @@
 {
-    "pollster": "Techne",
-    "date": "06/06/2025",
+    "pollster": "YouGov",
+    "date": "10/06/2025",
     "seats": {
-        "Reform UK": 310,
-        "Labour": 185,
-        "Conservative": 33,
-        "Liberal Democrats": 78,
+        "Reform UK": 281,
+        "Labour": 205,
+        "Conservative": 40,
+        "Liberal Democrats": 80,
         "SNP": 22,
         "Others": 14,
         "Green": 4,
@@ -24,8 +24,8 @@
         },
         "Reform UK": {
             "ge_share": 14.3,
-            "latest_share": 31.0,
-            "swing": 16.7
+            "latest_share": 29.0,
+            "swing": 14.7
         },
         "Liberal Democrats": {
             "ge_share": 12.2,
@@ -34,13 +34,13 @@
         },
         "Green": {
             "ge_share": 6.8,
-            "latest_share": 8.0,
-            "swing": 1.2000000000000002
+            "latest_share": 10.0,
+            "swing": 3.2
         },
         "Others": {
             "ge_share": 6.1,
-            "latest_share": 4.0,
-            "swing": -2.0999999999999996
+            "latest_share": 1.0,
+            "swing": -5.1
         }
     }
 }
