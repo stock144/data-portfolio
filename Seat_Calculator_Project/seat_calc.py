@@ -6,14 +6,6 @@ results = pd.read_csv("GE_results.csv")
 party_columns = ["Con", "Lab", "LD", "RUK", "Green", "SNP", "PC", "All other candidates"]
 polls = pd.read_csv("/Users/pj.stock/data-portfolio/data-portfolio/Polling_project/polls.csv")
 
-
-
-rename_dict = {
-    'Lab': 'Lab', 'Con': 'Con', 'Ref': 'RUK', 'LD': 'LD',
-    'Greens': 'Green', 'SNP': 'SNP', 'PC': 'PC', 'Others': 'All other candidates'
-}
-
-
 # Rename poll columns
 rename_dict = {
     'Lab': 'Lab', 'Con': 'Con', 'Ref': 'RUK', 'LD': 'LD',
@@ -24,18 +16,12 @@ polls = polls.rename(columns=rename_dict)
 # Select the latest poll
 latest_poll = polls.iloc[0]
 
-
-# Map poll to party_columns
-poll_mapped = {
-    "Con": float(latest_poll["Con"]),
-    "Lab": float(latest_poll["Lab"]),
-    "LD": float(latest_poll["LD"]),
-    "RUK": float(latest_poll["RUK"]),
-    "Green": float(latest_poll["Green"]),
-    "SNP": float(latest_poll["SNP"]),
-    "PC": float(latest_poll.get("PC", 0)),
-    "All other candidates": float(latest_poll["All other candidates"])
-}
+# Map poll to party_columns, handling NaN values
+poll_mapped = {}
+for party in party_columns:
+    poll_value = latest_poll.get(party)
+    if pd.notna(poll_value):
+        poll_mapped[party] = float(poll_value)
 
 # 2024 GE national shares
 GE_result = {
@@ -49,23 +35,27 @@ for party in party_columns:
 
 results_pct = results[["Valid votes", "Constituency name", "Country name", "Con", "Lab", "LD", "RUK", "Green", "SNP", "PC", "All other candidates"]]
 
-# Calculate swings
-swings = {party: poll_mapped[party] - GE_result.get(party, 0) for party in party_columns}
+# Calculate swings only for parties with polling data
+swings = {}
+for party in party_columns:
+    if party in poll_mapped:
+        swings[party] = poll_mapped[party] - GE_result.get(party, 0)
 
-# Apply swings
+# Apply swings only to parties with polling data
 results_pct_adjusted = results_pct.copy()
 for party in party_columns:
-    if party not in ["SNP", "PC"]:
+    if party in swings:
         results_pct_adjusted[party] = results_pct_adjusted[party] + swings[party]
         results_pct_adjusted[party] = results_pct_adjusted[party].clip(lower=0)
 
 # Normalize percentages to sum to 100% and round to avoid precision issues
-results_pct_adjusted[party_columns] = (results_pct_adjusted[party_columns]
-                                      .div(results_pct_adjusted[party_columns].sum(axis=1), axis=0) * 100).round(6)
+# Only include parties with polling data in the normalization
+parties_with_data = [party for party in party_columns if party in poll_mapped]
+results_pct_adjusted[parties_with_data] = (results_pct_adjusted[parties_with_data]
+                                      .div(results_pct_adjusted[parties_with_data].sum(axis=1), axis=0) * 100).round(6)
 
-
-# Determine winners
-results_pct_adjusted["Winner"] = results_pct_adjusted[party_columns].idxmax(axis=1)
+# Determine winners only among parties with polling data
+results_pct_adjusted["Winner"] = results_pct_adjusted[parties_with_data].idxmax(axis=1)
 
 # Aggregate seat counts
 seat_counts = results_pct_adjusted["Winner"].value_counts().to_dict()
@@ -88,42 +78,27 @@ output_data = {
         'Green': int(seat_counts.get('Green', 0)),
         'Plaid Cymru': int(seat_counts.get('PC', 0))
     },
-    'swings': {
-        'Labour': {
-            'ge_share': GE_result['Lab'],
-            'latest_share': float(latest_poll['Lab']),
-            'swing': float(swings['Lab'])
-        },
-        'Conservative': {
-            'ge_share': GE_result['Con'],
-            'latest_share': float(latest_poll['Con']),
-            'swing': float(swings['Con'])
-        },
-        'Reform UK': {
-            'ge_share': GE_result['RUK'],
-            'latest_share': float(latest_poll['RUK']),
-            'swing': float(swings['RUK'])
-        },
-        'Liberal Democrats': {
-            'ge_share': GE_result['LD'],
-            'latest_share': float(latest_poll['LD']),
-            'swing': float(swings['LD'])
-        },
-        'Green': {
-            'ge_share': GE_result['Green'],
-            'latest_share': float(latest_poll['Green']),
-            'swing': float(swings['Green'])
-        },
-        'Others': {
-            'ge_share': GE_result['All other candidates'],
-            'latest_share': float(latest_poll['All other candidates']),
-            'swing': float(swings['All other candidates'])
-        }
-    }
+    'swings': {}
 }
 
-# Verify JSON matches printed seat counts
-print("\nJSON Output:", json.dumps(output_data, indent=4))
+# Add swing data only for parties with polling data
+for party, swing in swings.items():
+    party_name = {
+        'Lab': 'Labour',
+        'Con': 'Conservative',
+        'RUK': 'Reform UK',
+        'LD': 'Liberal Democrats',
+        'Green': 'Green',
+        'SNP': 'SNP',
+        'PC': 'Plaid Cymru',
+        'All other candidates': 'Others'
+    }[party]
+    
+    output_data['swings'][party_name] = {
+        'ge_share': GE_result[party],
+        'latest_share': float(poll_mapped[party]),
+        'swing': float(swing)
+    }
 
 # Save to JSON
 with open('seat_results.json', 'w') as f:

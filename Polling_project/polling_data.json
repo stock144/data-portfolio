@@ -1,24 +1,24 @@
 {
     "most_recent_poll": {
-        "date": "10 June 2025",
-        "pollster": "YouGov",
-        "sample_size": 1611,
-        "labour": 23.0,
-        "conservative": 17.0,
-        "reform": 29.0,
-        "libdem": 15.0,
-        "greens": 10.0,
-        "snp": 3.0,
-        "others": 1.0
+        "date": "11 June 2025",
+        "pollster": "More in Common",
+        "sample_size": 2073,
+        "labour": 24.0,
+        "conservative": 20.0,
+        "reform": 28.0,
+        "libdem": 14.0,
+        "greens": 7.0,
+        "snp": "Not Supplied",
+        "others": "Not Supplied"
     },
     "latest_polls": {
-        "Lab": 23.0,
-        "Con": 17.0,
-        "Ref": 29.0,
-        "LD": 15.0,
-        "Greens": 10.0,
-        "SNP": 3.0,
-        "Others": 1.0
+        "Lab": 24.0,
+        "Con": 20.0,
+        "Ref": 28.0,
+        "LD": 14.0,
+        "Greens": 7.0,
+        "SNP": "Not Supplied",
+        "Others": "Not Supplied"
     },
     "averages": {
         "Lab": 24.5,
@@ -30,6 +30,18 @@
         "Others": 2.7
     },
     "recent_polls": [
+        {
+            "date": "11 June 2025",
+            "pollster": "More in Common",
+            "sample_size": 2073,
+            "labour": 24.0,
+            "conservative": 20.0,
+            "reform": 28.0,
+            "libdem": 14.0,
+            "greens": 7.0,
+            "snp": "Not Supplied",
+            "others": "Not Supplied"
+        },
         {
             "date": "10 June 2025",
             "pollster": "YouGov",
@@ -137,18 +149,6 @@
             "greens": 11.0,
             "snp": 2.0,
             "others": 2.0
-        },
-        {
-            "date": "26 May 2025",
-            "pollster": "YouGov",
-            "sample_size": 2000,
-            "labour": 22.0,
-            "conservative": 19.0,
-            "reform": 31.0,
-            "libdem": 14.0,
-            "greens": 8.0,
-            "snp": 2.0,
-            "others": 3.0
         }
     ]
 }

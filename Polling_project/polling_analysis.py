@@ -20,6 +20,12 @@ df['Date_Numeric'] = (df['Date'] - df['Date'].min()).dt.days
 
 # Group by date and calculate mean for each party
 party_columns = ['Lab', 'Con', 'Ref', 'LD', 'Greens', 'SNP', 'Others']
+
+# Replace empty strings and whitespace with NaN
+for col in party_columns:
+    df[col] = pd.to_numeric(df[col].replace(r'^\s*$', np.nan, regex=True), errors='coerce')
+
+# Calculate daily averages, excluding NaN values
 daily_averages = df.groupby('Date')[party_columns].mean().reset_index()
 
 # Sort by date
@@ -41,22 +47,26 @@ colors = {
 
 # Plot each party with LOESS smoothing
 for party, color in colors.items():
-    # Create scatter plot with higher alpha for individual points
-    plt.scatter(daily_averages['Date'], daily_averages[party], 
-                color=color, alpha=0.5, label=f'{party} (raw)')
+    # Filter out NaN values for this party
+    valid_data = daily_averages.dropna(subset=[party])
     
-    # Calculate LOESS smoothing with 14-day window
-    # Convert 14 days to a fraction of the total date range
-    date_range = (daily_averages['Date'].max() - daily_averages['Date'].min()).days
-    frac = 14 / date_range  # 14 days as a fraction of total days
-    
-    lowess = sm.nonparametric.lowess(daily_averages[party], 
-                                    daily_averages['Date_Numeric'],
-                                    frac=frac, return_sorted=False)  # 14-day window
-    
-    # Plot smoothed line
-    plt.plot(daily_averages['Date'], lowess, 
-         color=color, linewidth=2, label=party)
+    if len(valid_data) > 0:
+        # Create scatter plot with higher alpha for individual points
+        plt.scatter(valid_data['Date'], valid_data[party], 
+                    color=color, alpha=0.5, label=f'{party} (raw)')
+        
+        # Calculate LOESS smoothing with 14-day window
+        # Convert 14 days to a fraction of the total date range
+        date_range = (valid_data['Date'].max() - valid_data['Date'].min()).days
+        frac = 14 / date_range  # 14 days as a fraction of total days
+        
+        lowess = sm.nonparametric.lowess(valid_data[party], 
+                                        valid_data['Date_Numeric'],
+                                        frac=frac, return_sorted=False)  # 14-day window
+        
+        # Plot smoothed line
+        plt.plot(valid_data['Date'], lowess, 
+             color=color, linewidth=2, label=party)
 
 # Add vertical line for Local Elections
 election_date = pd.to_datetime('01/05/2025', format='%d/%m/%Y')
@@ -88,7 +98,7 @@ plt.tight_layout()
 plt.savefig('polling_trends.png', dpi=300, bbox_inches='tight')
 
 # Calculate statistics
-# Calculate averages directly from the raw data, not from daily averages
+# Calculate averages directly from the raw data, excluding NaN values
 averages = df[party_columns].mean().round(1).sort_values(ascending=False)
 latest_date = daily_averages['Date'].max()
 latest_polls = daily_averages[daily_averages['Date'] == latest_date]
@@ -103,16 +113,16 @@ polling_data = {
         'date': most_recent_date.strftime('%d %B %Y'),
         'pollster': most_recent_poll['Pollster'],
         'sample_size': int(most_recent_poll['Sample Size']),
-        'labour': float(most_recent_poll['Lab']),
-        'conservative': float(most_recent_poll['Con']),
-        'reform': float(most_recent_poll['Ref']),
-        'libdem': float(most_recent_poll['LD']),
-        'greens': float(most_recent_poll['Greens']),
-        'snp': float(most_recent_poll['SNP']),
-        'others': float(most_recent_poll['Others'])
+        'labour': float(most_recent_poll['Lab']) if pd.notna(most_recent_poll['Lab']) else 'Not Supplied',
+        'conservative': float(most_recent_poll['Con']) if pd.notna(most_recent_poll['Con']) else 'Not Supplied',
+        'reform': float(most_recent_poll['Ref']) if pd.notna(most_recent_poll['Ref']) else 'Not Supplied',
+        'libdem': float(most_recent_poll['LD']) if pd.notna(most_recent_poll['LD']) else 'Not Supplied',
+        'greens': float(most_recent_poll['Greens']) if pd.notna(most_recent_poll['Greens']) else 'Not Supplied',
+        'snp': float(most_recent_poll['SNP']) if pd.notna(most_recent_poll['SNP']) else 'Not Supplied',
+        'others': float(most_recent_poll['Others']) if pd.notna(most_recent_poll['Others']) else 'Not Supplied'
     },
-    'latest_polls': {party: round(latest_polls[party].values[0], 1) for party in party_columns},
-    'averages': {party: round(averages[party], 1) for party in party_columns},
+    'latest_polls': {party: round(latest_polls[party].values[0], 1) if pd.notna(latest_polls[party].values[0]) else 'Not Supplied' for party in party_columns},
+    'averages': {party: round(averages[party], 1) if pd.notna(averages[party]) else 'Not Supplied' for party in party_columns},
     'recent_polls': []
 }
 
@@ -123,13 +133,13 @@ for _, poll in recent_polls.iterrows():
         'date': poll['Date'].strftime('%d %B %Y'),
         'pollster': poll['Pollster'],
         'sample_size': int(poll['Sample Size']),
-        'labour': float(poll['Lab']),
-        'conservative': float(poll['Con']),
-        'reform': float(poll['Ref']),
-        'libdem': float(poll['LD']),
-        'greens': float(poll['Greens']),
-        'snp': float(poll['SNP']),
-        'others': float(poll['Others'])
+        'labour': float(poll['Lab']) if pd.notna(poll['Lab']) else 'Not Supplied',
+        'conservative': float(poll['Con']) if pd.notna(poll['Con']) else 'Not Supplied',
+        'reform': float(poll['Ref']) if pd.notna(poll['Ref']) else 'Not Supplied',
+        'libdem': float(poll['LD']) if pd.notna(poll['LD']) else 'Not Supplied',
+        'greens': float(poll['Greens']) if pd.notna(poll['Greens']) else 'Not Supplied',
+        'snp': float(poll['SNP']) if pd.notna(poll['SNP']) else 'Not Supplied',
+        'others': float(poll['Others']) if pd.notna(poll['Others']) else 'Not Supplied'
     })
 
 # Save to JSON file
@@ -146,4 +156,5 @@ print(f"\nAs of {latest_date.strftime('%d %B %Y')}:")
 latest_values = latest_polls[party_columns].iloc[0]
 sorted_latest = latest_values.sort_values(ascending=False)
 for party, value in sorted_latest.items():
-    print(f"{party}: {value:.1f}%") 
+    if pd.notna(value):
+        print(f"{party}: {value:.1f}%") 
