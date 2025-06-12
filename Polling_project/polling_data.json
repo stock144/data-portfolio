@@ -1,28 +1,28 @@
 {
     "most_recent_poll": {
-        "date": "11 June 2025",
-        "pollster": "More in Common",
-        "sample_size": 2073,
+        "date": "12 June 2025",
+        "pollster": "Find Out Now",
+        "sample_size": 2651,
         "labour": 24.0,
-        "conservative": 20.0,
-        "reform": 28.0,
-        "libdem": 14.0,
-        "greens": 7.0,
-        "snp": "Not Supplied",
-        "others": "Not Supplied"
+        "conservative": 16.0,
+        "reform": 30.0,
+        "libdem": 3.0,
+        "greens": 11.0,
+        "snp": 3.0,
+        "others": 2.0
     },
     "latest_polls": {
         "Lab": 24.0,
-        "Con": 20.0,
-        "Ref": 28.0,
-        "LD": 14.0,
-        "Greens": 7.0,
-        "SNP": "Not Supplied",
-        "Others": "Not Supplied"
+        "Con": 16.0,
+        "Ref": 30.0,
+        "LD": 3.0,
+        "Greens": 11.0,
+        "SNP": 3.0,
+        "Others": 2.0
     },
     "averages": {
         "Lab": 24.5,
-        "Con": 21.6,
+        "Con": 21.5,
         "Ref": 25.9,
         "LD": 13.1,
         "Greens": 8.7,
@@ -30,6 +30,18 @@
         "Others": 2.7
     },
     "recent_polls": [
+        {
+            "date": "12 June 2025",
+            "pollster": "Find Out Now",
+            "sample_size": 2651,
+            "labour": 24.0,
+            "conservative": 16.0,
+            "reform": 30.0,
+            "libdem": 3.0,
+            "greens": 11.0,
+            "snp": 3.0,
+            "others": 2.0
+        },
         {
             "date": "11 June 2025",
             "pollster": "More in Common",
@@ -136,18 +148,6 @@
             "libdem": 13.0,
             "greens": 11.0,
             "snp": 3.0,
-            "others": 2.0
-        },
-        {
-            "date": "27 May 2025",
-            "pollster": "Find Out Now",
-            "sample_size": 1524,
-            "labour": 21.0,
-            "conservative": 19.0,
-            "reform": 29.0,
-            "libdem": 15.0,
-            "greens": 11.0,
-            "snp": 2.0,
             "others": 2.0
         }
     ]
