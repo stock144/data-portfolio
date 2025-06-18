@@ -1,21 +1,21 @@
 {
-    "pollster": "Find Out Now",
-    "date": "12/06/2025",
+    "pollster": "YouGov",
+    "date": "16/06/2025",
     "seats": {
-        "Reform UK": 302,
-        "Labour": 206,
-        "Conservative": 37,
-        "Liberal Democrats": 60,
+        "Reform UK": 233,
+        "Labour": 242,
+        "Conservative": 48,
+        "Liberal Democrats": 81,
         "SNP": 23,
         "Others": 14,
-        "Green": 4,
+        "Green": 5,
         "Plaid Cymru": 4
     },
     "swings": {
         "Conservative": {
             "ge_share": 23.7,
-            "latest_share": 16.0,
-            "swing": -7.699999999999999
+            "latest_share": 17.0,
+            "swing": -6.699999999999999
         },
         "Labour": {
             "ge_share": 33.7,
@@ -24,23 +24,23 @@
         },
         "Liberal Democrats": {
             "ge_share": 12.2,
-            "latest_share": 3.0,
-            "swing": -9.2
+            "latest_share": 15.0,
+            "swing": 2.8000000000000007
         },
         "Reform UK": {
             "ge_share": 14.3,
-            "latest_share": 30.0,
-            "swing": 15.7
+            "latest_share": 27.0,
+            "swing": 12.7
         },
         "Green": {
             "ge_share": 6.8,
-            "latest_share": 11.0,
-            "swing": 4.2
+            "latest_share": 10.0,
+            "swing": 3.2
         },
         "SNP": {
             "ge_share": 2.5,
-            "latest_share": 3.0,
-            "swing": 0.5
+            "latest_share": 4.0,
+            "swing": 1.5
         },
         "Plaid Cymru": {
             "ge_share": 0.7,
