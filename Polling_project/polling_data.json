@@ -1,28 +1,28 @@
 {
     "most_recent_poll": {
-        "date": "16 June 2025",
-        "pollster": "YouGov",
-        "sample_size": 2255,
-        "labour": 24.0,
-        "conservative": 17.0,
-        "reform": 27.0,
-        "libdem": 15.0,
-        "greens": 10.0,
-        "snp": 4.0,
-        "others": 2.0
+        "date": "18 June 2025",
+        "pollster": "Find Out Now",
+        "sample_size": 2628,
+        "labour": 23.0,
+        "conservative": 16.0,
+        "reform": 31.0,
+        "libdem": 12.0,
+        "greens": 11.0,
+        "snp": 3.0,
+        "others": 1.0
     },
     "latest_polls": {
-        "Lab": 22.5,
-        "Con": 19.5,
-        "Ref": 28.0,
-        "LD": 14.0,
-        "Greens": 9.5,
-        "SNP": 3.5,
-        "Others": 2.0
+        "Lab": 23.0,
+        "Con": 16.0,
+        "Ref": 31.0,
+        "LD": 12.0,
+        "Greens": 11.0,
+        "SNP": 3.0,
+        "Others": 1.0
     },
     "averages": {
         "Lab": 24.4,
-        "Con": 21.5,
+        "Con": 21.4,
         "Ref": 26.0,
         "LD": 13.1,
         "Greens": 8.8,
@@ -31,16 +31,16 @@
     },
     "recent_polls": [
         {
-            "date": "16 June 2025",
-            "pollster": "YouGov",
-            "sample_size": 2255,
-            "labour": 24.0,
-            "conservative": 17.0,
-            "reform": 27.0,
-            "libdem": 15.0,
-            "greens": 10.0,
-            "snp": 4.0,
-            "others": 2.0
+            "date": "18 June 2025",
+            "pollster": "Find Out Now",
+            "sample_size": 2628,
+            "labour": 23.0,
+            "conservative": 16.0,
+            "reform": 31.0,
+            "libdem": 12.0,
+            "greens": 11.0,
+            "snp": 3.0,
+            "others": 1.0
         },
         {
             "date": "16 June 2025",
@@ -53,6 +53,18 @@
             "greens": 9.0,
             "snp": 3.0,
             "others": "Not Supplied"
+        },
+        {
+            "date": "16 June 2025",
+            "pollster": "YouGov",
+            "sample_size": 2255,
+            "labour": 24.0,
+            "conservative": 17.0,
+            "reform": 27.0,
+            "libdem": 15.0,
+            "greens": 10.0,
+            "snp": 4.0,
+            "others": 2.0
         },
         {
             "date": "13 June 2025",
@@ -137,18 +149,6 @@
             "greens": 8.0,
             "snp": 2.0,
             "others": 3.0
-        },
-        {
-            "date": "01 June 2025",
-            "pollster": "YouGov",
-            "sample_size": 1524,
-            "labour": 22.0,
-            "conservative": 18.0,
-            "reform": 28.0,
-            "libdem": 17.0,
-            "greens": 9.0,
-            "snp": 3.0,
-            "others": 2.0
         }
     ]
 }
