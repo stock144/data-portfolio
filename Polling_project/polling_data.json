@@ -1,35 +1,47 @@
 {
     "most_recent_poll": {
-        "date": "21 June 2025",
-        "pollster": "Ipsos",
-        "sample_size": 1810,
-        "labour": 25.0,
-        "conservative": 15.0,
-        "reform": 34.0,
-        "libdem": 11.0,
-        "greens": 9.0,
-        "snp": "Not Supplied",
-        "others": 6.0
+        "date": "24 June 2025",
+        "pollster": "YouGov",
+        "sample_size": 1794,
+        "labour": 23.0,
+        "conservative": 17.0,
+        "reform": 27.0,
+        "libdem": 16.0,
+        "greens": 10.0,
+        "snp": 3.0,
+        "others": 3.0
     },
     "latest_polls": {
-        "Lab": 25.0,
-        "Con": 15.0,
-        "Ref": 34.0,
-        "LD": 11.0,
-        "Greens": 9.0,
-        "SNP": "Not Supplied",
-        "Others": 6.0
+        "Lab": 23.0,
+        "Con": 17.0,
+        "Ref": 27.0,
+        "LD": 16.0,
+        "Greens": 10.0,
+        "SNP": 3.0,
+        "Others": 3.0
     },
     "averages": {
         "Lab": 24.4,
-        "Con": 21.4,
+        "Con": 21.3,
         "Ref": 26.1,
-        "LD": 13.0,
+        "LD": 13.1,
         "Greens": 8.8,
         "SNP": 2.7,
         "Others": 2.7
     },
     "recent_polls": [
+        {
+            "date": "24 June 2025",
+            "pollster": "YouGov",
+            "sample_size": 1794,
+            "labour": 23.0,
+            "conservative": 17.0,
+            "reform": 27.0,
+            "libdem": 16.0,
+            "greens": 10.0,
+            "snp": 3.0,
+            "others": 3.0
+        },
         {
             "date": "21 June 2025",
             "pollster": "Ipsos",
@@ -137,18 +149,6 @@
             "greens": 8.0,
             "snp": 2.0,
             "others": 4.0
-        },
-        {
-            "date": "05 June 2025",
-            "pollster": "Find Out Now",
-            "sample_size": 1962,
-            "labour": 22.0,
-            "conservative": 16.0,
-            "reform": 31.0,
-            "libdem": 15.0,
-            "greens": 11.0,
-            "snp": 3.0,
-            "others": 2.0
         }
     ]
 }
