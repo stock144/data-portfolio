@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UK Parliamentary Seat Trends</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .plot-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        .project-description {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        .project-description p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .project-description a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .project-description a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #666;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            color: #333;
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>UK Parliamentary Seat Trends</h1>
+        <div class="project-description">
+            <p>This project visualizes the predicted seat counts for each major UK political party over time, based on polling data and a seat projection model.</p>
+            <p><strong>Methodology:</strong></p>
+            <ul>
+                <li><strong>Base Data:</strong> The model starts with the 2024 General Election results at the constituency level for all major parties.</li>
+                <li><strong>Poll Integration:</strong> For each poll, national-level swings are calculated for each party compared to the 2024 results.</li>
+                <li><strong>Swing Application:</strong> The Universal National Swing (UNS) methodology is used, applying the national swings uniformly to each constituency's 2024 results.</li>
+                <li><strong>Seat Allocation:</strong> The party with the highest adjusted vote share in each constituency is awarded the seat, using the First Past the Post system.</li>
+                <li><strong>Scotland and Wales:</strong> As most polls are UK/GB-wide, regional parties (SNP, Plaid Cymru) are not adjusted and retain their 2024 vote share.</li>
+            </ul>
+            <p>The graph below shows the seat projections for each party over time, smoothed using a <strong>7-point rolling average</strong> to highlight trends and reduce noise from individual polls.</p>
+            <p><em>Limitations:</em> The UNS method is simple and transparent but does not account for local factors or tactical voting, and may overstate the impact of national swings in some areas.</p>
+            <p>For more details on the methodology, see the <a href="project4.html">Seat Calculator</a> project.</p>
+        </div>
+        <div class="plot-container">
+            <div id="seatTrendPlot" style="width:100%;max-width:1100px;height:600px;margin:auto;"></div>
+        </div>
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('Seat_Graph_Project/all_seat_results.json')
+        .then(response => response.json())
+        .then(data => {
+          // Flatten and ensure ISO date format, handle DD/MM/YYYY
+          data = data.map(row => {
+            let dateStr = row.date;
+            // Convert DD/MM/YYYY to YYYY-MM-DD
+            if (dateStr && dateStr.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
+              const [day, month, year] = dateStr.split('/');
+              dateStr = `${year}-${month}-${day}`;
+            }
+            let dateObj = new Date(dateStr);
+            if (isNaN(dateObj.getTime())) {
+              console.warn('Invalid date:', row.date, row);
+              return null;
+            }
+            return {
+              ...row.seats,
+              date: dateObj.toISOString().slice(0, 10)
+            };
+          }).filter(row => row !== null);
+          console.log('Plot data:', data); // Debug: see what is being passed
+
+          const parties = ['Labour', 'Conservative', 'Reform UK', 'Liberal Democrats', 'SNP', 'Others', 'Green', 'Plaid Cymru'];
+          const colors = {
+            'Labour': '#E4003B',
+            'Conservative': '#0087DC',
+            'Reform UK': '#12B6CF',
+            'Liberal Democrats': '#FAA61A',
+            'Green': '#6AB023',
+            'SNP': '#000000',
+            'Plaid Cymru': '#005B54',
+            'Others': '#999999'
+          };
+
+          // Rolling mean function
+          function rollingMean(arr, window) {
+            return arr.map((_, idx, a) => {
+              const start = Math.max(0, idx - Math.floor(window/2));
+              const end = Math.min(a.length, idx + Math.ceil(window/2));
+              const windowArr = a.slice(start, end).filter(v => v !== null && v !== undefined);
+              if (windowArr.length === 0) return null;
+              return windowArr.reduce((sum, v) => sum + v, 0) / windowArr.length;
+            });
+          }
+
+          const window = 7;
+          const traces = parties.map(party => {
+            const yRaw = data.map(row => row[party] ?? null);
+            return {
+              x: data.map(row => row.date),
+              y: rollingMean(yRaw, window),
+              mode: 'lines',
+              name: party,
+              line: { color: colors[party], width: 3 },
+              hovertemplate: '%{y:.0f}<extra>%{fullData.name}</extra>'
+            };
+          });
+
+          // Add majority line
+          traces.push({
+            x: data.map(row => row.date),
+            y: Array(data.length).fill(326),
+            mode: 'lines',
+            name: 'Majority (326 seats)',
+            line: { color: 'black', dash: 'dash', width: 2 },
+            hoverinfo: 'skip'
+          });
+
+          const layout = {
+            title: 'UK Parliamentary Seat Trends by Party',
+            xaxis: { title: 'Date', type: 'date' },
+            yaxis: { title: 'Number of Seats', range: [0, 550], tickformat: ',d' },
+            legend: { orientation: 'v', x: 1.05, y: 1 },
+            margin: { t: 60, r: 200 }
+          };
+
+          Plotly.newPlot('seatTrendPlot', traces, layout, {responsive: true});
+        });
+    });
+    </script>
+</body>
+</html> 

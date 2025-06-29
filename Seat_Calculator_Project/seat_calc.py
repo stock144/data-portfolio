@@ -23,6 +23,10 @@ for party in party_columns:
     if pd.notna(poll_value):
         poll_mapped[party] = float(poll_value)
 
+# Debug: print what was mapped
+print(f"Poll {latest_poll.get('Pollster', 'Unknown')} on {latest_poll.get('Date', 'Unknown')}:")
+print("Poll mapped:", poll_mapped)
+
 # 2024 GE national shares
 GE_result = {
     "Lab": 33.7, "Con": 23.7, "LD": 12.2, "RUK": 14.3, "Green": 6.8, 
@@ -51,6 +55,17 @@ for party in party_columns:
 # Normalize percentages to sum to 100% and round to avoid precision issues
 # Only include parties with polling data in the normalization
 parties_with_data = [party for party in party_columns if party in poll_mapped]
+
+# Debug: print parties with data
+print("Parties with data:", parties_with_data)
+
+# Check if we have any parties with data
+if len(parties_with_data) == 0:
+    print("Warning: No parties with polling data found")
+    print("Available poll data:", poll_mapped)
+    print("Available columns in latest_poll:", latest_poll.index.tolist())
+    exit(1)  # Exit with error
+
 results_pct_adjusted[parties_with_data] = (results_pct_adjusted[parties_with_data]
                                       .div(results_pct_adjusted[parties_with_data].sum(axis=1), axis=0) * 100).round(6)
 

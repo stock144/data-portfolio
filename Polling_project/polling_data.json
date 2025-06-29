@@ -1,35 +1,47 @@
 {
     "most_recent_poll": {
-        "date": "26 June 2025",
-        "pollster": "Techne",
-        "sample_size": 1628,
-        "labour": 23.0,
-        "conservative": 18.0,
-        "reform": 28.0,
-        "libdem": 16.0,
-        "greens": 8.0,
-        "snp": 3.0,
-        "others": 4.0
+        "date": "28 June 2025",
+        "pollster": "BMG Research",
+        "sample_size": 1617,
+        "labour": 27.0,
+        "conservative": 19.0,
+        "reform": 30.0,
+        "libdem": 12.0,
+        "greens": 7.0,
+        "snp": 2.0,
+        "others": 2.0
     },
     "latest_polls": {
-        "Lab": 22.5,
-        "Con": 18.0,
-        "Ref": 29.0,
-        "LD": 14.5,
-        "Greens": 9.5,
-        "SNP": 3.0,
-        "Others": 3.0
+        "Lab": 27.0,
+        "Con": 19.0,
+        "Ref": 30.0,
+        "LD": 12.0,
+        "Greens": 7.0,
+        "SNP": 2.0,
+        "Others": 2.0
     },
     "averages": {
         "Lab": 24.4,
         "Con": 21.3,
-        "Ref": 26.1,
+        "Ref": 26.2,
         "LD": 13.1,
         "Greens": 8.8,
         "SNP": 2.7,
-        "Others": 2.8
+        "Others": 2.7
     },
     "recent_polls": [
+        {
+            "date": "28 June 2025",
+            "pollster": "BMG Research",
+            "sample_size": 1617,
+            "labour": 27.0,
+            "conservative": 19.0,
+            "reform": 30.0,
+            "libdem": 12.0,
+            "greens": 7.0,
+            "snp": 2.0,
+            "others": 2.0
+        },
         {
             "date": "26 June 2025",
             "pollster": "Techne",
@@ -137,18 +149,6 @@
             "greens": 11.0,
             "snp": 3.0,
             "others": 2.0
-        },
-        {
-            "date": "11 June 2025",
-            "pollster": "More in Common",
-            "sample_size": 2073,
-            "labour": 24.0,
-            "conservative": 20.0,
-            "reform": 28.0,
-            "libdem": 14.0,
-            "greens": 7.0,
-            "snp": "Not Supplied",
-            "others": "Not Supplied"
         }
     ]
 }

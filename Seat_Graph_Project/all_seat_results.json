@@ -1,0 +1,1892 @@
+[
+  {
+    "pollster":"BMG Research",
+    "date":"28\/06\/2025",
+    "seats":{
+      "Reform UK":243,
+      "Labour":252,
+      "Conservative":46,
+      "Liberal Democrats":75,
+      "SNP":12,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"26\/06\/2025",
+    "seats":{
+      "Reform UK":263,
+      "Labour":216,
+      "Conservative":50,
+      "Liberal Democrats":81,
+      "SNP":22,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"26\/06\/2025",
+    "seats":{
+      "Reform UK":304,
+      "Labour":181,
+      "Conservative":42,
+      "Liberal Democrats":76,
+      "SNP":24,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"24\/06\/2025",
+    "seats":{
+      "Reform UK":246,
+      "Labour":229,
+      "Conservative":48,
+      "Liberal Democrats":81,
+      "SNP":23,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Ipsos",
+    "date":"21\/06\/2025",
+    "seats":{
+      "Reform UK":359,
+      "Labour":188,
+      "Conservative":12,
+      "Liberal Democrats":73,
+      "SNP":0,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"18\/06\/2025",
+    "seats":{
+      "Reform UK":318,
+      "Labour":184,
+      "Conservative":28,
+      "Liberal Democrats":75,
+      "SNP":23,
+      "Others":13,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"16\/06\/2025",
+    "seats":{
+      "Reform UK":233,
+      "Labour":242,
+      "Conservative":48,
+      "Liberal Democrats":81,
+      "SNP":23,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"16\/06\/2025",
+    "seats":{
+      "Reform UK":273,
+      "Labour":176,
+      "Conservative":98,
+      "Liberal Democrats":73,
+      "SNP":24,
+      "Others":0,
+      "Green":6,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"13\/06\/2025",
+    "seats":{
+      "Reform UK":285,
+      "Labour":206,
+      "Conservative":41,
+      "Liberal Democrats":75,
+      "SNP":21,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"12\/06\/2025",
+    "seats":{
+      "Reform UK":302,
+      "Labour":206,
+      "Conservative":37,
+      "Liberal Democrats":60,
+      "SNP":23,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"11\/06\/2025",
+    "seats":{
+      "Reform UK":239,
+      "Labour":249,
+      "Conservative":79,
+      "Liberal Democrats":78,
+      "SNP":0,
+      "Others":0,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"10\/06\/2025",
+    "seats":{
+      "Reform UK":281,
+      "Labour":205,
+      "Conservative":39,
+      "Liberal Democrats":80,
+      "SNP":23,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"06\/06\/2025",
+    "seats":{
+      "Reform UK":310,
+      "Labour":186,
+      "Conservative":33,
+      "Liberal Democrats":78,
+      "SNP":21,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"05\/06\/2025",
+    "seats":{
+      "Reform UK":326,
+      "Labour":171,
+      "Conservative":28,
+      "Liberal Democrats":78,
+      "SNP":25,
+      "Others":13,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"02\/06\/2025",
+    "seats":{
+      "Reform UK":230,
+      "Labour":209,
+      "Conservative":90,
+      "Liberal Democrats":78,
+      "SNP":21,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"01\/06\/2025",
+    "seats":{
+      "Reform UK":271,
+      "Labour":201,
+      "Conservative":50,
+      "Liberal Democrats":82,
+      "SNP":24,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"30\/05\/2025",
+    "seats":{
+      "Reform UK":295,
+      "Labour":212,
+      "Conservative":33,
+      "Liberal Democrats":74,
+      "SNP":15,
+      "Others":13,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"29\/05\/2025",
+    "seats":{
+      "Reform UK":323,
+      "Labour":173,
+      "Conservative":26,
+      "Liberal Democrats":82,
+      "SNP":23,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"28\/05\/2025",
+    "seats":{
+      "Reform UK":348,
+      "Labour":159,
+      "Conservative":25,
+      "Liberal Democrats":75,
+      "SNP":25,
+      "Others":13,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"27\/05\/2025",
+    "seats":{
+      "Reform UK":290,
+      "Labour":176,
+      "Conservative":57,
+      "Liberal Democrats":79,
+      "SNP":24,
+      "Others":14,
+      "Green":6,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"26\/05\/2025",
+    "seats":{
+      "Reform UK":315,
+      "Labour":170,
+      "Conservative":45,
+      "Liberal Democrats":76,
+      "SNP":22,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"22\/05\/2025",
+    "seats":{
+      "Reform UK":307,
+      "Labour":184,
+      "Conservative":34,
+      "Liberal Democrats":80,
+      "SNP":22,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"21\/05\/2025",
+    "seats":{
+      "Reform UK":359,
+      "Labour":150,
+      "Conservative":25,
+      "Liberal Democrats":75,
+      "SNP":23,
+      "Others":13,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"19\/05\/2025",
+    "seats":{
+      "Reform UK":293,
+      "Labour":196,
+      "Conservative":30,
+      "Liberal Democrats":85,
+      "SNP":23,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"19\/05\/2025",
+    "seats":{
+      "Reform UK":282,
+      "Labour":178,
+      "Conservative":70,
+      "Liberal Democrats":77,
+      "SNP":22,
+      "Others":13,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"16\/05\/2025",
+    "seats":{
+      "Reform UK":254,
+      "Labour":236,
+      "Conservative":46,
+      "Liberal Democrats":77,
+      "SNP":15,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"15\/05\/2025",
+    "seats":{
+      "Reform UK":284,
+      "Labour":196,
+      "Conservative":46,
+      "Liberal Democrats":79,
+      "SNP":22,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"14\/05\/2025",
+    "seats":{
+      "Reform UK":372,
+      "Labour":143,
+      "Conservative":19,
+      "Liberal Democrats":75,
+      "SNP":23,
+      "Others":13,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"12\/05\/2025",
+    "seats":{
+      "Reform UK":260,
+      "Labour":216,
+      "Conservative":49,
+      "Liberal Democrats":81,
+      "SNP":22,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"12\/05\/2025",
+    "seats":{
+      "Reform UK":217,
+      "Labour":249,
+      "Conservative":69,
+      "Liberal Democrats":78,
+      "SNP":15,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"11\/05\/2025",
+    "seats":{
+      "Reform UK":334,
+      "Labour":156,
+      "Conservative":38,
+      "Liberal Democrats":77,
+      "SNP":24,
+      "Others":13,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Freshwater Strategy",
+    "date":"08\/05\/2025",
+    "seats":{
+      "Reform UK":252,
+      "Labour":214,
+      "Conservative":64,
+      "Liberal Democrats":78,
+      "SNP":22,
+      "Others":16,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"08\/05\/2025",
+    "seats":{
+      "Reform UK":340,
+      "Labour":156,
+      "Conservative":38,
+      "Liberal Democrats":75,
+      "SNP":24,
+      "Others":13,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"BMG Research",
+    "date":"07\/05\/2025",
+    "seats":{
+      "Reform UK":379,
+      "Labour":129,
+      "Conservative":20,
+      "Liberal Democrats":76,
+      "SNP":25,
+      "Others":13,
+      "Green":5,
+      "Plaid Cymru":3
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"06\/05\/2025",
+    "seats":{
+      "Reform UK":288,
+      "Labour":195,
+      "Conservative":39,
+      "Liberal Democrats":80,
+      "SNP":25,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"05\/05\/2025",
+    "seats":{
+      "Reform UK":273,
+      "Labour":222,
+      "Conservative":41,
+      "Liberal Democrats":76,
+      "SNP":16,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Survation",
+    "date":"04\/05\/2025",
+    "seats":{
+      "Reform UK":205,
+      "Labour":221,
+      "Conservative":102,
+      "Liberal Democrats":78,
+      "SNP":22,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"02\/05\/2025",
+    "seats":{
+      "Reform UK":190,
+      "Labour":276,
+      "Conservative":69,
+      "Liberal Democrats":78,
+      "SNP":15,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"02\/05\/2025",
+    "seats":{
+      "Reform UK":126,
+      "Labour":285,
+      "Conservative":129,
+      "Liberal Democrats":72,
+      "SNP":15,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Survation",
+    "date":"30\/04\/2025",
+    "seats":{
+      "Reform UK":291,
+      "Labour":175,
+      "Conservative":58,
+      "Liberal Democrats":77,
+      "SNP":24,
+      "Others":15,
+      "Green":6,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"28\/04\/2025",
+    "seats":{
+      "Reform UK":192,
+      "Labour":236,
+      "Conservative":99,
+      "Liberal Democrats":78,
+      "SNP":22,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"27\/04\/2025",
+    "seats":{
+      "Reform UK":98,
+      "Labour":271,
+      "Conservative":164,
+      "Liberal Democrats":77,
+      "SNP":14,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"25\/04\/2025",
+    "seats":{
+      "Reform UK":144,
+      "Labour":289,
+      "Conservative":108,
+      "Liberal Democrats":72,
+      "SNP":15,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"24\/04\/2025",
+    "seats":{
+      "Reform UK":123,
+      "Labour":285,
+      "Conservative":123,
+      "Liberal Democrats":78,
+      "SNP":15,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"23\/04\/2025",
+    "seats":{
+      "Reform UK":273,
+      "Labour":169,
+      "Conservative":82,
+      "Liberal Democrats":78,
+      "SNP":26,
+      "Others":15,
+      "Green":7,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"22\/04\/2025",
+    "seats":{
+      "Reform UK":169,
+      "Labour":247,
+      "Conservative":108,
+      "Liberal Democrats":80,
+      "SNP":22,
+      "Others":15,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"21\/04\/2025",
+    "seats":{
+      "Reform UK":132,
+      "Labour":233,
+      "Conservative":167,
+      "Liberal Democrats":73,
+      "SNP":20,
+      "Others":16,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"16\/04\/2025",
+    "seats":{
+      "Reform UK":251,
+      "Labour":195,
+      "Conservative":78,
+      "Liberal Democrats":78,
+      "SNP":24,
+      "Others":14,
+      "Green":6,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"14\/04\/2025",
+    "seats":{
+      "Reform UK":91,
+      "Labour":291,
+      "Conservative":144,
+      "Liberal Democrats":78,
+      "SNP":21,
+      "Others":16,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"14\/04\/2025",
+    "seats":{
+      "Reform UK":98,
+      "Labour":266,
+      "Conservative":168,
+      "Liberal Democrats":73,
+      "SNP":19,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"14\/04\/2025",
+    "seats":{
+      "Reform UK":74,
+      "Labour":275,
+      "Conservative":186,
+      "Liberal Democrats":72,
+      "SNP":14,
+      "Others":20,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Focaldata",
+    "date":"14\/04\/2025",
+    "seats":{
+      "Reform UK":33,
+      "Labour":334,
+      "Conservative":173,
+      "Liberal Democrats":70,
+      "SNP":10,
+      "Others":19,
+      "Green":7,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Lord Ashcroft Polls",
+    "date":"11\/04\/2025",
+    "seats":{
+      "Reform UK":108,
+      "Labour":310,
+      "Conservative":125,
+      "Liberal Democrats":72,
+      "SNP":12,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"10\/04\/2025",
+    "seats":{
+      "Reform UK":105,
+      "Labour":275,
+      "Conservative":150,
+      "Liberal Democrats":78,
+      "SNP":14,
+      "Others":20,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"09\/04\/2025",
+    "seats":{
+      "Reform UK":192,
+      "Labour":217,
+      "Conservative":114,
+      "Liberal Democrats":78,
+      "SNP":24,
+      "Others":15,
+      "Green":6,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"07\/04\/2025",
+    "seats":{
+      "Reform UK":87,
+      "Labour":285,
+      "Conservative":158,
+      "Liberal Democrats":78,
+      "SNP":21,
+      "Others":16,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"07\/04\/2025",
+    "seats":{
+      "Reform UK":101,
+      "Labour":271,
+      "Conservative":163,
+      "Liberal Democrats":78,
+      "SNP":14,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"06\/04\/2025",
+    "seats":{
+      "Reform UK":153,
+      "Labour":188,
+      "Conservative":201,
+      "Liberal Democrats":70,
+      "SNP":17,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":3
+    }
+  },
+  {
+    "pollster":"Freshwater Strategy",
+    "date":"03\/04\/2025",
+    "seats":{
+      "Reform UK":96,
+      "Labour":266,
+      "Conservative":169,
+      "Liberal Democrats":72,
+      "SNP":19,
+      "Others":20,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"02\/04\/2025",
+    "seats":{
+      "Reform UK":254,
+      "Labour":195,
+      "Conservative":79,
+      "Liberal Democrats":78,
+      "SNP":24,
+      "Others":14,
+      "Green":6,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"01\/04\/2025",
+    "seats":{
+      "Reform UK":96,
+      "Labour":262,
+      "Conservative":184,
+      "Liberal Democrats":72,
+      "SNP":14,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"More in Common (MRP)",
+    "date":"31\/03\/2025",
+    "seats":{
+      "Reform UK":89,
+      "Labour":291,
+      "Conservative":144,
+      "Liberal Democrats":78,
+      "SNP":21,
+      "Others":18,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"31\/03\/2025",
+    "seats":{
+      "Reform UK":127,
+      "Labour":197,
+      "Conservative":213,
+      "Liberal Democrats":70,
+      "SNP":20,
+      "Others":18,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"28\/03\/2025",
+    "seats":{
+      "Reform UK":127,
+      "Labour":285,
+      "Conservative":129,
+      "Liberal Democrats":72,
+      "SNP":15,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"28\/03\/2025",
+    "seats":{
+      "Reform UK":181,
+      "Labour":234,
+      "Conservative":119,
+      "Liberal Democrats":72,
+      "SNP":21,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now\r\n \r\n\r\n Electoral Calculus",
+    "date":"27\/03\/2025",
+    "seats":{
+      "Reform UK":65,
+      "Labour":306,
+      "Conservative":171,
+      "Liberal Democrats":72,
+      "SNP":13,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"BMG Research",
+    "date":"27\/03\/2025",
+    "seats":{
+      "Reform UK":82,
+      "Labour":292,
+      "Conservative":164,
+      "Liberal Democrats":73,
+      "SNP":13,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"26\/03\/2025",
+    "seats":{
+      "Reform UK":162,
+      "Labour":230,
+      "Conservative":140,
+      "Liberal Democrats":72,
+      "SNP":22,
+      "Others":14,
+      "Green":6,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"24\/03\/2025",
+    "seats":{
+      "Reform UK":80,
+      "Labour":280,
+      "Conservative":165,
+      "Liberal Democrats":78,
+      "SNP":22,
+      "Others":20,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"24\/03\/2025",
+    "seats":{
+      "Reform UK":92,
+      "Labour":248,
+      "Conservative":196,
+      "Liberal Democrats":70,
+      "SNP":19,
+      "Others":16,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"21\/03\/2025",
+    "seats":{
+      "Reform UK":143,
+      "Labour":289,
+      "Conservative":103,
+      "Liberal Democrats":77,
+      "SNP":15,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"20\/03\/2025",
+    "seats":{
+      "Reform UK":54,
+      "Labour":331,
+      "Conservative":155,
+      "Liberal Democrats":73,
+      "SNP":10,
+      "Others":19,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"19\/03\/2025",
+    "seats":{
+      "Reform UK":217,
+      "Labour":204,
+      "Conservative":103,
+      "Liberal Democrats":78,
+      "SNP":24,
+      "Others":14,
+      "Green":6,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"17\/03\/2025",
+    "seats":{
+      "Reform UK":86,
+      "Labour":313,
+      "Conservative":140,
+      "Liberal Democrats":77,
+      "SNP":15,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"17\/03\/2025",
+    "seats":{
+      "Reform UK":65,
+      "Labour":285,
+      "Conservative":192,
+      "Liberal Democrats":70,
+      "SNP":14,
+      "Others":16,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Deltapoll",
+    "date":"17\/03\/2025",
+    "seats":{
+      "Reform UK":100,
+      "Labour":272,
+      "Conservative":169,
+      "Liberal Democrats":72,
+      "SNP":13,
+      "Others":16,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"17\/03\/2025",
+    "seats":{
+      "Reform UK":15,
+      "Labour":368,
+      "Conservative":176,
+      "Liberal Democrats":48,
+      "SNP":11,
+      "Others":18,
+      "Green":10,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Lord Ashcroft Polls",
+    "date":"13\/03\/2025",
+    "seats":{
+      "Reform UK":74,
+      "Labour":326,
+      "Conservative":137,
+      "Liberal Democrats":77,
+      "SNP":10,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"12\/03\/2025",
+    "seats":{
+      "Reform UK":192,
+      "Labour":237,
+      "Conservative":105,
+      "Liberal Democrats":72,
+      "SNP":21,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"10\/03\/2025",
+    "seats":{
+      "Reform UK":85,
+      "Labour":285,
+      "Conservative":158,
+      "Liberal Democrats":78,
+      "SNP":21,
+      "Others":18,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"10\/03\/2025",
+    "seats":{
+      "Reform UK":110,
+      "Labour":276,
+      "Conservative":155,
+      "Liberal Democrats":73,
+      "SNP":13,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"09\/03\/2025",
+    "seats":{
+      "Reform UK":62,
+      "Labour":306,
+      "Conservative":171,
+      "Liberal Democrats":72,
+      "SNP":13,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"JL Partners",
+    "date":"07\/03\/2025",
+    "seats":{
+      "Reform UK":143,
+      "Labour":318,
+      "Conservative":79,
+      "Liberal Democrats":77,
+      "SNP":12,
+      "Others":13,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"06\/03\/2025",
+    "seats":{
+      "Reform UK":91,
+      "Labour":331,
+      "Conservative":115,
+      "Liberal Democrats":77,
+      "SNP":12,
+      "Others":16,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"05\/03\/2025",
+    "seats":{
+      "Reform UK":158,
+      "Labour":270,
+      "Conservative":110,
+      "Liberal Democrats":73,
+      "SNP":16,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"03\/03\/2025",
+    "seats":{
+      "Reform UK":111,
+      "Labour":307,
+      "Conservative":120,
+      "Liberal Democrats":78,
+      "SNP":15,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"02\/03\/2025",
+    "seats":{
+      "Reform UK":163,
+      "Labour":232,
+      "Conservative":137,
+      "Liberal Democrats":77,
+      "SNP":19,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Freshwater Strategy",
+    "date":"02\/03\/2025",
+    "seats":{
+      "Reform UK":73,
+      "Labour":304,
+      "Conservative":168,
+      "Liberal Democrats":72,
+      "SNP":10,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"28\/02\/2025",
+    "seats":{
+      "Reform UK":60,
+      "Labour":299,
+      "Conservative":165,
+      "Liberal Democrats":77,
+      "SNP":21,
+      "Others":24,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Focaldata",
+    "date":"27\/02\/2025",
+    "seats":{
+      "Reform UK":98,
+      "Labour":306,
+      "Conservative":139,
+      "Liberal Democrats":73,
+      "SNP":10,
+      "Others":16,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"26\/02\/2025",
+    "seats":{
+      "Reform UK":229,
+      "Labour":208,
+      "Conservative":91,
+      "Liberal Democrats":77,
+      "SNP":22,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"26\/02\/2025",
+    "seats":{
+      "Reform UK":161,
+      "Labour":272,
+      "Conservative":112,
+      "Liberal Democrats":72,
+      "SNP":15,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"BMG Research",
+    "date":"24\/02\/2025",
+    "seats":{
+      "Reform UK":129,
+      "Labour":258,
+      "Conservative":141,
+      "Liberal Democrats":78,
+      "SNP":21,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"24\/02\/2025",
+    "seats":{
+      "Reform UK":101,
+      "Labour":235,
+      "Conservative":198,
+      "Liberal Democrats":73,
+      "SNP":19,
+      "Others":15,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"21\/02\/2025",
+    "seats":{
+      "Reform UK":115,
+      "Labour":326,
+      "Conservative":103,
+      "Liberal Democrats":73,
+      "SNP":12,
+      "Others":13,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"20\/02\/2025",
+    "seats":{
+      "Reform UK":138,
+      "Labour":266,
+      "Conservative":134,
+      "Liberal Democrats":72,
+      "SNP":16,
+      "Others":16,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"19\/02\/2025",
+    "seats":{
+      "Reform UK":232,
+      "Labour":234,
+      "Conservative":73,
+      "Liberal Democrats":76,
+      "SNP":16,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"18\/02\/2025",
+    "seats":{
+      "Reform UK":132,
+      "Labour":264,
+      "Conservative":150,
+      "Liberal Democrats":72,
+      "SNP":13,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"17\/02\/2025",
+    "seats":{
+      "Reform UK":181,
+      "Labour":258,
+      "Conservative":95,
+      "Liberal Democrats":78,
+      "SNP":16,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"17\/02\/2025",
+    "seats":{
+      "Reform UK":50,
+      "Labour":343,
+      "Conservative":152,
+      "Liberal Democrats":70,
+      "SNP":10,
+      "Others":17,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Lord Ashcroft Polls",
+    "date":"13\/02\/2025",
+    "seats":{
+      "Reform UK":96,
+      "Labour":306,
+      "Conservative":140,
+      "Liberal Democrats":72,
+      "SNP":10,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"12\/02\/2025",
+    "seats":{
+      "Reform UK":254,
+      "Labour":198,
+      "Conservative":82,
+      "Liberal Democrats":72,
+      "SNP":22,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"10\/02\/2025",
+    "seats":{
+      "Reform UK":161,
+      "Labour":271,
+      "Conservative":106,
+      "Liberal Democrats":78,
+      "SNP":16,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"10\/02\/2025",
+    "seats":{
+      "Reform UK":110,
+      "Labour":276,
+      "Conservative":156,
+      "Liberal Democrats":72,
+      "SNP":13,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"07\/02\/2025",
+    "seats":{
+      "Reform UK":109,
+      "Labour":310,
+      "Conservative":125,
+      "Liberal Democrats":72,
+      "SNP":12,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"06\/02\/2025",
+    "seats":{
+      "Reform UK":107,
+      "Labour":276,
+      "Conservative":156,
+      "Liberal Democrats":72,
+      "SNP":13,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"05\/02\/2025",
+    "seats":{
+      "Reform UK":254,
+      "Labour":235,
+      "Conservative":46,
+      "Liberal Democrats":77,
+      "SNP":16,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"03\/02\/2025",
+    "seats":{
+      "Reform UK":142,
+      "Labour":260,
+      "Conservative":129,
+      "Liberal Democrats":78,
+      "SNP":21,
+      "Others":15,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"03\/02\/2025",
+    "seats":{
+      "Reform UK":86,
+      "Labour":243,
+      "Conservative":209,
+      "Liberal Democrats":70,
+      "SNP":19,
+      "Others":16,
+      "Green":4,
+      "Plaid Cymru":3
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"02\/02\/2025",
+    "seats":{
+      "Reform UK":29,
+      "Labour":328,
+      "Conservative":206,
+      "Liberal Democrats":58,
+      "SNP":8,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":3
+    }
+  },
+  {
+    "pollster":"Freshwater Strategy",
+    "date":"30\/01\/2025",
+    "seats":{
+      "Reform UK":71,
+      "Labour":307,
+      "Conservative":159,
+      "Liberal Democrats":72,
+      "SNP":13,
+      "Others":20,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"29\/01\/2025",
+    "seats":{
+      "Reform UK":207,
+      "Labour":221,
+      "Conservative":109,
+      "Liberal Democrats":72,
+      "SNP":22,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"29\/01\/2025",
+    "seats":{
+      "Reform UK":82,
+      "Labour":276,
+      "Conservative":187,
+      "Liberal Democrats":72,
+      "SNP":14,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"BMG Research",
+    "date":"29\/01\/2025",
+    "seats":{
+      "Reform UK":74,
+      "Labour":326,
+      "Conservative":139,
+      "Liberal Democrats":73,
+      "SNP":12,
+      "Others":18,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Survation",
+    "date":"27\/01\/2025",
+    "seats":{
+      "Reform UK":58,
+      "Labour":338,
+      "Conservative":141,
+      "Liberal Democrats":77,
+      "SNP":12,
+      "Others":16,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"27\/01\/2025",
+    "seats":{
+      "Reform UK":104,
+      "Labour":272,
+      "Conservative":170,
+      "Liberal Democrats":72,
+      "SNP":13,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"29\/01\/2025",
+    "seats":{
+      "Reform UK":105,
+      "Labour":242,
+      "Conservative":178,
+      "Liberal Democrats":72,
+      "SNP":20,
+      "Others":24,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now\r\n \r\n\r\n Electoral Calculus",
+    "date":"24\/01\/2025",
+    "seats":{
+      "Reform UK":133,
+      "Labour":315,
+      "Conservative":97,
+      "Liberal Democrats":72,
+      "SNP":12,
+      "Others":13,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"23\/01\/2025",
+    "seats":{
+      "Reform UK":106,
+      "Labour":304,
+      "Conservative":120,
+      "Liberal Democrats":77,
+      "SNP":16,
+      "Others":16,
+      "Green":7,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Whitestone Insight",
+    "date":"23\/01\/2025",
+    "seats":{
+      "Reform UK":77,
+      "Labour":288,
+      "Conservative":172,
+      "Liberal Democrats":72,
+      "SNP":13,
+      "Others":20,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"22\/01\/2025",
+    "seats":{
+      "Reform UK":163,
+      "Labour":208,
+      "Conservative":164,
+      "Liberal Democrats":72,
+      "SNP":22,
+      "Others":15,
+      "Green":6,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"20\/01\/2025",
+    "seats":{
+      "Reform UK":86,
+      "Labour":313,
+      "Conservative":140,
+      "Liberal Democrats":77,
+      "SNP":15,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"20\/01\/2025",
+    "seats":{
+      "Reform UK":105,
+      "Labour":240,
+      "Conservative":193,
+      "Liberal Democrats":70,
+      "SNP":19,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"20\/01\/2025",
+    "seats":{
+      "Reform UK":34,
+      "Labour":347,
+      "Conservative":167,
+      "Liberal Democrats":70,
+      "SNP":10,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Deltapoll",
+    "date":"20\/01\/2025",
+    "seats":{
+      "Reform UK":23,
+      "Labour":340,
+      "Conservative":176,
+      "Liberal Democrats":70,
+      "SNP":10,
+      "Others":22,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Lord Ashcroft Polls",
+    "date":"16\/01\/2025",
+    "seats":{
+      "Reform UK":59,
+      "Labour":304,
+      "Conservative":182,
+      "Liberal Democrats":70,
+      "SNP":10,
+      "Others":21,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"15\/01\/2025",
+    "seats":{
+      "Reform UK":105,
+      "Labour":239,
+      "Conservative":194,
+      "Liberal Democrats":70,
+      "SNP":19,
+      "Others":15,
+      "Green":5,
+      "Plaid Cymru":3
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"14\/01\/2025",
+    "seats":{
+      "Reform UK":47,
+      "Labour":314,
+      "Conservative":184,
+      "Liberal Democrats":72,
+      "SNP":10,
+      "Others":19,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"JL Partners",
+    "date":"13\/01\/2025",
+    "seats":{
+      "Reform UK":99,
+      "Labour":303,
+      "Conservative":133,
+      "Liberal Democrats":77,
+      "SNP":15,
+      "Others":15,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"13\/01\/2025",
+    "seats":{
+      "Reform UK":92,
+      "Labour":249,
+      "Conservative":196,
+      "Liberal Democrats":70,
+      "SNP":19,
+      "Others":16,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"10\/01\/2025",
+    "seats":{
+      "Reform UK":54,
+      "Labour":349,
+      "Conservative":166,
+      "Liberal Democrats":50,
+      "SNP":11,
+      "Others":12,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Opinium",
+    "date":"08\/01\/2025",
+    "seats":{
+      "Reform UK":143,
+      "Labour":287,
+      "Conservative":107,
+      "Liberal Democrats":73,
+      "SNP":16,
+      "Others":15,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"08\/01\/2025",
+    "seats":{
+      "Reform UK":44,
+      "Labour":300,
+      "Conservative":199,
+      "Liberal Democrats":70,
+      "SNP":13,
+      "Others":17,
+      "Green":4,
+      "Plaid Cymru":3
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"06\/01\/2025",
+    "seats":{
+      "Reform UK":38,
+      "Labour":300,
+      "Conservative":223,
+      "Liberal Democrats":62,
+      "SNP":8,
+      "Others":12,
+      "Green":4,
+      "Plaid Cymru":3
+    }
+  },
+  {
+    "pollster":"Freshwater Strategy",
+    "date":"03\/01\/2025",
+    "seats":{
+      "Reform UK":37,
+      "Labour":367,
+      "Conservative":144,
+      "Liberal Democrats":72,
+      "SNP":10,
+      "Others":12,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  }
+]
