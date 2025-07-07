@@ -1,0 +1,46 @@
+{
+    "pollster": "Ipsos",
+    "date": "20/06/2025",
+    "seats": {
+        "Reform UK": 0,
+        "Labour": 22,
+        "Conservative": 3,
+        "Liberal Democrats": 6,
+        "SNP": 26,
+        "Others": 0,
+        "Green": 0,
+        "Plaid Cymru": 0
+    },
+    "swings": {
+        "Conservative": {
+            "ge_share": 12.7,
+            "latest_share": 10.0,
+            "swing": -2.6999999999999993
+        },
+        "Labour": {
+            "ge_share": 35.3,
+            "latest_share": 22.0,
+            "swing": -13.299999999999997
+        },
+        "Liberal Democrats": {
+            "ge_share": 9.7,
+            "latest_share": 9.0,
+            "swing": -0.6999999999999993
+        },
+        "Green": {
+            "ge_share": 3.8,
+            "latest_share": 10.0,
+            "swing": 6.2
+        },
+        "SNP": {
+            "ge_share": 30.0,
+            "latest_share": 31.0,
+            "swing": 1.0
+        },
+        "Others": {
+            "ge_share": 1.2,
+            "latest_share": 1.0,
+            "swing": -0.19999999999999996
+        }
+    }
+}
