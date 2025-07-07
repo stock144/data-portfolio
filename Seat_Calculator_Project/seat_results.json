@@ -1,6 +1,4 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "pollster": "Find Out Now",
     "date": "02/07/2025",
     "seats": {
@@ -9,26 +7,6 @@
         "Conservative": 32,
         "Liberal Democrats": 79,
         "SNP": 25,
-=======
-    "pollster": "More in Common[3]",
-    "date": "03/07/2025",
-    "seats": {
-        "Reform UK": 262,
-        "Labour": 217,
-        "Conservative": 52,
-        "Liberal Democrats": 76,
-        "SNP": 21,
->>>>>>> main
-=======
-    "pollster": "Find Out Now",
-    "date": "02/07/2025",
-    "seats": {
-        "Reform UK": 309,
-        "Labour": 182,
-        "Conservative": 32,
-        "Liberal Democrats": 79,
-        "SNP": 25,
->>>>>>> ba49898 (re-add polls)
         "Others": 14,
         "Green": 5,
         "Plaid Cymru": 4
@@ -41,18 +19,8 @@
         },
         "Labour": {
             "ge_share": 33.7,
-<<<<<<< HEAD
-<<<<<<< HEAD
             "latest_share": 22.0,
             "swing": -11.700000000000003
-=======
-            "latest_share": 24.0,
-            "swing": -9.700000000000003
->>>>>>> main
-=======
-            "latest_share": 22.0,
-            "swing": -11.700000000000003
->>>>>>> ba49898 (re-add polls)
         },
         "Liberal Democrats": {
             "ge_share": 12.2,
@@ -66,18 +34,8 @@
         },
         "Green": {
             "ge_share": 6.8,
-<<<<<<< HEAD
-<<<<<<< HEAD
             "latest_share": 11.0,
             "swing": 4.2
-=======
-            "latest_share": 9.0,
-            "swing": 2.2
->>>>>>> main
-=======
-            "latest_share": 11.0,
-            "swing": 4.2
->>>>>>> ba49898 (re-add polls)
         },
         "SNP": {
             "ge_share": 2.5,
