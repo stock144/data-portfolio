@@ -12,14 +12,15 @@ sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = [14, 8]
 
 # Read the CSV file
-df = pd.read_csv("polls.csv")
+df = pd.read_csv("scottish_polls.csv")
 
 # Convert date column to datetime
 df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y')
 df['Date_Numeric'] = (df['Date'] - df['Date'].min()).dt.days
 
 # Group by date and calculate mean for each party
-party_columns = ['Lab', 'Con', 'Ref', 'LD', 'Greens', 'SNP', 'Others']
+
+party_columns = ['Lab', 'SNP', 'Con', 'LD', 'REF', 'Greens', 'Others']
 
 # Replace empty strings and whitespace with NaN
 for col in party_columns:
@@ -38,10 +39,10 @@ plt.figure(figsize=(14, 8))
 colors = {
     'Lab': '#E4003B',  # Labour Red
     'Con': '#0087DC',  # Conservative Blue
-    'Ref': '#12B6CF',  # Reform Blue
+    'REF': '#12B6CF',  # Reform Blue
     'LD': '#FAA61A',   # Liberal Democrat Orange
     'Greens': '#6AB023', # Green Party Green
-    'SNP': '#000000',   # SNP Black
+    'SNP': '#0A2C50',   # SNP Black   
     'Others': '#999999'  # Grey
 }
 
@@ -58,7 +59,7 @@ for party, color in colors.items():
         # Calculate LOESS smoothing with 14-day window
         # Convert 14 days to a fraction of the total date range
         date_range = (valid_data['Date'].max() - valid_data['Date'].min()).days
-        frac = 14 / date_range  # 14 days as a fraction of total days
+        frac =0.8
         
         lowess = sm.nonparametric.lowess(valid_data[party], 
                                         valid_data['Date_Numeric'],
@@ -68,15 +69,10 @@ for party, color in colors.items():
         plt.plot(valid_data['Date'], lowess, 
              color=color, linewidth=2, label=party)
 
-# Add vertical line for Local Elections
-election_date = pd.to_datetime('01/05/2025', format='%d/%m/%Y')
-plt.axvline(x=election_date, color='black', linestyle='--', alpha=0.5)
-plt.text(election_date, 38, 'Local Elections - England', 
-         rotation=45, verticalalignment='bottom', 
-         horizontalalignment='left', fontsize=10)
+
 
 # Customize the plot
-plt.title('Westminster Voting Intentions (GB)', fontsize=16, pad=20)
+plt.title('Westminster Voting Intentions (Scotland)', fontsize=16, pad=20)
 plt.xlabel('Date', fontsize=12)
 plt.ylabel('Support (%)', fontsize=12)
 plt.ylim(0, 40)  # Set y-axis limits from 0 to 40
@@ -115,7 +111,7 @@ polling_data = {
         'sample_size': int(most_recent_poll['Sample Size']),
         'labour': float(most_recent_poll['Lab']) if pd.notna(most_recent_poll['Lab']) else 'Not Supplied',
         'conservative': float(most_recent_poll['Con']) if pd.notna(most_recent_poll['Con']) else 'Not Supplied',
-        'reform': float(most_recent_poll['Ref']) if pd.notna(most_recent_poll['Ref']) else 'Not Supplied',
+        'reform': float(most_recent_poll['REF']) if pd.notna(most_recent_poll['REF']) else 'Not Supplied',
         'libdem': float(most_recent_poll['LD']) if pd.notna(most_recent_poll['LD']) else 'Not Supplied',
         'greens': float(most_recent_poll['Greens']) if pd.notna(most_recent_poll['Greens']) else 'Not Supplied',
         'snp': float(most_recent_poll['SNP']) if pd.notna(most_recent_poll['SNP']) else 'Not Supplied',
@@ -135,7 +131,7 @@ for _, poll in recent_polls.iterrows():
         'sample_size': int(poll['Sample Size']),
         'labour': float(poll['Lab']) if pd.notna(poll['Lab']) else 'Not Supplied',
         'conservative': float(poll['Con']) if pd.notna(poll['Con']) else 'Not Supplied',
-        'reform': float(poll['Ref']) if pd.notna(poll['Ref']) else 'Not Supplied',
+        'reform': float(poll['REF']) if pd.notna(poll['REF']) else 'Not Supplied',
         'libdem': float(poll['LD']) if pd.notna(poll['LD']) else 'Not Supplied',
         'greens': float(poll['Greens']) if pd.notna(poll['Greens']) else 'Not Supplied',
         'snp': float(poll['SNP']) if pd.notna(poll['SNP']) else 'Not Supplied',

@@ -79,6 +79,18 @@
             "others": 2.0
         },
         {
+            "date": "27 June 2025",
+            "pollster": "Survation",
+            "sample_size": 1700,
+            "labour": 26.0,
+            "conservative": 19.0,
+            "reform": 27.0,
+            "libdem": 12.0,
+            "greens": 8.0,
+            "snp": "Not Supplied",
+            "others": "Not Supplied"
+        },
+        {
             "date": "26 June 2025",
             "pollster": "Techne",
             "sample_size": 1628,
