@@ -1,5 +1,33 @@
 [
   {
+    "pollster":"YouGov",
+    "date":"07\/07\/2025",
+    "seats":{
+      "Reform UK":220,
+      "Labour":255,
+      "Conservative":48,
+      "Liberal Democrats":81,
+      "SNP":22,
+      "Others":15,
+      "Green":5,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Freshwater Strategy",
+    "date":"06\/07\/2025",
+    "seats":{
+      "Reform UK":307,
+      "Labour":184,
+      "Conservative":41,
+      "Liberal Democrats":79,
+      "SNP":22,
+      "Others":13,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
     "pollster":"Find Out Now",
     "date":"02\/07\/2025",
     "seats":{

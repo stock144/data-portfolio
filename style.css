@@ -3,19 +3,26 @@ body {
   background-color: #f9f9f9;
   margin: 0;
   color: #333;
+  width: 100vw;
+  min-width: 100vw;
 }
 
 .container {
-  max-width: 800px;
-  margin: 40px auto;
+  width: 100vw;
+  min-height: 100vh;
+  max-width: none;
+  margin: 0;
   background-color: #fff;
-  padding: 20px 40px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
   color: #0077b6;
+  text-align: center;
 }
 
 a {
@@ -39,4 +46,30 @@ ul li {
 iframe {
   border: none;
   margin-top: 20px;
+}
+
+.plot-container {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  background-color: white;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  height: 100%;
+  min-height: 90vh;
+}
+
+#seatTrendPlot {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 90vh;
+  min-width: 0;
+}
+
+.project-description {
+  text-align: center;
+  margin: 0 auto;
 }

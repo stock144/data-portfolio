@@ -60,7 +60,7 @@
             <p>For more details on the methodology, see the <a href="project4.html">Seat Calculator</a> project.</p>
         </div>
         <div class="plot-container">
-            <div id="seatTrendPlot" style="width:100%;max-width:1100px;height:600px;margin:auto;"></div>
+            <div id="seatTrendPlot"></div>
         </div>
         <a href="index.html" class="back-link">← Back to Portfolio</a>
     </div>
@@ -140,10 +140,14 @@
             xaxis: { title: 'Date', type: 'date' },
             yaxis: { title: 'Number of Seats', range: [0, 550], tickformat: ',d' },
             legend: { orientation: 'v', x: 1.05, y: 1 },
-            margin: { t: 60, r: 200 }
+            margin: { t: 60, r: 200 },
+            autosize: true
           };
 
           Plotly.newPlot('seatTrendPlot', traces, layout, {responsive: true});
+          window.addEventListener('resize', function() {
+            Plotly.Plots.resize('seatTrendPlot');
+          });
         });
     });
     </script>
