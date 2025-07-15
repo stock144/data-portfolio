@@ -1,15 +1,43 @@
 [
   {
-    "pollster":"YouGov",
-    "date":"07\/07\/2025",
+    "pollster":"Opinium",
+    "date":"11\/07\/2025",
     "seats":{
-      "Reform UK":220,
-      "Labour":255,
-      "Conservative":48,
-      "Liberal Democrats":81,
+      "Reform UK":267,
+      "Labour":217,
+      "Conservative":46,
+      "Liberal Democrats":77,
+      "SNP":21,
+      "Others":14,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"Techne",
+    "date":"10\/07\/2025",
+    "seats":{
+      "Reform UK":287,
+      "Labour":196,
+      "Conservative":46,
+      "Liberal Democrats":80,
       "SNP":22,
       "Others":15,
-      "Green":5,
+      "Green":4,
+      "Plaid Cymru":0
+    }
+  },
+  {
+    "pollster":"Find Out Now",
+    "date":"09\/07\/2025",
+    "seats":{
+      "Reform UK":316,
+      "Labour":169,
+      "Conservative":45,
+      "Liberal Democrats":75,
+      "SNP":22,
+      "Others":15,
+      "Green":4,
       "Plaid Cymru":4
     }
   },
