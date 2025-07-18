@@ -1,5 +1,47 @@
 [
   {
+    "pollster":"Find Out Now",
+    "date":"16\/07\/2025",
+    "seats":{
+      "Reform UK":331,
+      "Labour":154,
+      "Conservative":38,
+      "Liberal Democrats":77,
+      "SNP":24,
+      "Others":15,
+      "Green":7,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"YouGov",
+    "date":"14\/07\/2025",
+    "seats":{
+      "Reform UK":275,
+      "Labour":202,
+      "Conservative":43,
+      "Liberal Democrats":81,
+      "SNP":25,
+      "Others":14,
+      "Green":6,
+      "Plaid Cymru":4
+    }
+  },
+  {
+    "pollster":"More in Common",
+    "date":"14\/07\/2025",
+    "seats":{
+      "Reform UK":0,
+      "Labour":339,
+      "Conservative":168,
+      "Liberal Democrats":79,
+      "SNP":21,
+      "Others":27,
+      "Green":11,
+      "Plaid Cymru":5
+    }
+  },
+  {
     "pollster":"Opinium",
     "date":"11\/07\/2025",
     "seats":{
