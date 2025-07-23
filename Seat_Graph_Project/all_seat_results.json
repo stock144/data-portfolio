@@ -73,14 +73,14 @@
     "pollster":"More in Common",
     "date":"14\/07\/2025",
     "seats":{
-      "Reform UK":0,
-      "Labour":339,
-      "Conservative":168,
-      "Liberal Democrats":79,
+      "Reform UK":204,
+      "Labour":241,
+      "Conservative":83,
+      "Liberal Democrats":78,
       "SNP":21,
-      "Others":27,
-      "Green":11,
-      "Plaid Cymru":5
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":4
     }
   },
   {
@@ -1148,7 +1148,7 @@
     }
   },
   {
-    "pollster":"Find Out Now\n \n\n Electoral Calculus",
+    "pollster":"Find Out Now\r\n \r\n\r\n Electoral Calculus",
     "date":"27\/03\/2025",
     "seats":{
       "Reform UK":65,
@@ -1876,7 +1876,7 @@
     }
   },
   {
-    "pollster":"Find Out Now\n \n\n Electoral Calculus",
+    "pollster":"Find Out Now\r\n \r\n\r\n Electoral Calculus",
     "date":"24\/01\/2025",
     "seats":{
       "Reform UK":133,

@@ -5,6 +5,7 @@ body {
   color: #333;
   width: 100vw;
   min-width: 100vw;
+  text-align: center;
 }
 
 .container {
@@ -49,27 +50,22 @@ iframe {
 }
 
 .plot-container {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: stretch;
-  justify-content: stretch;
   background-color: white;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  margin: 0;
-  height: 100%;
-  min-height: 90vh;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin: 20px 0;
 }
 
 #seatTrendPlot {
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 90vh;
+  width: 100%;
+  height: 600px;
   min-width: 0;
 }
 
-.project-description {
+.project-description,
+.project-description p,
+.project-description ul,
+.project-description li {
   text-align: center;
-  margin: 0 auto;
 }
