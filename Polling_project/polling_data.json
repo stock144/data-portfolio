@@ -1,35 +1,71 @@
 {
     "most_recent_poll": {
-        "date": "16 July 2025",
-        "pollster": "Find Out Now",
-        "sample_size": 2603,
-        "labour": 20.0,
+        "date": "21 July 2025",
+        "pollster": "YouGov",
+        "sample_size": 2273,
+        "labour": 23.0,
         "conservative": 17.0,
-        "reform": 30.0,
-        "libdem": 13.0,
-        "greens": 12.0,
-        "snp": 2.0,
-        "others": 4.0
+        "reform": 27.0,
+        "libdem": 15.0,
+        "greens": 11.0,
+        "snp": 3.0,
+        "others": 3.0
     },
     "latest_polls": {
-        "Lab": 20.0,
+        "Lab": 23.0,
         "Con": 17.0,
-        "Ref": 30.0,
-        "LD": 13.0,
-        "Greens": 12.0,
-        "SNP": 2.0,
-        "Others": 4.0
+        "Ref": 27.0,
+        "LD": 15.0,
+        "Greens": 11.0,
+        "SNP": 3.0,
+        "Others": 3.0
     },
     "averages": {
         "Lab": 24.3,
-        "Con": 21.0,
+        "Con": 20.9,
         "Ref": 26.4,
-        "LD": 13.1,
+        "LD": 13.2,
         "Greens": 8.9,
         "SNP": 2.7,
         "Others": 2.8
     },
     "recent_polls": [
+        {
+            "date": "21 July 2025",
+            "pollster": "YouGov",
+            "sample_size": 2273,
+            "labour": 23.0,
+            "conservative": 17.0,
+            "reform": 27.0,
+            "libdem": 15.0,
+            "greens": 11.0,
+            "snp": 3.0,
+            "others": 3.0
+        },
+        {
+            "date": "18 July 2025",
+            "pollster": "JL Partners",
+            "sample_size": 2305,
+            "labour": 23.0,
+            "conservative": 17.0,
+            "reform": 29.0,
+            "libdem": 14.0,
+            "greens": 9.0,
+            "snp": 2.0,
+            "others": 4.0
+        },
+        {
+            "date": "18 July 2025",
+            "pollster": "Focaldata",
+            "sample_size": 1271,
+            "labour": 23.0,
+            "conservative": 19.0,
+            "reform": 27.0,
+            "libdem": 14.0,
+            "greens": 9.0,
+            "snp": 2.0,
+            "others": 5.0
+        },
         {
             "date": "16 July 2025",
             "pollster": "Find Out Now",
@@ -44,18 +80,6 @@
         },
         {
             "date": "14 July 2025",
-            "pollster": "More in Common",
-            "sample_size": 2311,
-            "labour": 24.0,
-            "conservative": 20.0,
-            "reform": "Not Supplied",
-            "libdem": 13.0,
-            "greens": 9.0,
-            "snp": 3.0,
-            "others": 3.0
-        },
-        {
-            "date": "14 July 2025",
             "pollster": "YouGov",
             "sample_size": 2209,
             "labour": 22.0,
@@ -63,6 +87,18 @@
             "reform": 28.0,
             "libdem": 16.0,
             "greens": 12.0,
+            "snp": 3.0,
+            "others": 3.0
+        },
+        {
+            "date": "14 July 2025",
+            "pollster": "More in Common",
+            "sample_size": 2311,
+            "labour": 24.0,
+            "conservative": 20.0,
+            "reform": "Not Supplied",
+            "libdem": 13.0,
+            "greens": 9.0,
             "snp": 3.0,
             "others": 3.0
         },
@@ -113,42 +149,6 @@
             "greens": 6.0,
             "snp": 3.0,
             "others": 2.0
-        },
-        {
-            "date": "02 July 2025",
-            "pollster": "Find Out Now",
-            "sample_size": 2604,
-            "labour": 22.0,
-            "conservative": 16.0,
-            "reform": 30.0,
-            "libdem": 15.0,
-            "greens": 11.0,
-            "snp": 3.0,
-            "others": 3.0
-        },
-        {
-            "date": "30 June 2025",
-            "pollster": "YouGov",
-            "sample_size": 2392,
-            "labour": 24.0,
-            "conservative": 17.0,
-            "reform": 26.0,
-            "libdem": 16.0,
-            "greens": 10.0,
-            "snp": 3.0,
-            "others": 2.0
-        },
-        {
-            "date": "30 June 2025",
-            "pollster": "More in Common",
-            "sample_size": 2532,
-            "labour": 24.0,
-            "conservative": 19.0,
-            "reform": 29.0,
-            "libdem": 12.0,
-            "greens": 9.0,
-            "snp": 3.0,
-            "others": 3.0
         }
     ]
 }
