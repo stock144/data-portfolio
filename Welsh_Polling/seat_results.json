@@ -1,0 +1,51 @@
+{
+    "pollster": "YouGov",
+    "date": "30/05/2025",
+    "seats": {
+        "Reform UK": 13,
+        "Labour": 6,
+        "Conservative": 5,
+        "Liberal Democrats": 1,
+        "SNP": 0,
+        "Others": 0,
+        "Green": 0,
+        "Plaid Cymru": 7
+    },
+    "swings": {
+        "Conservative": {
+            "ge_share": 18.2,
+            "latest_share": 13.0,
+            "swing": -5.199999999999999
+        },
+        "Labour": {
+            "ge_share": 37.0,
+            "latest_share": 20.0,
+            "swing": -17.0
+        },
+        "Liberal Democrats": {
+            "ge_share": 6.5,
+            "latest_share": 9.0,
+            "swing": 2.5
+        },
+        "Reform UK": {
+            "ge_share": 16.9,
+            "latest_share": 24.0,
+            "swing": 7.100000000000001
+        },
+        "Green": {
+            "ge_share": 4.7,
+            "latest_share": 7.0,
+            "swing": 2.3
+        },
+        "Plaid Cymru": {
+            "ge_share": 14.8,
+            "latest_share": 24.0,
+            "swing": 9.2
+        },
+        "Others": {
+            "ge_share": 1.5,
+            "latest_share": 2.0,
+            "swing": 0.5
+        }
+    }
+}

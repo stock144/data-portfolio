@@ -1,5 +1,19 @@
 [
   {
+    "pollster":"Find Out Now",
+    "date":"24\/07\/2025",
+    "seats":{
+      "Reform UK":389,
+      "Labour":122,
+      "Conservative":18,
+      "Liberal Democrats":74,
+      "SNP":25,
+      "Others":14,
+      "Green":5,
+      "Plaid Cymru":3
+    }
+  },
+  {
     "pollster":"YouGov",
     "date":"21\/07\/2025",
     "seats":{

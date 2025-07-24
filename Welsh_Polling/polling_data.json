@@ -1,0 +1,58 @@
+{
+    "most_recent_poll": {
+        "date": "30 May 2025",
+        "pollster": "YouGov",
+        "sample_size": 1248,
+        "labour": 20.0,
+        "conservative": 13.0,
+        "reform": 24.0,
+        "libdem": 9.0,
+        "greens": 7.0,
+        "pc": 24.0,
+        "others": 2.0
+    },
+    "latest_polls": {
+        "Lab": 20.0,
+        "Con": 13.0,
+        "REF": 24.0,
+        "PC": 24.0,
+        "LD": 9.0,
+        "Greens": 7.0,
+        "Others": 2.0
+    },
+    "averages": {
+        "Lab": 24.5,
+        "Con": 14.0,
+        "REF": 24.5,
+        "PC": 21.0,
+        "LD": 7.5,
+        "Greens": 6.5,
+        "Others": 1.5
+    },
+    "recent_polls": [
+        {
+            "date": "30 May 2025",
+            "pollster": "YouGov",
+            "sample_size": 1248,
+            "labour": 20.0,
+            "conservative": 13.0,
+            "reform": 24.0,
+            "libdem": 9.0,
+            "greens": 7.0,
+            "pc": 24.0,
+            "others": 2.0
+        },
+        {
+            "date": "03 April 2025",
+            "pollster": "Survation",
+            "sample_size": 844,
+            "labour": 29.0,
+            "conservative": 15.0,
+            "reform": 25.0,
+            "libdem": 6.0,
+            "greens": 6.0,
+            "pc": 18.0,
+            "others": 1.0
+        }
+    ]
+}

@@ -1,49 +1,33 @@
 {
     "most_recent_poll": {
-        "date": "24 July 2025",
-        "pollster": "Find Out Now",
-        "sample_size": 2651,
-        "labour": 20.0,
-        "conservative": 16.0,
-        "reform": 34.0,
-        "libdem": 14.0,
-        "greens": 10.0,
-        "snp": 3.0,
-        "others": 4.0
+        "date": "21 July 2025",
+        "pollster": "YouGov",
+        "sample_size": 2273,
+        "labour": 23.0,
+        "conservative": 17.0,
+        "reform": 27.0,
+        "libdem": 15.0,
+        "greens": 11.0,
+        "pc": 1.0,
+        "others": 3.0
     },
     "latest_polls": {
-        "Lab": 20.0,
-        "Con": 16.0,
-        "Ref": 34.0,
-        "LD": 14.0,
-        "Greens": 10.0,
-        "SNP": 3.0,
-        "PC": 1.0,
-        "Others": 4.0
+        "Lab": 23.0,
+        "Con": 17.0,
+        "Ref": 27.0,
+        "LD": 15.0,
+        "Greens": 11.0,
+        "Others": 3.0
     },
     "averages": {
-        "Lab": 24.2,
+        "Lab": 24.3,
         "Con": 20.9,
-        "Ref": 26.5,
+        "Ref": 26.4,
         "LD": 13.2,
         "Greens": 8.9,
-        "SNP": 2.7,
-        "PC": 0.9,
         "Others": 2.8
     },
     "recent_polls": [
-        {
-            "date": "24 July 2025",
-            "pollster": "Find Out Now",
-            "sample_size": 2651,
-            "labour": 20.0,
-            "conservative": 16.0,
-            "reform": 34.0,
-            "libdem": 14.0,
-            "greens": 10.0,
-            "snp": 3.0,
-            "others": 4.0
-        },
         {
             "date": "21 July 2025",
             "pollster": "YouGov",
@@ -53,7 +37,7 @@
             "reform": 27.0,
             "libdem": 15.0,
             "greens": 11.0,
-            "snp": 3.0,
+            "pc": 1.0,
             "others": 3.0
         },
         {
@@ -65,7 +49,7 @@
             "reform": 29.0,
             "libdem": 14.0,
             "greens": 9.0,
-            "snp": 2.0,
+            "pc": 1.0,
             "others": 4.0
         },
         {
@@ -77,7 +61,7 @@
             "reform": 27.0,
             "libdem": 14.0,
             "greens": 9.0,
-            "snp": 2.0,
+            "pc": 1.0,
             "others": 5.0
         },
         {
@@ -89,7 +73,7 @@
             "reform": 30.0,
             "libdem": 13.0,
             "greens": 12.0,
-            "snp": 2.0,
+            "pc": 1.0,
             "others": 4.0
         },
         {
@@ -101,7 +85,7 @@
             "reform": 28.0,
             "libdem": 16.0,
             "greens": 12.0,
-            "snp": 3.0,
+            "pc": 1.0,
             "others": 3.0
         },
         {
@@ -113,7 +97,7 @@
             "reform": 27.0,
             "libdem": 13.0,
             "greens": 9.0,
-            "snp": 3.0,
+            "pc": 1.0,
             "others": 3.0
         },
         {
@@ -125,7 +109,7 @@
             "reform": 29.0,
             "libdem": 13.0,
             "greens": 9.0,
-            "snp": 3.0,
+            "pc": 1.0,
             "others": 3.0
         },
         {
@@ -137,7 +121,7 @@
             "reform": 29.0,
             "libdem": 16.0,
             "greens": 9.0,
-            "snp": 2.0,
+            "pc": "Not Supplied",
             "others": 4.0
         },
         {
@@ -149,8 +133,20 @@
             "reform": 31.0,
             "libdem": 13.0,
             "greens": 9.0,
-            "snp": 2.0,
+            "pc": 1.0,
             "others": 4.0
+        },
+        {
+            "date": "06 July 2025",
+            "pollster": "Freshwater Strategy",
+            "sample_size": 1259,
+            "labour": 23.0,
+            "conservative": 19.0,
+            "reform": 31.0,
+            "libdem": 16.0,
+            "greens": 6.0,
+            "pc": "Not Supplied",
+            "others": 2.0
         }
     ]
 }
