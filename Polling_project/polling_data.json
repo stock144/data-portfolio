@@ -1,25 +1,25 @@
 {
     "most_recent_poll": {
-        "date": "24 July 2025",
-        "pollster": "Find Out Now",
-        "sample_size": 2651,
-        "labour": 20.0,
-        "conservative": 16.0,
-        "reform": 34.0,
-        "libdem": 14.0,
-        "greens": 10.0,
+        "date": "25 July 2025",
+        "pollster": "Opinium",
+        "sample_size": 2050,
+        "labour": 25.0,
+        "conservative": 17.0,
+        "reform": 32.0,
+        "libdem": 13.0,
+        "greens": 8.0,
         "snp": 3.0,
-        "others": 4.0
+        "others": 2.0
     },
     "latest_polls": {
-        "Lab": 20.0,
-        "Con": 16.0,
-        "Ref": 34.0,
-        "LD": 14.0,
-        "Greens": 10.0,
+        "Lab": 25.0,
+        "Con": 17.0,
+        "Ref": 32.0,
+        "LD": 13.0,
+        "Greens": 8.0,
         "SNP": 3.0,
         "PC": 1.0,
-        "Others": 4.0
+        "Others": 2.0
     },
     "averages": {
         "Lab": 24.2,
@@ -33,16 +33,16 @@
     },
     "recent_polls": [
         {
-            "date": "24 July 2025",
-            "pollster": "Find Out Now",
-            "sample_size": 2651,
-            "labour": 20.0,
-            "conservative": 16.0,
-            "reform": 34.0,
-            "libdem": 14.0,
-            "greens": 10.0,
+            "date": "25 July 2025",
+            "pollster": "Opinium",
+            "sample_size": 2050,
+            "labour": 25.0,
+            "conservative": 17.0,
+            "reform": 32.0,
+            "libdem": 13.0,
+            "greens": 8.0,
             "snp": 3.0,
-            "others": 4.0
+            "others": 2.0
         },
         {
             "date": "21 July 2025",

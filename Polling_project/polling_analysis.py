@@ -1,21 +1,14 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import statsmodels.api as sm
-from datetime import datetime, timedelta
+from plotnine import *
 import json
-
-# Set the style for seaborn
-sns.set_style("whitegrid")
-plt.rcParams['figure.figsize'] = [14, 8]
 
 # Read the CSV file
 df = pd.read_csv("polls.csv")
 
 # Convert date column to datetime
-df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y')
+# (add .str.strip() for safety)
+df['Date'] = pd.to_datetime(df['Date'].astype(str).str.strip(), format='%d/%m/%Y', errors='coerce')
 df['Date_Numeric'] = (df['Date'] - df['Date'].min()).dt.days
 
 # Group by date and calculate mean for each party
@@ -28,87 +21,56 @@ for col in party_columns:
 # Calculate daily averages, excluding NaN values
 daily_averages = df.groupby('Date')[party_columns].mean().reset_index()
 
-# Sort by date
-daily_averages['Date_Numeric'] = (daily_averages['Date'] - daily_averages['Date'].min()).dt.days
+df_long = daily_averages.melt(id_vars=['Date'], value_vars=party_columns, var_name='Party', value_name='Support')
+df_long = df_long.dropna(subset=['Support'])
 
-# Create the plot
-plt.figure(figsize=(14, 8))
-
-# Define party colors
-colors = {
-    'Lab': '#E4003B',  # Labour Red
-    'Con': '#0087DC',  # Conservative Blue
-    'Ref': '#12B6CF',  # Reform Blue
-    'LD': '#FAA61A',   # Liberal Democrat Orange
-    'Greens': '#6AB023', # Green Party Green
-    'SNP': '#000000',   # SNP Black
-    'PC': '#3F8428',    # Plaid Cymru Green
-    'Others': '#999999'  # Grey
+# Define party colors for plotnine
+ggplot_colors = {
+    'Lab': '#E4003B',
+    'Con': '#0087DC',
+    'Ref': '#12B6CF',
+    'LD': '#FAA61A',
+    'Greens': '#6AB023',
+    'SNP': '#000000',
+    'PC': '#3F8428',
+    'Others': '#999999'
 }
 
-# Plot each party with LOESS smoothing
-for party, color in colors.items():
-    # Filter out NaN values for this party
-    valid_data = daily_averages.dropna(subset=[party])
-    
-    if len(valid_data) > 0:
-        # Create scatter plot with higher alpha for individual points
-        plt.scatter(valid_data['Date'], valid_data[party], 
-                    color=color, alpha=0.5, label=f'{party} (raw)')
-        
-        # Calculate LOESS smoothing with 14-day window
-        # Convert 14 days to a fraction of the total date range
-        date_range = (valid_data['Date'].max() - valid_data['Date'].min()).days
-        frac = 14 / date_range  # 14 days as a fraction of total days
-        
-        lowess = sm.nonparametric.lowess(valid_data[party], 
-                                        valid_data['Date_Numeric'],
-                                        frac=frac, return_sorted=False)  # 14-day window
-        
-        # Plot smoothed line
-        plt.plot(valid_data['Date'], lowess, 
-             color=color, linewidth=2, label=party)
-
-# Add vertical line for Local Elections
-election_date = pd.to_datetime('01/05/2025', format='%d/%m/%Y')
-plt.axvline(x=election_date, color='black', linestyle='--', alpha=0.5)
-plt.text(election_date, 38, 'Local Elections - England', 
-         rotation=45, verticalalignment='bottom', 
-         horizontalalignment='left', fontsize=10)
-
-# Customize the plot
-plt.title('Westminster Voting Intentions (GB)', fontsize=16, pad=20)
-plt.xlabel('Date', fontsize=12)
-plt.ylabel('Support (%)', fontsize=12)
-plt.ylim(0, 40)  # Set y-axis limits from 0 to 40
-
-# Format x-axis dates
-plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%d/%m/%Y'))
-plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=1))
-plt.xticks(rotation=45)
-
-# Customize legend
-plt.legend(title='Party', 
-          bbox_to_anchor=(1.05, 1),
-          loc='upper left')
-
-# Adjust layout to prevent label cutoff
-plt.tight_layout()
+# Create the plot using plotnine (ggplot style)
+p = (
+    ggplot(df_long, aes('Date', 'Support', color='Party'))
+    + geom_point(alpha=0.5)
+    + geom_smooth(method='loess', span=0.2, se=False)
+    + scale_color_manual(values=ggplot_colors)
+    + scale_y_continuous(limits=[0, 40])
+    + labs(
+        title='Westminster Voting Intentions (GB)',
+        x='Date',
+        y='Support (%)'
+    )
+    + geom_vline(xintercept=pd.to_datetime('01/05/2025', format='%d/%m/%Y'), linetype='dashed', color='black', alpha=0.5)
+    + annotate('text', x=pd.to_datetime('01/05/2025', format='%d/%m/%Y'), y=33, label='Local Elections - England', angle=45, va='bottom', ha='left', size=8)
+    + scale_x_datetime(date_breaks='1 month', date_labels='%b %Y')
+    + theme_bw()
+    + theme(
+        axis_text_x=element_text(rotation=45, ha='right'),
+        figure_size=(14, 8),
+        legend_title=element_text(size=12),
+        legend_position='bottom'
+    )
+)
 
 # Save the plot
-plt.savefig('polling_trends.png', dpi=300, bbox_inches='tight')
+p.save('polling_trends.png', dpi=300, bbox_inches='tight')
 
 # Calculate statistics
-# Calculate averages directly from the raw data, excluding NaN values
 averages = df[party_columns].mean().round(1).sort_values(ascending=False)
 latest_date = daily_averages['Date'].max()
 latest_polls = daily_averages[daily_averages['Date'] == latest_date]
 
-# Get the most recent poll details
 most_recent_poll = df.sort_values('Date', ascending=False).iloc[0]
 most_recent_date = most_recent_poll['Date']
 
-# Create data dictionary for JSON
 polling_data = {
     'most_recent_poll': {
         'date': most_recent_date.strftime('%d %B %Y'),
@@ -127,7 +89,6 @@ polling_data = {
     'recent_polls': []
 }
 
-# Add recent polls data
 recent_polls = df.sort_values('Date', ascending=False).head(10)
 for _, poll in recent_polls.iterrows():
     polling_data['recent_polls'].append({
@@ -143,17 +104,14 @@ for _, poll in recent_polls.iterrows():
         'others': float(poll['Others']) if pd.notna(poll['Others']) else 'Not Supplied'
     })
 
-# Save to JSON file
 with open('polling_data.json', 'w') as f:
     json.dump(polling_data, f, indent=4)
 
-# Print statistics
 print("\nAverage support by party:")
 print(averages)
 
 print("\nLatest polling averages:")
-print(f"\nAs of {latest_date.strftime('%d %B %Y')}:")
-# Get latest polls and sort in descending order
+print(f"\nAs of {latest_date.strftime('%d %B %Y')}:" )
 latest_values = latest_polls[party_columns].iloc[0]
 sorted_latest = latest_values.sort_values(ascending=False)
 for party, value in sorted_latest.items():

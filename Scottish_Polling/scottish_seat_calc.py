@@ -8,7 +8,7 @@ polls = pd.read_csv("scottish_polls.csv")
 
 # Rename poll columns
 rename_dict = {
-    'Lab': 'Lab', 'Con': 'Con', 'Ref': 'RUK', 'LD': 'LD',
+    'Lab': 'Lab', 'Con': 'Con', 'REF': 'RUK', 'LD': 'LD',
     'Greens': 'Green', 'SNP': 'SNP', 'PC': 'PC', 'Others': 'All other candidates'
 }
 polls = polls.rename(columns=rename_dict)

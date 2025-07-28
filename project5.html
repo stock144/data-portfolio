@@ -56,6 +56,7 @@
                 <li><strong>Scotland and Wales:</strong> As most polls are UK/GB-wide, regional parties (SNP, Plaid Cymru) are not adjusted and retain their 2024 vote share.</li>
             </ul>
             <p>The graph below shows the seat projections for each party over time, smoothed using a <strong>7-point rolling average</strong> to highlight trends and reduce noise from individual polls.</p>
+            <p><em>Note:</em> Polling data is available from January 2025 onwards. The flat period before this reflects the baseline 2024 General Election results.</p>
             <p><em>Limitations:</em> The UNS method is simple and transparent but does not account for local factors or tactical voting, and may overstate the impact of national swings in some areas.</p>
             <p>For more details on the methodology, see the <a href="project4.html">Seat Calculator</a> project.</p>
         </div>
@@ -69,25 +70,63 @@
       fetch('Seat_Graph_Project/all_seat_results.json')
         .then(response => response.json())
         .then(data => {
-          // Flatten and ensure ISO date format, handle DD/MM/YYYY
-          data = data.map(row => {
+          // Group polls by date and average them
+          const dateMap = new Map();
+          data.forEach(row => {
             let dateStr = row.date;
             // Convert DD/MM/YYYY to YYYY-MM-DD
             if (dateStr && dateStr.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
               const [day, month, year] = dateStr.split('/');
               dateStr = `${year}-${month}-${day}`;
             }
-            let dateObj = new Date(dateStr);
+            const dateObj = new Date(dateStr);
             if (isNaN(dateObj.getTime())) {
               console.warn('Invalid date:', row.date, row);
-              return null;
+              return;
             }
+            
+            // Group polls by date
+            if (!dateMap.has(dateStr)) {
+              dateMap.set(dateStr, {
+                polls: [],
+                date: dateStr,
+                originalDate: row.date
+              });
+            }
+            dateMap.get(dateStr).polls.push(row.seats);
+          });
+          
+          // Average polls for each date
+          data = Array.from(dateMap.entries()).map(([dateStr, dateData]) => {
+            const polls = dateData.polls;
+            const parties = ['Labour', 'Conservative', 'Reform UK', 'Liberal Democrats', 'SNP', 'Others', 'Green', 'Plaid Cymru'];
+            
+            // Calculate average for each party
+            const averagedSeats = {};
+            parties.forEach(party => {
+              const values = polls.map(poll => poll[party]).filter(val => val !== null && val !== undefined && !isNaN(val));
+              if (values.length > 0) {
+                averagedSeats[party] = Math.round(values.reduce((sum, val) => sum + val, 0) / values.length);
+              } else {
+                averagedSeats[party] = null;
+              }
+            });
+            
             return {
-              ...row.seats,
-              date: dateObj.toISOString().slice(0, 10)
+              ...averagedSeats,
+              date: dateStr,
+              originalDate: dateData.originalDate,
+              pollCount: polls.length // For debugging
             };
-          }).filter(row => row !== null);
-          console.log('Plot data:', data); // Debug: see what is being passed
+          }).sort((a, b) => new Date(a.date) - new Date(b.date));
+          
+          console.log('Averaged data:', data.length, 'entries'); // Debug
+          // Log dates with multiple polls
+          data.forEach(row => {
+            if (row.pollCount > 1) {
+              console.log(`Date ${row.date}: ${row.pollCount} polls averaged`);
+            }
+          });
 
           const parties = ['Labour', 'Conservative', 'Reform UK', 'Liberal Democrats', 'SNP', 'Others', 'Green', 'Plaid Cymru'];
           const colors = {
@@ -101,27 +140,31 @@
             'Others': '#999999'
           };
 
-          // Rolling mean function
+          // Improved rolling mean function
           function rollingMean(arr, window) {
             return arr.map((_, idx, a) => {
               const start = Math.max(0, idx - Math.floor(window/2));
               const end = Math.min(a.length, idx + Math.ceil(window/2));
-              const windowArr = a.slice(start, end).filter(v => v !== null && v !== undefined);
+              const windowArr = a.slice(start, end).filter(v => v !== null && v !== undefined && !isNaN(v));
               if (windowArr.length === 0) return null;
               return windowArr.reduce((sum, v) => sum + v, 0) / windowArr.length;
             });
           }
 
-          const window = 7;
+          const window = 7; // 7-point rolling average
           const traces = parties.map(party => {
             const yRaw = data.map(row => row[party] ?? null);
+            const smoothed = rollingMean(yRaw, window);
+            
             return {
               x: data.map(row => row.date),
-              y: rollingMean(yRaw, window),
+              y: smoothed,
               mode: 'lines',
               name: party,
-              line: { color: colors[party], width: 3 },
-              hovertemplate: '%{y:.0f}<extra>%{fullData.name}</extra>'
+              line: { color: colors[party], width: 3 }, // Reduced width for cleaner appearance
+              hovertemplate: '<b>%{fullData.name}</b><br>' +
+                           'Seats: %{y:.0f}<br>' +
+                           'Date: %{x}<extra></extra>'
             };
           });
 
@@ -131,17 +174,40 @@
             y: Array(data.length).fill(326),
             mode: 'lines',
             name: 'Majority (326 seats)',
-            line: { color: 'black', dash: 'dash', width: 2 },
+            line: { color: 'black', dash: 'dash', width: 2 }, // Reduced width
             hoverinfo: 'skip'
           });
 
           const layout = {
-            title: 'UK Parliamentary Seat Trends by Party',
-            xaxis: { title: 'Date', type: 'date' },
-            yaxis: { title: 'Number of Seats', range: [0, 550], tickformat: ',d' },
-            legend: { orientation: 'v', x: 1.05, y: 1 },
-            margin: { t: 60, r: 200 },
-            autosize: true
+            title: {
+              text: 'UK Parliamentary Seat Trends by Party',
+              font: { size: 20, color: '#333' }
+            },
+            xaxis: { 
+              title: { text: 'Date', font: { size: 14 } },
+              type: 'date',
+              gridcolor: '#f0f0f0',
+              showgrid: true,
+              range: ['2025-01-01', '2025-07-28'] // Extended to today's date
+            },
+            yaxis: { 
+              title: { text: 'Number of Seats', font: { size: 14 } },
+              range: [0, 550], 
+              tickformat: ',d',
+              gridcolor: '#f0f0f0',
+              showgrid: true
+            },
+            legend: { 
+              orientation: 'v', 
+              x: 1.02, 
+              y: 1,
+              font: { size: 12 }
+            },
+            margin: { t: 80, r: 200, b: 80, l: 80 }, // Increased margins
+            autosize: true,
+            plot_bgcolor: 'white',
+            paper_bgcolor: 'white',
+            font: { family: 'Arial, sans-serif' }
           };
 
           Plotly.newPlot('seatTrendPlot', traces, layout, {responsive: true});

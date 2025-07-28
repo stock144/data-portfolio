@@ -1,35 +1,51 @@
 {
     "most_recent_poll": {
-        "date": "20 June 2025",
-        "pollster": "Ipsos",
-        "sample_size": 1066,
-        "labour": 22.0,
+        "date": "25 July 2025",
+        "pollster": "ScotVoting/YouGov",
+        "sample_size": 1050,
+        "labour": 19.0,
         "conservative": 10.0,
-        "reform": 16.0,
-        "libdem": 9.0,
-        "greens": 10.0,
-        "snp": "Not Supplied",
-        "others": 1.0
+        "reform": 22.0,
+        "libdem": 11.0,
+        "green": 7.0,
+        "alba": "Not Supplied",
+        "snp": 29.0,
+        "others": "Not Supplied"
     },
     "latest_polls": {
-        "Lab": 22.0,
-        "SNP": "Not Supplied",
+        "Lab": 19.0,
+        "SNP": 29.0,
         "Con": 10.0,
-        "LD": 9.0,
-        "REF": 16.0,
-        "Greens": 10.0,
-        "Others": 1.0
+        "LD": 11.0,
+        "REF": 22.0,
+        "Greens": 7.0,
+        "Alba": "Not Supplied",
+        "Others": "Not Supplied"
     },
     "averages": {
-        "Lab": 20.7,
-        "SNP": 32.2,
-        "Con": 12.3,
-        "LD": 9.5,
-        "REF": 17.4,
-        "Greens": 6.1,
+        "Lab": 20.5,
+        "SNP": 31.6,
+        "Con": 12.0,
+        "LD": 9.7,
+        "REF": 18.0,
+        "Greens": 6.2,
+        "Alba": 1.3,
         "Others": 2.0
     },
     "recent_polls": [
+        {
+            "date": "25 July 2025",
+            "pollster": "ScotVoting/YouGov",
+            "sample_size": 1050,
+            "labour": 19.0,
+            "conservative": 10.0,
+            "reform": 22.0,
+            "libdem": 11.0,
+            "green": 7.0,
+            "alba": "Not Supplied",
+            "snp": 29.0,
+            "others": "Not Supplied"
+        },
         {
             "date": "20 June 2025",
             "pollster": "Ipsos",
@@ -38,8 +54,9 @@
             "conservative": 10.0,
             "reform": 16.0,
             "libdem": 9.0,
-            "greens": 10.0,
-            "snp": "Not Supplied",
+            "green": 10.0,
+            "alba": 1.0,
+            "snp": 31.0,
             "others": 1.0
         },
         {
@@ -50,7 +67,8 @@
             "conservative": 12.0,
             "reform": 21.0,
             "libdem": 8.0,
-            "greens": 7.0,
+            "green": 7.0,
+            "alba": 1.0,
             "snp": 31.0,
             "others": 1.0
         },
@@ -62,7 +80,8 @@
             "conservative": 11.0,
             "reform": 21.0,
             "libdem": 11.0,
-            "greens": 5.0,
+            "green": 5.0,
+            "alba": "Not Supplied",
             "snp": 32.0,
             "others": "Not Supplied"
         },
@@ -74,7 +93,8 @@
             "conservative": 14.0,
             "reform": 15.0,
             "libdem": 9.0,
-            "greens": 5.0,
+            "green": 5.0,
+            "alba": "Not Supplied",
             "snp": 33.0,
             "others": "Not Supplied"
         },
@@ -86,7 +106,8 @@
             "conservative": 12.0,
             "reform": 17.0,
             "libdem": 9.0,
-            "greens": 6.0,
+            "green": 6.0,
+            "alba": "Not Supplied",
             "snp": 32.0,
             "others": 5.0
         },
@@ -98,7 +119,8 @@
             "conservative": 13.0,
             "reform": 17.0,
             "libdem": 11.0,
-            "greens": 6.0,
+            "green": 6.0,
+            "alba": 2.0,
             "snp": 32.0,
             "others": "Not Supplied"
         },
@@ -110,7 +132,8 @@
             "conservative": 14.0,
             "reform": 15.0,
             "libdem": "Not Supplied",
-            "greens": 4.0,
+            "green": 4.0,
+            "alba": "Not Supplied",
             "snp": 33.0,
             "others": 1.0
         }

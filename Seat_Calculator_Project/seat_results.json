@@ -1,41 +1,41 @@
 {
-    "pollster": "Find Out Now",
-    "date": "24/07/2025",
+    "pollster": "Opinium",
+    "date": "25/07/2025",
     "seats": {
-        "Reform UK": 389,
-        "Labour": 122,
-        "Conservative": 18,
-        "Liberal Democrats": 74,
-        "SNP": 25,
-        "Others": 14,
-        "Green": 5,
-        "Plaid Cymru": 3
+        "Reform UK": 305,
+        "Labour": 204,
+        "Conservative": 28,
+        "Liberal Democrats": 75,
+        "SNP": 17,
+        "Others": 13,
+        "Green": 4,
+        "Plaid Cymru": 4
     },
     "swings": {
         "Conservative": {
             "ge_share": 23.7,
-            "latest_share": 16.0,
-            "swing": -7.699999999999999
+            "latest_share": 17.0,
+            "swing": -6.699999999999999
         },
         "Labour": {
             "ge_share": 33.7,
-            "latest_share": 20.0,
-            "swing": -13.700000000000003
+            "latest_share": 25.0,
+            "swing": -8.700000000000003
         },
         "Liberal Democrats": {
             "ge_share": 12.2,
-            "latest_share": 14.0,
-            "swing": 1.8000000000000007
+            "latest_share": 13.0,
+            "swing": 0.8000000000000007
         },
         "Reform UK": {
             "ge_share": 14.3,
-            "latest_share": 34.0,
-            "swing": 19.7
+            "latest_share": 32.0,
+            "swing": 17.7
         },
         "Green": {
             "ge_share": 6.8,
-            "latest_share": 10.0,
-            "swing": 3.2
+            "latest_share": 8.0,
+            "swing": 1.2000000000000002
         },
         "SNP": {
             "ge_share": 2.5,
@@ -49,8 +49,8 @@
         },
         "Others": {
             "ge_share": 6.1,
-            "latest_share": 4.0,
-            "swing": -2.0999999999999996
+            "latest_share": 2.0,
+            "swing": -4.1
         }
     }
 }

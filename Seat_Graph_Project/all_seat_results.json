@@ -1,7 +1,21 @@
 [
   {
+    "pollster":"Opinium",
+    "date":"25\/07\/2025",
+    "seats":{
+      "Reform UK":305,
+      "Labour":204,
+      "Conservative":28,
+      "Liberal Democrats":75,
+      "SNP":17,
+      "Others":13,
+      "Green":4,
+      "Plaid Cymru":4
+    }
+  },
+  {
     "pollster":"Find Out Now",
-    "date":"24\/07\/2025",
+    "date":"24\/07\/2024",
     "seats":{
       "Reform UK":389,
       "Labour":122,
@@ -1162,7 +1176,7 @@
     }
   },
   {
-    "pollster":"Find Out Now\r\n \r\n\r\n Electoral Calculus",
+    "pollster":"Find Out Now\n \n\n Electoral Calculus",
     "date":"27\/03\/2025",
     "seats":{
       "Reform UK":65,
@@ -1890,7 +1904,7 @@
     }
   },
   {
-    "pollster":"Find Out Now\r\n \r\n\r\n Electoral Calculus",
+    "pollster":"Find Out Now\n \n\n Electoral Calculus",
     "date":"24\/01\/2025",
     "seats":{
       "Reform UK":133,

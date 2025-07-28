@@ -15,21 +15,18 @@ plt.rcParams['figure.figsize'] = [14, 8]
 df = pd.read_csv("scottish_polls.csv")
 
 # Convert date column to datetime
-df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y')
+df['Date'] = pd.to_datetime(df['Date'].astype(str).str.strip(), format='%d/%m/%Y', errors='coerce')
 df['Date_Numeric'] = (df['Date'] - df['Date'].min()).dt.days
 
-# Group by date and calculate mean for each party
-
-party_columns = ['Lab', 'SNP', 'Con', 'LD', 'REF', 'Greens', 'Others']
+party_columns = ['Lab', 'SNP', 'Con', 'LD', 'REF', 'Greens', 'Alba', 'Others']
 
 # Replace empty strings and whitespace with NaN
 for col in party_columns:
     df[col] = pd.to_numeric(df[col].replace(r'^\s*$', np.nan, regex=True), errors='coerce')
 
-# Calculate daily averages, excluding NaN values
 daily_averages = df.groupby('Date')[party_columns].mean().reset_index()
 
-# Sort by date
+# Add Date_Numeric column to daily_averages for LOESS smoothing
 daily_averages['Date_Numeric'] = (daily_averages['Date'] - daily_averages['Date'].min()).dt.days
 
 # Create the plot
@@ -38,11 +35,12 @@ plt.figure(figsize=(14, 8))
 # Define party colors
 colors = {
     'Lab': '#E4003B',  # Labour Red
+    'SNP': '#0A2C50',  # SNP Blue
     'Con': '#0087DC',  # Conservative Blue
-    'REF': '#12B6CF',  # Reform Blue
     'LD': '#FAA61A',   # Liberal Democrat Orange
+    'REF': '#12B6CF',  # Reform Blue
     'Greens': '#6AB023', # Green Party Green
-    'SNP': '#0A2C50',   # SNP Black   
+    'Alba': '#0057B7',  # Alba Blue
     'Others': '#999999'  # Grey
 }
 
@@ -52,24 +50,21 @@ for party, color in colors.items():
     valid_data = daily_averages.dropna(subset=[party])
     
     if len(valid_data) > 0:
-        # Create scatter plot with higher alpha for individual points
+        # Create scatter plot with higher alpha for individual points (no legend entry)
         plt.scatter(valid_data['Date'], valid_data[party], 
-                    color=color, alpha=0.5, label=f'{party} (raw)')
+                    color=color, alpha=0.5, label='')
         
-        # Calculate LOESS smoothing with 14-day window
-        # Convert 14 days to a fraction of the total date range
+        # Calculate LOESS smoothing
         date_range = (valid_data['Date'].max() - valid_data['Date'].min()).days
-        frac =0.8
+        frac = 0.3  # Changed back to 0.3
         
         lowess = sm.nonparametric.lowess(valid_data[party], 
                                         valid_data['Date_Numeric'],
-                                        frac=frac, return_sorted=False)  # 14-day window
+                                        frac=frac, return_sorted=False)
         
-        # Plot smoothed line
+        # Plot smoothed line only (no scatter points)
         plt.plot(valid_data['Date'], lowess, 
              color=color, linewidth=2, label=party)
-
-
 
 # Customize the plot
 plt.title('Westminster Voting Intentions (Scotland)', fontsize=16, pad=20)
@@ -78,14 +73,15 @@ plt.ylabel('Support (%)', fontsize=12)
 plt.ylim(0, 40)  # Set y-axis limits from 0 to 40
 
 # Format x-axis dates
-plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%d/%m/%Y'))
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
 plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=1))
 plt.xticks(rotation=45)
 
-# Customize legend
+# Customize legend - place at bottom
 plt.legend(title='Party', 
-          bbox_to_anchor=(1.05, 1),
-          loc='upper left')
+          bbox_to_anchor=(0.5, -0.15),
+          loc='upper center',
+          ncol=4)
 
 # Adjust layout to prevent label cutoff
 plt.tight_layout()
@@ -94,16 +90,13 @@ plt.tight_layout()
 plt.savefig('polling_trends.png', dpi=300, bbox_inches='tight')
 
 # Calculate statistics
-# Calculate averages directly from the raw data, excluding NaN values
 averages = df[party_columns].mean().round(1).sort_values(ascending=False)
 latest_date = daily_averages['Date'].max()
 latest_polls = daily_averages[daily_averages['Date'] == latest_date]
 
-# Get the most recent poll details
 most_recent_poll = df.sort_values('Date', ascending=False).iloc[0]
 most_recent_date = most_recent_poll['Date']
 
-# Create data dictionary for JSON
 polling_data = {
     'most_recent_poll': {
         'date': most_recent_date.strftime('%d %B %Y'),
@@ -113,7 +106,8 @@ polling_data = {
         'conservative': float(most_recent_poll['Con']) if pd.notna(most_recent_poll['Con']) else 'Not Supplied',
         'reform': float(most_recent_poll['REF']) if pd.notna(most_recent_poll['REF']) else 'Not Supplied',
         'libdem': float(most_recent_poll['LD']) if pd.notna(most_recent_poll['LD']) else 'Not Supplied',
-        'greens': float(most_recent_poll['Greens']) if pd.notna(most_recent_poll['Greens']) else 'Not Supplied',
+        'green': float(most_recent_poll['Greens']) if pd.notna(most_recent_poll['Greens']) else 'Not Supplied',
+        'alba': float(most_recent_poll['Alba']) if pd.notna(most_recent_poll['Alba']) else 'Not Supplied',
         'snp': float(most_recent_poll['SNP']) if pd.notna(most_recent_poll['SNP']) else 'Not Supplied',
         'others': float(most_recent_poll['Others']) if pd.notna(most_recent_poll['Others']) else 'Not Supplied'
     },
@@ -122,7 +116,6 @@ polling_data = {
     'recent_polls': []
 }
 
-# Add recent polls data
 recent_polls = df.sort_values('Date', ascending=False).head(10)
 for _, poll in recent_polls.iterrows():
     polling_data['recent_polls'].append({
@@ -133,22 +126,20 @@ for _, poll in recent_polls.iterrows():
         'conservative': float(poll['Con']) if pd.notna(poll['Con']) else 'Not Supplied',
         'reform': float(poll['REF']) if pd.notna(poll['REF']) else 'Not Supplied',
         'libdem': float(poll['LD']) if pd.notna(poll['LD']) else 'Not Supplied',
-        'greens': float(poll['Greens']) if pd.notna(poll['Greens']) else 'Not Supplied',
+        'green': float(poll['Greens']) if pd.notna(poll['Greens']) else 'Not Supplied',
+        'alba': float(poll['Alba']) if pd.notna(poll['Alba']) else 'Not Supplied',
         'snp': float(poll['SNP']) if pd.notna(poll['SNP']) else 'Not Supplied',
         'others': float(poll['Others']) if pd.notna(poll['Others']) else 'Not Supplied'
     })
 
-# Save to JSON file
 with open('polling_data.json', 'w') as f:
     json.dump(polling_data, f, indent=4)
 
-# Print statistics
 print("\nAverage support by party:")
 print(averages)
 
 print("\nLatest polling averages:")
-print(f"\nAs of {latest_date.strftime('%d %B %Y')}:")
-# Get latest polls and sort in descending order
+print(f"\nAs of {latest_date.strftime('%d %B %Y')}:" )
 latest_values = latest_polls[party_columns].iloc[0]
 sorted_latest = latest_values.sort_values(ascending=False)
 for party, value in sorted_latest.items():
