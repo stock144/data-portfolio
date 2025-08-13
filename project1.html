@@ -69,19 +69,47 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       margin: 20px 0;
     }
+    /* Small badge for achievements */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #eaf7ea;
+      color: #2e7d32;
+      border: 1px solid #4CAF50;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin: 10px 0 20px 0;
+    }
+    .badge .icon {
+      font-size: 1.1em;
+      line-height: 1;
+    }
+    .badge-fixed {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Market Analysis</h1>
-    <p>This project explored a hypothetical supermarket with stores worldwide.
-        The aim was to analyze sales patterns, customer demographics, marketing effectiveness, and conversion rates across various channels.</p>
+    <div class="badge badge-fixed"><span class="icon" aria-hidden="true">🏆</span><span>LSE Result: Passed with Distinction</span></div>
+    <h2>Introduction</h2>
+    <p>This project kicked off my data analyst journey. I worked with Excel, Tableau, and SQL to build strong foundations in data collection and cleaning.</p>
+    <p>I already use SQL day to day, but this module deepened my Excel skills—especially pivot tables—and how to turn them into effective dashboards.</p>
 
-    <p>The data was cleaned and wrangled in Excel, and then imported into Tableau for visualisation. SQL was used to create additional datasets for analysis, and for a deeper dive into the data.</p>
+    <h2>Project Information</h2>
+    <p>This was a hypothetical supermarket case with a global store footprint. The goal was to analyse sales patterns, customer demographics, marketing effectiveness, and conversion rates across channels.</p>
 
-    <p>This project involved creating SQL databases, importing the tables from CSV files, and then using SQL to query the data, with exposure to grouping, aggregating, and joining tables.</p>
-
-    <p>A final PDF report was created to present the findings to the client, and includes a technical appendix.</p>
+    <h2>Approach</h2>
+    <p>Data was cleaned and wrangled in Excel, then imported into Tableau for visualisation. SQL was used to build additional datasets and support deeper analysis.</p>
+    <p>I created SQL databases, imported CSVs, and wrote queries using grouping, aggregation, and joins.</p>
+    <p>The findings were compiled into a client-ready PDF report with a technical appendix.</p>
     <a href="2Market_project/2Market_Report.pdf" target="_blank" class="download-btn">Download Full Report</a>
 
     <h2>Interactive Visualization</h2>

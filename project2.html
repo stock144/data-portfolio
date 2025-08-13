@@ -211,18 +211,48 @@
     .code-example .function {
       color: #dcdcaa;
     }
+    /* Small badge for achievements */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #eaf7ea;
+      color: #2e7d32;
+      border: 1px solid #4CAF50;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin: 10px 0 20px 0;
+    }
+    .badge .icon {
+      font-size: 1.1em;
+      line-height: 1;
+    }
+    .badge-fixed {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>NHS Analysis Project</h1>
-    <p>This project explored NHS capacity and utilisation, using publically available data.</p>
+    <div class="badge badge-fixed"><span class="icon" aria-hidden="true">🏆</span><span>LSE Result: Passed with Distinction</span></div>
+    <h2>Introduction</h2>
+    <p>This project introduced Python, Jupyter Notebook, and Pandas. This project involved working with large CSV-based datasets, often with missing or unclear data.</p>
+    <p>The focus was using Python to explore and visualise data, and to identify trends, correlations, and potential causation.</p>
 
-    <p>The aim of this project was to advice on capacity, insights into missed appointments, social media engagment, and the use of different service settings within the NHS.</p>
+    <h2>Project Information</h2>
+    <p>The analysis explored NHS capacity and utilisation using publicly available data.</p>
+    <p>The aim was to advise on capacity, provide insights into missed appointments and social media engagement, and understand usage across different NHS service settings.</p>
+    <p>The dataset comprised three CSV files, totalling over 1.5 million rows of NHS appointment data.</p>
 
-    <p>This project involved converting CSV's into dataframes with pandas, and creating visualisations with matplotlib and seaborn.</p>
-
-    <p>The data for this project consisted of 3 CSV files, containing over 1.5million rows of NHS appointment data.</p>
+    <h2>Approach</h2>
+    <p>Data was loaded and cleaned in Pandas, then visualised with Matplotlib and Seaborn.</p>
+    <p>I converted CSVs into DataFrames, handled quality issues, and built exploratory visuals to surface key patterns.</p>
 
     <p>Tools used:</p>
     <ul class="tools-list">
