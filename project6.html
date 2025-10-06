@@ -76,26 +76,444 @@
     .project-description a:hover {
       text-decoration: underline;
     }
+    /* Hero Section */
+    .hero {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      padding: 28px 24px;
+      margin: 10px 0 24px 0;
+    }
+    .hero h1 {
+      margin: 0 0 10px 0;
+      border-bottom: none;
+      padding-bottom: 0;
+      font-size: 2.2em;
+    }
+    .hero-subtitle {
+      color: #495057;
+      margin: 8px 0 16px 0;
+      font-size: 1.05em;
+    }
+    .badges-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .badge {
+      background: #eef7f0;
+      color: #255d3e;
+      border: 1px solid #cde8d5;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.9em;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+    
+    /* Two-column layout for Background */
+    .two-col {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+    .two-col .col-left {
+      flex: 2 1 420px;
+      min-width: 280px;
+    }
+    .two-col .col-right {
+      flex: 1 1 260px;
+      min-width: 260px;
+      background: #ffffff;
+      border: 1px solid #e6ece8;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      height: fit-content;
+    }
+    .metrics-title {
+      margin: 0 0 8px 0;
+      font-size: 1em;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+    .metric-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .metric {
+      background: #f6fbf7;
+      border: 1px solid #e1f1e6;
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+    .metric .label {
+      display: block;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 2px;
+    }
+    .metric .desc {
+      color: #61707c;
+      font-size: 0.95em;
+    }
+    /* Responsive refinements */
+    @media (max-width: 680px) {
+      .hero {
+        padding: 20px 18px;
+      }
+      .hero h1 {
+        font-size: 1.8em;
+      }
+      .hero-subtitle {
+        font-size: 1em;
+      }
+      .badges-row {
+        gap: 8px;
+      }
+      .badge {
+        font-size: 0.85em;
+        padding: 6px 8px;
+      }
+      .two-col {
+        gap: 16px;
+      }
+      .two-col .col-right {
+        padding: 12px 14px;
+      }
+    }
+    /* Model Overview flow */
+    .flow {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+    .flow-step {
+      background: #ffffff;
+      border: 1px solid #e6ece8;
+      border-radius: 10px;
+      padding: 12px;
+      min-width: 160px;
+      flex: 1 1 160px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .flow-step .title {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 6px;
+    }
+    .flow-step .desc {
+      color: #61707c;
+      font-size: 0.92em;
+    }
+    .flow-arrow {
+      align-self: center;
+      color: #9aa6b2;
+      font-weight: 600;
+    }
+    .novelty-callout {
+      margin-top: 16px;
+      background: #f6fbf7;
+      border-left: 4px solid #4CAF50;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #255d3e;
+    }
+    @media (max-width: 680px) {
+      .flow-arrow { display: none; }
+    }
+    /* Data & Feature Engineering */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e6ece8;
+      border-radius: 10px;
+      padding: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card .card-title {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 6px;
+    }
+    .card .card-desc {
+      color: #61707c;
+      font-size: 0.92em;
+    }
+    details.collapsible {
+      margin-top: 14px;
+      background: #f8fbf9;
+      border: 1px solid #e6ece8;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    details.collapsible summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #2c3e50;
+      outline: none;
+    }
+    .method-list {
+      margin: 10px 0 0 0;
+      padding-left: 18px;
+      color: #495057;
+    }
+    @media (max-width: 980px) {
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+    /* Stock Tabs */
+    .tabs {
+      margin-top: 6px;
+    }
+    .tablist {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #e6ece8;
+      padding-bottom: 6px;
+    }
+    .tab-button {
+      background: #f3f7f5;
+      border: 1px solid #e0e8e2;
+      color: #2c3e50;
+      border-radius: 8px 8px 0 0;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .tab-button[aria-selected="true"] {
+      background: #ffffff;
+      border-bottom-color: #ffffff;
+    }
+    .tabpanel {
+      border: 1px solid #e6ece8;
+      border-top: none;
+      border-radius: 0 8px 8px 8px;
+      padding: 14px;
+      margin-top: -1px;
+      background: #ffffff;
+    }
+    .metric-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 10px 0 14px 0;
+    }
+    .metric-badge {
+      background: #eef7f0;
+      border: 1px solid #cde8d5;
+      color: #255d3e;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.9em;
+      font-weight: 600;
+    }
+    .two-up {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 760px) {
+      .two-up { grid-template-columns: 1fr; }
+    }
+    .stock-result-image {
+      width: 480px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 6px auto 0;
+    }
+    .figure-image-small {
+      width: 520px;
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+    /* Pie chart for composite weights */
+    .weights-visual {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0 4px 0;
+    }
+    .weights-pie {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background:
+        conic-gradient(
+          #2c7be5 0% 25%,      /* Macro 25% */
+          #4CAF50 25% 50%,     /* EPS 25% */
+          #f59e0b 50% 65%,     /* Volatility 15% */
+          #6f42c1 65% 95%,     /* Sentiment 30% */
+          #e83e8c 95% 100%     /* Revenue 5% */
+        );
+      box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+    }
+    .weights-legend {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      min-width: 280px;
+    }
+    .weights-legend li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border: 1px solid #e6ece8;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+    .weights-legend .label {
+      color: #2c3e50;
+      font-weight: 600;
+    }
+    .weights-legend .value {
+      color: #495057;
+    }
+    .swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      margin-right: 8px;
+      display: inline-block;
+    }
+    .swatch.macro { background: #2c7be5; }
+    .swatch.eps { background: #4CAF50; }
+    .swatch.vol { background: #f59e0b; }
+    .swatch.sent { background: #6f42c1; }
+    .swatch.rev { background: #e83e8c; }
+    @media (max-width: 520px) {
+      .weights-legend { grid-template-columns: 1fr; }
+      .weights-pie { width: 200px; height: 200px; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Stock Market Earnings Project</h1>
-    <div class="badge badge-fixed"><span class="icon" aria-hidden="true">📈</span><span>Financial Analysis</span></div>
+    <div style="text-align: right; font-weight: 700;">LSE Result: Passed with Distinction</div>
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Stock Market Earnings Project</h1>
+      <p class="hero-subtitle">Predicting stock movements around earnings announcements for Apple, Nvidia, and Google using adaptive composite scoring and machine learning.</p>
+      
+    </section>
 
     <!-- Background Section -->
     <div class="project-description">
-      <h2>Background & Context</h2>
-      <p>
-        Earnings announcements provide high volatility in the stock market, with opportunities available for investors and traders. 
-        This project explored how historic pricing, earnings surprise, sentiment, and macroeconomic factors drive stock price movements 
-        at earnings for Apple, Nvidia, and Google.
+      <h2>Background & Problem</h2>
+      <div class="two-col">
+        <div class="col-left">
+          <p>
+            This was an employer project in conjunction with LSE. The initial and final presentations, along with the model, were presented to the employer, an investment management firm.
+          </p>
+          <p>
+            Earnings announcements create high volatility and short, decisive windows for trading.
+            Our goal was to generate reproducible, actionable signals by combining historical price action,
+            earnings surprise, sentiment, and macroeconomic data.
       </p>
+      <div class="key-questions-callout" style="background: #f8f9fa; border-left: 4px solid #0A2C50; padding: 12px 14px; margin: 12px 0; border-radius: 6px;">
+        <div style="font-weight: 600; margin-bottom: 8px;">We concentrated on three questions:</div>
+        <ul style="margin: 0 0 0 18px;">
+          <li><strong>Price behavior:</strong> How do stock prices typically behave around earnings windows?</li>
+          <li><strong>Financial drivers:</strong> What financial metrics (e.g. revenue, margins) most impact those movements?</li>
+          <li><strong>Macro context:</strong> How do macroeconomic conditions (e.g. inflation, interest rates, and unemployment) interact with these patterns?</li>
+        </ul>
+      </div>
       <p>
-         The aim was to produce a model that gave reproducible and actionable insights — a case of 
-         "when this happens, do this." Results needed to be repeatable, and the model adaptable to new market 
-         and macro conditions.
-      </p>
+            The objective: a robust, adaptable decision system - when specific conditions are met,
+            take a clear long, short, or hold action - with results that remain consistent across
+            changing market regimes.
+          </p>
+          <p>Keep reading below to learn about the research and methodology behind the model.</p>
+          <p>If you're interested in the results, skip ahead to <a href="#results-testing">Results &amp; Testing</a>.</p>
+          <div class="novelty-callout" aria-label="Executive summary" style="margin-top: 12px;">
+            <strong>Executive summary:</strong> This project used extensive data analysis and collection along with ML to create a model that predicts stock price movements around earnings events. The end result was a model that correctly predicted stock movement direction with a hit rate of ~60% and total returns of up to 76% over all earnings events tested.
+          </div>
+        </div>
+        <div class="col-right" aria-label="Key factors">
+          <div class="metrics-title">Key factors</div>
+          <div class="metric-list">
+            <div class="metric">
+              <span class="label">Earnings</span>
+              <span class="desc">EPS surprise and revenue dynamics at the event.</span>
+            </div>
+            <div class="metric">
+              <span class="label">Volatility</span>
+              <span class="desc">Pre-event volatility relative to historical levels.</span>
+            </div>
+            <div class="metric">
+              <span class="label">Sentiment</span>
+              <span class="desc">Market sentiment from news and social data.</span>
+            </div>
+            <div class="metric">
+              <span class="label">Macro</span>
+              <span class="desc">CPI, unemployment, and policy rate conditions.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+      <h2>Model Overview</h2>
+      <div class="flow" aria-label="Model pipeline">
+        <div class="flow-step">
+          <div class="title">Data Collection</div>
+          <div class="desc">Prices, earnings, macro, sentiment, and filings.</div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <div class="title">Feature Engineering</div>
+          <div class="desc">Normalised subscores for EPS, macro, volatility, sentiment, revenue.</div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <div class="title">Composite Score</div>
+          <div class="desc">Stock-specific weights combine subscores into a single signal metric.</div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <div class="title">Adaptive Thresholds</div>
+          <div class="desc">Thresholds adjust by market regime and sentiment conditions.</div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <div class="title">Signal Generation</div>
+          <div class="desc">Go Long, Go Short, or Hold based on threshold comparison.</div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <div class="title">Evaluation</div>
+          <div class="desc">Hit rate, returns, Sharpe, and signal-performance alignment.</div>
+        </div>
+      </div>
+      <div class="novelty-callout">
+        Composite score integrates EPS, macro, volatility, sentiment, and revenue - with
+        weights optimised per stock via grid testing across thousands of combinations.
+      </div>
     </div>
 
     <div class="project-description">
@@ -108,27 +526,30 @@
       
         <p>
           Composite scores were refined by applying stock-specific weights, discovered through 
-          grid testing thousands of variations. For example:
+          grid testing thousands of variations. The example weights below are visualised.
         </p>
-        <ul>
-          <li>EPS: 25% (moderate earnings focus)</li>
-          <li>Macro: 25% (high macro sensitivity)</li>
-          <li>Volatility: 15% (moderate volatility consideration)</li>
-          <li>Sentiment: 30% (high sentiment focus)</li>
-          <li>Revenue: 5% (low revenue focus)</li>
+        <div class="weights-visual" aria-label="Composite score weights">
+          <div class="weights-pie" role="img" aria-label="Pie chart showing Macro 25%, EPS 25%, Volatility 15%, Sentiment 30%, Revenue 5%"></div>
+          <ul class="weights-legend">
+            <li><span><span class="swatch eps"></span><span class="label">EPS</span></span><span class="value">25%</span></li>
+            <li><span><span class="swatch macro"></span><span class="label">Macro</span></span><span class="value">25%</span></li>
+            <li><span><span class="swatch vol"></span><span class="label">Volatility</span></span><span class="value">15%</span></li>
+            <li><span><span class="swatch sent"></span><span class="label">Sentiment</span></span><span class="value">30%</span></li>
+            <li><span><span class="swatch rev"></span><span class="label">Revenue</span></span><span class="value">5%</span></li>
         </ul>
+        </div>
       
         <p>
-          Sub-scores also exist within certain factors — for instance, the Macro score is a 
+          Sub-scores also exist within certain factors - for instance, the Macro score is a 
           weighted combination of CPI, unemployment, and the Federal Funds Rate (EFFR).
         </p>
-      
         <p>
-         The composite score is compared against dynamic thresholds for each stock, 
-         found through extensive grid testing to determine profitability points. These thresholds are 
-         adaptive: in strong economic conditions with positive sentiment they are lowered to allow more trades, 
-         while in uncertain or volatile periods they rise so only high-quality trades occur.
+          The composite score is compared against dynamic thresholds for each stock, found through
+          extensive grid testing to determine profitability points.
         </p>
+        <div class="novelty-callout" aria-label="Adaptive thresholds explanation">
+          In summary, when market conditions are good, we lower barriers to trade and generate more signals. In uncertain or volatile periods, thresholds rise so only high-quality trades occur.
+        </div>
       
         <p>
          The outcome is a decision system with three possible signals:  
@@ -138,15 +559,58 @@
         </p>
       
        
-   <div style="display: flex; gap: 20px; margin-top: 20px; justify-content: center; flex-wrap: wrap;">
-     <div style="flex: 1; min-width: 300px; text-align: center;">
-       <img src="earnings_project/plot1.png" alt="Model Flowchart" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
-       <p style="font-size: 0.9em; color: #666; margin-top: 8px;">Figure: End-to-end model flow for signal generation</p>
+    <div class="project-description">
+      <h2>Data & Feature Engineering</h2>
+      <p>
+        The unified dataset combines historical prices, earnings, macroeconomic indicators, and sentiment data. Core sources include
+        market data, macro series, and real-time filings.
+      </p>
+      <div class="card-grid" aria-label="Data sources">
+        <div class="card">
+          <div class="card-title">YFinance</div>
+          <div class="card-desc">Earnings reports, estimates, and OHLCV price history.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">FRED</div>
+          <div class="card-desc">Macro: CPI, unemployment, and policy rate (EFFR).</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Alpha Vantage</div>
+          <div class="card-desc">News sentiment signals combined with social sentiment.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">SEC Filings</div>
+          <div class="card-desc">10-K/10-Q data and earnings announcement timing.</div>
      </div>
-     <div style="flex: 1; min-width: 300px; text-align: center;">
-       <img src="earnings_project/plot2.png" alt="Model Results" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
-       <p style="font-size: 0.9em; color: #666; margin-top: 8px;">Figure: End-to-end model flow for signal generation</p>
      </div>
+      <h3>Data Sources and Methodology</h3>
+      <p>
+        To determine which variables to use for the stocks, we ran linear regression, multiple linear regression, and
+        decision trees. Generally, EPS percentage and EPS surprise were the best indicators of stock price movement
+        around earnings, along with revenue.
+      </p>
+      <p>
+        On the macroeconomics side, CPI, unemployment, and the effective federal funds rate (EFFR) had the greatest
+        impact on stocks.
+      </p>
+      <p>
+        As this project used only free and publicly available data, some data could not be easily obtained, such as
+        implied volatility and revenue surprise. As a workaround for testing purposes, proxies were used for
+        volatility and revenue surprise. Synthetic events were also used to expand the training set beyond the 42 real
+        earnings events.
+      </p>
+      <details class="collapsible">
+        <summary>Synthetic Data Generation</summary>
+        <ul class="method-list">
+          <li>Bootstrap sampling: similar historical events with noise while preserving correlations.</li>
+          <li>Volatility-based: scale returns by volatility subscore with volatility-dependent noise.</li>
+          <li>Macro-regime: shift returns based on macroeconomic conditions across cycles.</li>
+          <li>Rolling window: rolling averages with time-dependent noise.</li>
+        </ul>
+        <p>To create a volatility measure, pre‑earnings volatility is measured as the standard deviation of T−10 to T−2 returns and z-scored.</p>
+        <p>Revenue surprise is proxied from EPS surprise (≈ 0.7×).</p>
+        <p>Synthetic events are re‑scored (EPS/revenue/sentiment), normalised, and assigned adaptive thresholds.</p>
+      </details>
    </div>
 </div>
       
@@ -155,91 +619,89 @@
     <div class="project-description">
       <h2>System Summary</h2>
 
-      <h3>Unified Dataset Creation Process</h3>
-      <p>
-        We built a unified dataset combining 2015–2025 stock price, volatility, revenue, and macroeconomic, as well as sentiment data. The system integrates multiple data sources:
-      </p>
-        <ul>
-          <li>Earnings Data: YFinance for historical earnings reports and estimates </li>
-          <li>Price Data: Daily OHLCV (Open, High, Low, Close, Volume) data</li>
-          <li>Macroeconomic Data: Federal Reserve Economic Data (FRED) for CPI, unemployment, and federal funds rate</li>
-          <li>Sentiment Data: Alpha Vantage-derived sentiment scores combined with Reddit and X (Twitter) sentiment analysis</li>
-          <li>Real-time Data: SEC filings for quarterly earnings announcements from 10-K and 10-Q filings</li>
-        </ul>
-      <p>
-        Quarterly earnings reports from the SEC were merged with yFinance and Alpha Vantage pricing, plus Reddit/Twitter sentiment. 
-        Temporal separation ensured no look-ahead bias.
-      </p>
+      
 
-      <h3>Synthetic Data Generation</h3>
+      <details class="collapsible">
+        <summary>Machine Learning Models</summary>
       <p>
-        To overcome limited historical data (10 years of data for each stock, 42 real events per stock), the system generates synthetic events using four methods:
+        The implementation is built in Python, leveraging pandas for data handling, scikit-learn for modeling, and NumPy for numerical routines. Models are trained on engineered features designed to align with the composite score, including EPS surprise (pre/post), macro subscore, pre-earnings volatility, sentiment, and a revenue proxy. To prevent data leakage, train/test splits preserve the natural time order.
       </p>
-        <ul>
-          <li>Bootstrap Sampling (35%): Select similar historical events and add Gaussian noise while maintaining realistic correlations</li>
-          <li>Volatility-Based Generation (25%): Scale returns based on volatility subscore with volatility-dependent noise</li>
-          <li>Macro Regime-Based Generation (20%): Shift returns based on macroeconomic conditions and economic cycles</li>
-          <li>Rolling Window Generation (20%): Use historical rolling averages with time-dependent noise</li>
-        </ul>
+      <p>
+        We evaluate two prediction tasks:
+      </p>
+      <ol>
+        <p>Direction classification (up vs. down), using logistic regression, decision trees, and random forests.</p>
+        <p>Return regression over a short post-earnings window, using both linear and tree-based regressors.</p>
+      </ol>
+      <p>
+        Directional predictions determine the signal side (long vs. short), while regression outputs guide magnitude and priority.
+      </p>
+      </details>
 
-      <h3>Feature Engineering</h3>
+      <details class="collapsible">
+        <summary>Enhanced Optimisation Process</summary>
       <p>
-        The system calculates five normalised subscores for each earnings event:
-      </p>
-        <ul>
-          <li>EPS Subscore: Normalised earnings surprise percentage</li>
-          <li>Macro Subscore: Weighted combination of CPI, unemployment, and EFFR</li>
-          <li>Volatility Subscore: Pre-earnings volatility normalised against historical levels</li>
-          <li>Sentiment Subscore: Combined Alpha Vantage and Twitter sentiment analysis</li>
-          <li>Revenue Subscore: Proxy revenue surprise derived from earnings metrics</li>
-        </ul>
-
-      <h3>Machine Learning Models</h3>
-      <p>
-        The system is built using Python with key libraries including pandas for data manipulation, scikit-learn for machine learning models, 
-        and numpy for numerical computations. The modular architecture allows for easy extension and modification of individual components.
-      </p>
-      <p>
-        Multiple models were tested, including regression trees, random forests, and logistic regression. Classification models predicted 
-        direction, while regression models estimated return magnitude. Features included EPS surprise, sentiment, macro trends, and volatility.
-      </p>
-
-      <h3>Enhanced Optimisation Process</h3>
-      <p>
-        We optimised thresholds and multipliers using grid search across thousands of combinations. Metrics such as hit rate and average 
-        return were blended into a weighted score, with time-series cross-validation ensuring we avoid look-ahead bias.
+        For each stock and time period, we adjust trade thresholds by exploring different base levels and long/short balances. Performance is measured with a weighted mix of hit rate and average return, with checks in place to avoid extreme settings. We use time-series cross-validation to ensure results are robust, and a cross-stock mode allows thresholds to be learned from other names.
       </p>
         <p>
-         The system uses time-series cross-validation to ensure robust validation across different market cycles, 
-         with strict temporal separation between training and testing periods to prevent look-ahead bias.
+        Once a base threshold is set, we refine it at the event level using macro and sentiment signals, clipped to stock-specific ranges. For NVDA, regime and EPS factors add a small long bias to better capture its dynamics. This keeps thresholds flexible to market conditions while avoiding look-ahead bias.
         </p>
+      </details>
 
-       <h3>Stock-Specific Optimisations</h3>
+      <details class="collapsible">
+        <summary>Stock-Specific Optimisations</summary>
         <p>
-          Each stock required tailored settings: Apple favoured revenue-driven thresholds, Nvidia responded strongly to earnings volatility 
-          and sentiment, while Google was more sensitive to macro and advertising revenue patterns.
+          Each stock uses tailored weights and threshold ranges, with per-event macro/sentiment adjustments clipped within stock-specific bounds.
+          NVDA also applies small regime/EPS tweaks and a mild long bias to reflect observed post-earnings dynamics.
         </p>
+        <ul>
+          <li><strong>AAPL</strong>: Higher long multiplier (~1.2) and a moderate base threshold; revenue/EPS carry more weight. Thresholds adapt with macro and sentiment signals. <em>Base threshold: 18%.</em></li>
+          <li><strong>NVDA</strong>: Very low base threshold with a higher long tilt; enhanced sentiment and revenue features are used. <em>Base threshold: 0.5%.</em></li>
+          <li><strong>GOOGL</strong>: Higher EPS emphasis with a moderate base threshold and a smaller long multiplier; more sensitive to macro and revenue. <em>Base threshold: 8%.</em></li>
+        </ul>
        
         <p>
-          Time Window Optimisation: Identified optimal entry/exit windows around earnings announcement (T-5 to T+5 for AAPL, T-3 to T+7 for NVDA, T-2 to T+5 for GOOGL) 
+          Each stock has its own Time Window Optimisation -  by indentifying optimal entry/exit windows around earnings announcement (T-5 to T+5 for AAPL, T-3 to T+7 for NVDA, T-2 to T+5 for GOOGL) 
           through systematic testing of multiple timeframes.
         </p>
+      </details>
 
-      <h3>Adaptive Threshold System</h3>
+      <details class="collapsible">
+        <summary>Adaptive Threshold System</summary>
       <p>
-        Thresholds were not fixed but adjusted dynamically based on current macroeconomic and sentiment conditions. This adaptive system 
-        allowed the model to respond to changing market conditions.
+        Thresholds are asymmetric and stock-specific. We start from a stock and window base threshold, apply a higher long multiplier for long trades,
+        and then clip within min and max ranges to avoid extreme settings.
       </p>
+      <p>
+        The thresholds are adapted by up to ±0.05 for macroeconomics and ±0.03 for sentiment based on market conditions.
+      </p>
+      <p>
+        Example: if the base threshold is 0.12, a weak macro reading (macro subscore ≈ -0.4) raises it by +0.05 to 0.17, while strong positive sentiment (sentiment subscore ≈ +0.6)
+        lowers it by 0.03, giving an adjusted long threshold of ≈ 0.14 and short threshold of ≈ -0.14 before clipping to stock-specific bounds.
+      </p>
+      </details>
 
-      <h3>Complete System Flow</h3>
+      <details class="collapsible">
+        <summary>Complete System Flow</summary>
       <p>
         The final pipeline: load dataset → optimize thresholds → calculate composite scores → apply adaptive thresholds → generate signals → 
         evaluate performance. This end-to-end system produced consistent, reproducible results.
       </p>
+      <div style="display: flex; gap: 20px; margin-top: 20px; justify-content: center; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+          <img src="earnings_project/plot1.png" alt="Model Flowchart" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+          <p style="font-size: 0.9em; color: #666; margin-top: 8px;">Figure: End-to-end model flow for signal generation</p>
+        </div>
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+          <img src="earnings_project/plot2.png" alt="Model Results" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+          <p style="font-size: 0.9em; color: #666; margin-top: 8px;">Figure: End-to-end model flow for signal generation</p>
+        </div>
+      </div>
+      </details>
     </div>
 
     <div class="project-description">
-        <h2>Results & Testing</h2>
+        <h2 id="results-testing">Results & Testing</h2>
         <p>
           To evaluate the system, we tested it against the latest three earnings events from Apple, Nvidia, and Google. 
           Two of these events (Apple and Nvidia) occurred after the data collection period, 
@@ -252,31 +714,88 @@
         </p>
       
         <div style="text-align: center; margin: 20px 0;">
-          <img src="earnings_project/real_earnings.png" alt="Real Earnings Events" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+          <img src="earnings_project/real_earnings.png" alt="Real Earnings Events" class="figure-image-small" style="border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
           <p style="font-size: 0.9em; color: #666; margin-top: 8px;">Figure: Real earnings events for Apple, Nvidia, and Google</p>
         </div>
       
-        <p>
-          The headline results when tested against these real events were:
-        </p>
-        <ul>
-          <li>Correctly predicted the direction of trade (long or short) for all three stocks.</li>
-          <li>Overestimated Google returns for the time frame by approximately 1.1%.</li>
-          <li>Underestimated Apple returns by approximately 4.8%.</li>
-          <li>The model lost money on Nvidia despite the correct directional prediction — the system favoured short trades, but 
-              there were very few short signals, and they were not consistently profitable.</li>
-        </ul>
+        
       
-        <div style="text-align: center; margin: 20px 0;">
-          <img src="earnings_project/test_results.png" alt="Test Results Performance" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
-          <p style="font-size: 0.9em; color: #666; margin-top: 8px;">Figure: Model test results across the latest earnings events</p>
+        
+      
+       
         </div>
       
-       <p>
-         These findings revealed valuable insights, particularly around Nvidia, where a 
-         "sell the news" effect was observed. This suggests further model adjustments are needed 
-         to better capture such market dynamics.
-       </p>
+    <div class="project-description">
+      <h2>Model Testing by Stock</h2>
+      <p style="color: #495057;">
+        <strong>What “Hit Rate” means:</strong> For a chosen window (e.g., T-5 to T+5), the system replays all real earnings events for that stock and
+        counts the share of trades where the signal’s direction matched the realized move. Long trades are hits when the window return is positive;
+        short trades are hits when the window return is negative. Events with no signal are excluded. We also report the average return across the
+        signaled trades for that window.
+      </p>
+      <div class="tabs" id="stock-tabs">
+        <div role="tablist" aria-label="Stocks" class="tablist">
+          <button role="tab" aria-selected="true" aria-controls="panel-aapl" id="tab-aapl" class="tab-button">AAPL</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-nvda" id="tab-nvda" class="tab-button">NVDA</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-googl" id="tab-googl" class="tab-button">GOOGL</button>
+        </div>
+        <div id="panel-aapl" role="tabpanel" aria-labelledby="tab-aapl" class="tabpanel">
+          <div class="metric-badges">
+            <span class="metric-badge">Hit Rate: 60%</span>
+            <span class="metric-badge">Average Return: 2.55%</span>
+            <span class="metric-badge">Sharpe Ratio: 1.206</span>
+          </div>
+          <div style="margin-bottom: 12px; color: #495057;">
+            <ul>
+              <li>When compared to the actual earnings event on 1 August 2025, the model correctly predicted a LONG trade for T-5 to T+5.</li>
+              <li>The exact returns for this T-5 to T+5 window were underestimated by 4.8%.</li>
+              <li>The image shows that out of 25 events tested, 60% returned a profit.</li>
+              <li>The cumulative return for all these events would have been 67.33%.</li>
+              <li>This return miss is possibly explained by Apple's large EPS beat - the model didn't adequately forecast how a larger beat would influence returns given the EPS weighting in the composite score.</li>
+            </ul>
+          </div>
+          <div>
+            <img src="earnings_project/AAPL.png" alt="AAPL results" class="stock-result-image" style="border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+        <div id="panel-nvda" role="tabpanel" aria-labelledby="tab-nvda" class="tabpanel" hidden>
+          <div class="metric-badges">
+            <span class="metric-badge">Hit Rate: 60%</span>
+            <span class="metric-badge">Average Return: -0.78%</span>
+            <span class="metric-badge">Sharpe Ratio: -0.317</span>
+          </div>
+          <div style="margin-bottom: 12px; color: #495057;">
+            <ul>
+              <li>When compared to the actual earnings event on 27 August 2025, the model correctly predicted a SHORT trade for T-1 to T+1.</li>
+              <li>The model still made a loss of 0.78%. This indicates that although the model went SHORT, the test trades resulted in a LONG return.</li>
+              <li>Signals generated: 5 SHORT and 33 LONG. Both lost money, but SHORT lost slightly less.</li>
+              <li>This may indicate a training-data bias where shorts are being favoured due to historical movements. NVDA also has strong EPS and sentiment, which would signal up moves, but can exhibit a 'sell the news' pattern that leads the model to expect a down move.</li>
+            </ul>
+          </div>
+          <div>
+            <img src="earnings_project/NVDA.png" alt="NVDA results" class="stock-result-image" style="border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+        <div id="panel-googl" role="tabpanel" aria-labelledby="tab-googl" class="tabpanel" hidden>
+          <div class="metric-badges">
+            <span class="metric-badge">Hit Rate: 58.3%</span>
+            <span class="metric-badge">Average Return: 1.91%</span>
+            <span class="metric-badge">Sharpe Ratio: 1.066</span>
+          </div>
+          <div style="margin-bottom: 12px; color: #495057;">
+            <ul>
+              <li>Compared to the actual earnings event on 27 August 2025, the model correctly predicted a LONG trade for T-10 to T+10.</li>
+              <li>The exact returns for this window were overestimated by 1.1%.</li>
+              <li>The image shows that out of 36 events tested, 58.3% returned a profit.</li>
+              <li>The cumulative return for all these events would have been 76.81%.</li>
+              <li>This was the closest prediction overall, possibly highlighting GOOGL's stability and maturity when using historical stock data.</li>
+            </ul>
+          </div>
+          <div>
+            <img src="earnings_project/GOOGL.png" alt="GOOGL results" class="stock-result-image" style="border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+      </div>
      </div>
 
      <!-- Usage Section -->
@@ -420,11 +939,7 @@ STRATEGY REASONING & DECISION FACTORS
        </div>
        </ul>
 
-       <h3>Threshold Types</h3>
-       <p>
-         The system uses standard adaptive thresholds that combine window-based optimisation with market condition adjustments. 
-         This approach ensures reliable performance across different market environments while maintaining methodological rigour.
-       </p>
+    
 
       
 
@@ -446,7 +961,7 @@ STRATEGY REASONING & DECISION FACTORS
        <ul>
          <li>Return Bounds: Maximum cumulative returns (AAPL: ±100%, NVDA: ±200%, GOOGL: ±100%)</li>
          <li>Return Capping: Clips returns to realistic ranges (-50% to +50% daily)</li>
-         <li>Market Regime Awareness: Adapts to bullish, bearish, and neutral market conditions</li>
+       
        </ul>
      </div>
 
@@ -487,5 +1002,63 @@ STRATEGY REASONING & DECISION FACTORS
 
     <a href="index.html" class="back-link">← Back to Portfolio</a>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tablist = document.querySelector('#stock-tabs [role="tablist"]');
+      if (!tablist) return;
+      const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+
+      function getPanel(tab) {
+        const id = tab.getAttribute('aria-controls');
+        return id ? document.getElementById(id) : null;
+      }
+
+      function activateTab(newTab, setFocus = true) {
+        tabs.forEach((tab) => {
+          const selected = tab === newTab;
+          tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+          tab.setAttribute('tabindex', selected ? '0' : '-1');
+          const panel = getPanel(tab);
+          if (panel) {
+            if (selected) {
+              panel.removeAttribute('hidden');
+            } else {
+              panel.setAttribute('hidden', '');
+            }
+          }
+        });
+        if (setFocus) newTab.focus();
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateTab(tab));
+        tab.addEventListener('keydown', (e) => {
+          const last = tabs.length - 1;
+          let targetIndex = index;
+          if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            targetIndex = index === last ? 0 : index + 1;
+            activateTab(tabs[targetIndex]);
+          } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            targetIndex = index === 0 ? last : index - 1;
+            activateTab(tabs[targetIndex]);
+          } else if (e.key === 'Home') {
+            e.preventDefault();
+            activateTab(tabs[0]);
+          } else if (e.key === 'End') {
+            e.preventDefault();
+            activateTab(tabs[last]);
+          } else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            activateTab(tab);
+          }
+        });
+      });
+
+      const initial = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+      if (initial) activateTab(initial, false);
+    });
+  </script>
 </body>
 </html>

@@ -29,10 +29,35 @@
       margin: 40px 0 20px 0;
       font-weight: 600;
     }
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 10px 0 20px 0;
+      justify-content: center;
+    }
+    .btn-secondary {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #4CAF50;
+      border: 1px solid #4CAF50;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .btn-secondary:hover {
+      background-color: #f6fffa;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    }
     .project-image {
       width: 100%;
-      max-width: 300px;
-      height: auto;
+      max-width: 320px;
+      height: 200px;
+      object-fit: cover;
       border-radius: 8px;
       margin: 15px 0 20px 0;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -144,9 +169,21 @@
 <body>
   <div class="container">
     <h1>PJ Stock</h1>
-    <p>I'm a QA Tester with an interest in data. While studying Data Analytics through LSE, I've gained experience in data collection, cleaning, wrangling and visualisation.</p>
+    <div class="hero-cta">
+      <a href="images/CV PJ Stock.pdf" target="_blank" class="btn-secondary">Download CV (PDF)</a>
+      <a href="mailto:pjstocc@gmail.com" class="btn-secondary">Contact</a>
+    </div>
+    <p>I have a QA background with experience in different sectors - energy, gaming and insurance to name some.</p>
 
-    <p>Each project below represents different skills learnt on my journey to become a data analyst, and personal projects that have interested me.</p>
+    <p>I'm interested in data as a reflection of people's behaviours and actions.</p>
+
+    <p>Having worked in tech for 8+ years, I bring skills such as research, stakeholder management, debugging, and SQL experience in validation and investigation.</p>
+
+    <p>I've recently completed the LSE Data Accelerator, I've gained experience in data fundamentals like EDA, regression and visualisation. I'm particularly interested in finance and polling, starting and running my own polling aggregator site during my studies.</p>
+
+    <p>I've earned Distinctions in all LSE assignments, with an average of 83%, and delivered an employer project with an investment management firm that received extremely positive feedback.</p>
+
+    <p>I'm London based and open to local and remote roles.</p>
 
     <p>Tools used:</p>
     <ul class="tools-list">
@@ -161,34 +198,68 @@
       <li>Seaborn</li>
     </ul>
 
-    <h2>Projects</h2>
+    <h2 id="projects">Projects</h2>
     <ul class="projects-list">
       <li>
         <p class="project-description"><strong>A LSE project exploring a supermarket's sales data.</strong></p>
-        <a href="project1.html" class="project-link">View Market Analysis Project</a>
         <img src="images/pexels-kevin-malik-9016541.jpg" alt="Modern supermarket interior" class="project-image">
+        <p class="project-description">Problem: Understand sales drivers and customer segments. Result: Insights on top categories, products, and customer segments.</p>
+        <ul class="tools-list">
+          <li>Tools: Excel, Tableau, SQL</li>
+          <li>Methods: Exploratory Data Analysis, Segmentation</li>
+          <li>Data: Sales, Products, Customers and Demographics</li>
+        </ul>
+        <a href="project1.html" class="project-link">View Market Analysis Project</a>
+        <a href="2Market_project/2Market_Report.pdf" target="_blank" class="btn-secondary">Download report (PDF)</a>
       </li>
       <li>
         <p class="project-description"><strong>A LSE project analysing NHS capacity and utilisation.</strong></p>
-        <a href="project2.html" class="project-link">View NHS Analysis Project</a>
         <img src="images/NHS_image.jpg" alt="NHS hospital" class="project-image">
+        <p class="project-description">Problem: Capacity and DNA (missed appointments) across different regions and NHS trusts.  Result: Insight on DNA rate, capacity utilisation, and seasonal patterns; produced recommendations to reduce missed appointments in most affected areas</p>
+        <ul class="tools-list">
+          <li>Tools: Python, Jupyter Notebooks, Excel</li>
+          <li>Methods: Exploratory Analysis, Regression and Plotting</li>
+          <li>Data: NHS Appointment and Capacity Data</li>
+        </ul>
+        <a href="project2.html" class="project-link">View NHS Analysis Project</a>
+        <a href="NHS_project/NHS_project_report.pdf" target="_blank" class="btn-secondary">Download report (PDF)</a>
       </li>
       <li>
         <p class="project-description"><strong>A LSE project using methods such as Linear and ML Regression.</strong></p>
-        <a href="project3.html" class="project-link">View Advanced Analytics Project</a>
         <img src="images/advanced_analytics.jpg" alt="Advanced Analytics" class="project-image">
+        <p class="project-description">Problem: Understand customer behaviour and segment for a loyalty program. Results: Insights on customer types (e.g., Low earner / high spender) and recommendations on attracting and maintaining each customer type based on spending and loyalty habits.</p>
+        <ul class="tools-list">
+          <li>Tools: Python, R</li>
+          <li>Methods: Linear Regression, ML Regression, Decision Trees, Clustering</li>
+          <li>Data: Customer Demographics and Loyalty Program Data</li>
+        </ul>
+        <a href="project3.html" class="project-link">View Advanced Analytics Project</a>
+        <a href="Advanced_Analytics_Project/Analytics_Report_PJ_Stock.pdf" target="_blank" class="btn-secondary">Download report (PDF)</a>
       </li>
       <li>
-        <p class="project-description"><strong>UK Polling & Seat Calculator - personal projects tracking polling and projecting seats.</strong></p>
+        <p class="project-description"><strong>UK Polling & Seat Calculator - Personal project of a polling aggregator website</strong></p>
+        <img src="images/seat_calc_image.jpg" alt="UK Polling and Seat Calculator" class="project-image">
+        <p class="project-description">A website that tracks UK political polling, seat trends for Westminster and Senedd, and politicians' approval ratings.</p>
+        <ul class="tools-list">
+          <li>Tools: Python, JS Charts</li>
+          <li>Methods: Visualisation, data analysis and regression, data cleaning</li>
+          <li>Data: Publicly available polling data, historic GE data</li>
+        </ul>
         <div class="project-links">
           <a href="project4.html" class="project-link">View Polling & Seat Calculator</a>
+          
         </div>
-        <img src="images/seat_calc_image.jpg" alt="UK Polling and Seat Calculator" class="project-image">
       </li>
       <li>
-        <p class="project-description"><strong>Stock Market Earnings Analysis - analyzing earnings data to identify market trends and investment opportunities.</strong></p>
+        <p class="project-description"><strong>A LSE Employer project, focussed on creating a predictive model for stock earnings events</strong></p>
+        <img src="images/stock_market.jpg" alt="Stock market charts" class="project-image">
+        <p class="project-description">A project to predict stock prices reactions to earnings events, creating repeatable and reliable outputs.</p>
+        <ul class="tools-list">
+          <li>Tools: Python,Flask</li>
+          <li>Methods: Linear and ML Regression, Machine Learning, Synthetic Data Creation, Temporal Validation</li>
+          <li>Data: Historic stock prices (YFinance), earnings surprise and revenue data (SEC), macroeconomic data (FRED)</li>
+        </ul>
         <a href="project6.html" class="project-link">View Stock Market Earnings Project</a>
-        <img src="images/advanced_analytics.jpg" alt="Stock Market Analysis" class="project-image">
       </li>
     </ul>
   </div>
